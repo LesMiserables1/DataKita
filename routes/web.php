@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/upload/foto','UploadController@showPhoto');
+Route::post('/upload/foto','UploadController@storePhoto');
+Route::get('/approve/foto','AdminController@showApprovePhoto');
+Route::post('/approve/foto','AdminController@approvePhoto');
