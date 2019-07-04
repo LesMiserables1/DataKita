@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/upload/foto','UploadController@showPhoto');
+Route::get('/upload/foto','UploadController@showUploadPhoto');
 Route::post('/upload/foto','UploadController@storePhoto');
 Route::get('/approve/foto','AdminController@showApprovePhoto');
 Route::post('/approve/foto','AdminController@approvePhoto');
+
+Route::get('/show/foto/{nama_foto}','UploadController@showPhoto');

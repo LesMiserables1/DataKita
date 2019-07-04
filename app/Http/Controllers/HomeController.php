@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Photo;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class HomeController extends Controller
 {
@@ -25,4 +28,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
 }
