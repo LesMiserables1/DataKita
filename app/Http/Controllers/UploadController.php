@@ -44,7 +44,7 @@ class UploadController extends Controller
         } catch (\Throwable $th) {
         }
         
-        return view('uploadfoto');
+        return;
     }
     
 }
