@@ -36,10 +36,14 @@ class UploadController extends Controller
     }
     public function showPhoto(Request $request)
     {
-        $foto = Photo::where('approve',true)->where('nama_foto',$request->nama_foto)->first();
-        $path = Storage::disk('foto')->get($foto);
-        $image = Image::make($path)->resize('300','300');
-        return $image->response();
+        $foto = Photo::where('nama_foto',$request->nama_foto)->first();
+        try {
+            $path = Storage::disk('foto')->get($foto->nama_foto);
+            $image = Image::make($path)->resize('300','300');
+            return $image->response();
+        } catch (\Throwable $th) {
+        }
+        
         return view('uploadfoto');
     }
     

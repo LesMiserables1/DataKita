@@ -22,8 +22,9 @@
     <input type="text" name="caption" id="" required>
     <input type="submit">
     <select name="jenis" id="jenis">
-        <option value="Agraria">Agraria</option>
-        <option value="Kehutanan">Kehutanan</option>
+        <option value="Agriculture_Mining">Agriculture&Mining</option>
+        <option value="Social_Population">Social&Population</option>
+        <option value="Economic_Trade">Economic&Trade</option>
     </select>
     </form>
 </body>

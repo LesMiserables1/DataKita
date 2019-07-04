@@ -9,24 +9,26 @@ use Image;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function show_agri_mining()
     {
-        return view('home');
+        $foto = Photo::where('jenis','Agriculture_Mining')->where('approve',true)->get();
+        return view('agriculture_mining')->with('photos',$foto);
+    }
+    public function show_eco_trade()
+    {
+        $foto = Photo::where('jenis','Economic_Trade')->where('approve',true)->get();
+        return view('agriculture_mining')->with('photos',$foto);
+    }
+    public function show_soc_pop()
+    {
+        $foto = Photo::where('jenis','Social_Population')->where('approve',true)->get();
+        return view('agriculture_mining')->with('photos',$foto);
     }
     
 }

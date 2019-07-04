@@ -24,4 +24,9 @@ Route::post('/upload/foto','UploadController@storePhoto');
 Route::get('/approve/foto','AdminController@showApprovePhoto');
 Route::post('/approve/foto','AdminController@approvePhoto');
 
+Route::get('/Agriculture_Mining','HomeController@show_agri_mining');
+Route::get('/Economic_Trade','HomeController@show_eco_trade');
+Route::get('/Social_Population','HomeController@show_soc_pop');
+
 Route::get('/show/foto/{nama_foto}','UploadController@showPhoto');
+
