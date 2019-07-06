@@ -1,0 +1,1 @@
+<a href="/approve/foto">approve</a>

@@ -17,12 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('home');
 
 Route::get('/upload/foto','UploadController@showUploadPhoto');
 Route::post('/upload/foto','UploadController@storePhoto');
-Route::get('/approve/foto','AdminController@showApprovePhoto');
-Route::post('/approve/foto','AdminController@approvePhoto');
+
+Route::get('/approve/foto','AdminController@showApprove');
+Route::post('/approve/foto','AdminController@approve');
 
 Route::get('/Agriculture_Mining','HomeController@show_agri_mining');
 Route::get('/Economic_Trade','HomeController@show_eco_trade');
