@@ -1,0 +1,127 @@
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  margin-top: 50px;
+}
+
+#agliculture, #social, #economy {
+  height: 500px;
+  overflow: hidden;
+}
+
+#agliculture .inner, #social .inner, #economy .inner {
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+#agliculture .inner .container-fluid, #social .inner .container-fluid, #economy .inner .container-fluid {
+  height: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+#agliculture .inner .container-fluid .row, #social .inner .container-fluid .row, #economy .inner .container-fluid .row {
+  height: 100%;
+}
+
+#agliculture .inner:before, #social .inner:before, #economy .inner:before {
+  background: url(../images/agliculture.jpg);
+  background-position: bottom;
+  background-size: cover;
+  filter: brightness(0.6) grayscale(1);
+  -webkit-filter: brightness(0.6) grayscale(1);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 500px;
+  width: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+@media (max-width: 767px) {
+  #agliculture .inner:before, #social .inner:before, #economy .inner:before {
+    height: 400px;
+  }
+}
+
+#agliculture .inner:hover, #social .inner:hover, #economy .inner:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+#agliculture .inner:hover .container-fluid, #social .inner:hover .container-fluid, #economy .inner:hover .container-fluid {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+#agliculture .inner:hover:before, #social .inner:hover:before, #economy .inner:hover:before {
+  filter: grayscale(0) brightness(0.6);
+  -webkit-filter: grayscale(0) brightness(0.6);
+}
+
+#agliculture button, #social button, #economy button {
+  width: 100%;
+}
+
+#agliculture .space, #social .space, #economy .space {
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  #agliculture, #social, #economy {
+    height: 400px;
+  }
+}
+
+#social .inner:before {
+  background: url(../images/social.jpg);
+  background-position: center;
+}
+
+#economy .inner:before {
+  background: url(../images/economy.jpg);
+  background-position: center;
+}
+
+.dropdown-menu {
+  background-color: #212529;
+}
+
+.dropdown-menu a, #agliculture h1, #social h1, #economy h1{
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  background: #010203;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .dropdown-menu {
+    text-align: center;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-inline {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=welcome.css.map */

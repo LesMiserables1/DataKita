@@ -1,0 +1,122 @@
+$colors: (
+    dark-text: #212529,
+    dark-bg: #010203
+);
+
+$tablet: 767px;
+$spacer: 1rem;
+
+@mixin tablet{
+    @media (max-width: #{$tablet}){
+        @content;
+    }
+}
+
+@function color($color-name){
+    @return map-get($colors, $color-name) 
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+section{
+    margin-top: 50px;
+}
+#agliculture, #social, #economy{
+    height: 500px;
+    overflow: hidden;
+    .inner{
+        height: 100%;
+        z-index: -1;
+        width: 100%;
+        transition: all .8s;
+        .container-fluid{
+            height: 100%;
+            transition: all .8s;
+            .row{
+                height: 100%;
+            }
+        }
+        &:before{
+            background: url(../images/agliculture.jpg);
+            background-position: bottom;
+            background-size: cover;
+            filter: brightness(0.6) grayscale(1);
+            -webkit-filter: brightness(0.6) grayscale(1);
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 500px;
+            width: 100%;
+            transition: all .8s;
+    
+            @include tablet{
+                height: 400px;
+            }
+        }
+        &:hover{
+            transform: scale(1.06);
+            .container-fluid{
+                transform: scale(0.9);
+            }
+            &:before{
+                filter: grayscale(0) brightness(0.6);
+                -webkit-filter: grayscale(0) brightness(0.6);
+            }
+        }
+    }
+    button{
+        width: 100%;
+    }
+    .space{
+        padding: 10px;
+    }
+    h1{
+        color: white;
+    }
+    @include tablet{
+        height: 400px;
+    }
+}
+#social{
+    .inner{
+        &:before{
+            background: url(../images/social.jpg);
+            background-position: center;
+        }
+    }
+}
+#economy{
+    .inner{
+        &:before{
+            background: url(../images/economy.jpg);
+            background-position: center;
+        }
+    }
+}
+.dropdown-menu{
+    background-color: color(dark-text);
+    a{
+        color: white;
+        &:hover{
+            background: color(dark-bg);
+            color: white;
+        }
+    }
+    @include tablet{
+        text-align: center;
+        margin-left: $spacer;
+    }
+}
+.navbar-nav{
+    @include tablet{
+        text-align: center;
+    }
+}
+.form-inline{
+    @include tablet{
+        justify-content: center;
+    }
+}
