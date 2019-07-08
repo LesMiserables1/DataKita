@@ -1,218 +1,284 @@
-$colors: (
-    dark-text: #212529,
-    dark-bg: #010203,
-    primary: #007bff
-);
-
-$tablet: 767px;
-$small: 576px;
-$mobile: 575px;
-$spacer: 1rem;
-$big: 992px;
-
-@mixin tablet{
-    @media (max-width: #{$tablet}){
-        @content;
-    }
-}
-@mixin small{
-    @media (min-width: #{$small}){
-        @content;
-    }
-}
-@mixin mobile{
-    @media (max-width: #{$mobile}){
-        @content;
-    }
-}
-@mixin big{
-    @media (min-width: #{$big}){
-        @content;
-    }
+body {
+  width: 100%;
+  height: 100vh;
 }
 
-@function color($color-name){
-    @return map-get($colors, $color-name) 
+section, .page-footer {
+  margin-top: 50px;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
+#agliculture, #social, #economy {
+  height: 500px;
+  overflow: hidden;
 }
-section, .page-footer{
-    margin-top: 50px;
-}
-#agliculture, #social, #economy{
-    height: 500px;
-    overflow: hidden;
-    .inner{
-        height: 100%;
-        z-index: -1;
-        width: 100%;
-        transition: all .8s;
-        .container-fluid{
-            height: 100%;
-            transition: all .8s;
-            .row{
-                height: 100%;
-            }
-        }
-        &:before{
-            background: url(../images/agliculture.jpg);
-            background-position: bottom;
-            background-size: cover;
-            filter: brightness(0.6) grayscale(1);
-            -webkit-filter: brightness(0.6) grayscale(1);
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 500px;
-            width: 100%;
-            transition: all .8s;
-    
-            @include tablet{ height: 400px; }
-        }
-        &:hover{
-            transform: scale(1.06);
-            .container-fluid{ transform: scale(0.95); }
-            &:before{
-                filter: grayscale(0) brightness(0.6);
-                -webkit-filter: grayscale(0) brightness(0.6);
-            }
-        }
-    }
-    button{ width: 100%; }
-    .space{ padding: 10px; }
-    h1{ color: white; }
-    @include tablet{ height: 400px; }
-}
-#social{
-    .inner{
-        &:before{
-            background: url(../images/social.jpg);
-            background-position: center;
-        }
-    }
-}
-#economy{
-    .inner{
-        &:before{
-            background: url(../images/economy.jpg);
-            background-position: center;
-        }
-    }
-}
-.dropdown-menu{
-    background-color: color(dark-text);
-    a{
-        color: white;
-        &:hover{
-            background: color(dark-bg);
-            color: white;
-        }
-    }
-    @include tablet{
-        text-align: center;
-        margin-left: $spacer;
-    }
-}
-.navbar-nav{
-    @include tablet{ text-align: center; }
-}
-.form-inline{
-    @include tablet{ justify-content: center; }
-}
-.page-footer{
-    color: white;
-    a{ color: white; }
-    .socmed{
-        list-style: none;
-        li{
-            display: inline-block;
-            a{
-                &:hover{
-                    color: color(primary);
-                }
-            }
-        }
-        @include tablet{ margin-left: -2.5rem; }
-    }
-    .text-right{
-        p{ margin-bottom: 0; }
-    }
-    .respond, .counts{
-        @include tablet{ text-align: center !important; }
-    }
-    .counts{ 
-        @include tablet{ display: block !important; }
-    }
-}
-#events{
-    .image{
-        overflow: hidden;
-        img{
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            transition: all 0.75s;
 
-            &:hover{
-                filter: brightness(0.85);
-            }
-        }
-    }
+#agliculture .inner, #social .inner, #economy .inner {
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
-.caption{
-    max-height: 200px;
-    overflow-y: auto;
+
+#agliculture .inner .container-fluid, #social .inner .container-fluid, #economy .inner .container-fluid {
+  height: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
-.caption p, button span{
-    @include big{ font-size: 16px !important; }
-    @include tablet{ font-size: 14px; }
-    @include small{ font-size: 12px; }
-    @include mobile{ font-size: 11px; }
+
+#agliculture .inner .container-fluid .row, #social .inner .container-fluid .row, #economy .inner .container-fluid .row {
+  height: 100%;
 }
-.close-small{
-    @include small{ display: none }
+
+#agliculture .inner:before, #social .inner:before, #economy .inner:before {
+  background: url(../images/agliculture.jpg);
+  background-position: bottom;
+  background-size: cover;
+  filter: brightness(0.6) grayscale(1);
+  -webkit-filter: brightness(0.6) grayscale(1);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 500px;
+  width: 100%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
-.close-big{
-    visibility: hidden;
-    @include mobile{ display: none}
+
+@media (max-width: 767px) {
+  #agliculture .inner:before, #social .inner:before, #economy .inner:before {
+    height: 400px;
+  }
 }
+
+#agliculture .inner:hover, #social .inner:hover, #economy .inner:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+#agliculture .inner:hover .container-fluid, #social .inner:hover .container-fluid, #economy .inner:hover .container-fluid {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+#agliculture .inner:hover:before, #social .inner:hover:before, #economy .inner:hover:before {
+  filter: grayscale(0) brightness(0.6);
+  -webkit-filter: grayscale(0) brightness(0.6);
+}
+
+#agliculture button, #social button, #economy button {
+  width: 100%;
+}
+
+#agliculture .space, #social .space, #economy .space {
+  padding: 10px;
+}
+
+#agliculture h1, #social h1, #economy h1 {
+  color: white;
+}
+
+@media (max-width: 767px) {
+  #agliculture, #social, #economy {
+    height: 400px;
+  }
+}
+
+#social .inner:before {
+  background: url(../images/social.jpg);
+  background-position: center;
+}
+
+#economy .inner:before {
+  background: url(../images/economy.jpg);
+  background-position: center;
+}
+
+.dropdown-menu {
+  background-color: #212529;
+}
+
+.dropdown-menu a {
+  color: white;
+}
+
+.dropdown-menu a:hover {
+  background: #010203;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .dropdown-menu {
+    text-align: center;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-inline {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.page-footer {
+  color: white;
+}
+
+.page-footer a {
+  color: white;
+}
+
+.page-footer .socmed {
+  list-style: none;
+}
+
+.page-footer .socmed li {
+  display: inline-block;
+}
+
+.page-footer .socmed li a:hover {
+  color: #007bff;
+}
+
+@media (max-width: 767px) {
+  .page-footer .socmed {
+    margin-left: -2.5rem;
+  }
+}
+
+.page-footer .text-right p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .page-footer .respond, .page-footer .counts {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-footer .counts {
+    display: block !important;
+  }
+}
+
+#events .image {
+  overflow: hidden;
+}
+
+#events .image img {
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
+
+#events .image img:hover {
+  -webkit-filter: brightness(0.85);
+          filter: brightness(0.85);
+}
+
+.caption {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+  .caption p, button span {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .caption p, button span {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 576px) {
+  .caption p, button span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .caption p, button span {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 576px) {
+  .close-small {
+    display: none;
+  }
+}
+
+.close-big {
+  visibility: hidden;
+}
+
+@media (max-width: 575px) {
+  .close-big {
+    display: none;
+  }
+}
+
 .carousel-wrap {
-    margin: auto;
-    padding: 0;
-    width: 100%;
-    position: relative;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  position: relative;
 }
+
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {
-    position: relative;
-    z-index: 100; 
-} 
+  position: relative;
+  z-index: 100;
+}
+
 /* end fix */
 .owl-nav > div {
-    margin-top: -26px;
-    position: absolute;
-    top: 50%;
-    color: #cdcbcd;
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
 }
-.owl-nav{
-    i{ font-size: 52px }
-    .owl-prev{ left: -30px; }
-    .owl-next{ right: -30px; }
+
+.owl-nav i {
+  font-size: 52px;
 }
-.owl-dot.active span, .owl-dot:hover span{
-      background: color(primary) !important;
+
+.owl-nav .owl-prev {
+  left: -30px;
 }
-#infographics{
-    .item{
-        overflow: hidden;
-        img{
-            height: 300px;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
+
+.owl-nav .owl-next {
+  right: -30px;
 }
+
+.owl-dot.active span, .owl-dot:hover span {
+  background: #007bff !important;
+}
+
+#infographics .item {
+  overflow: hidden;
+}
+
+#infographics .item img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=welcome.css.map */
