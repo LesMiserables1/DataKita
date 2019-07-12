@@ -19,7 +19,8 @@
     <form action="/upload/foto" enctype="multipart/form-data" method="POST">
     @csrf
     <input type="file" name="foto[]" id="" accept="image/*" multiple required>
-    <input type="text" name="caption" id="" required>
+    <input type="text" name="title" placeholder="judul" required>
+    <input type="text" name="caption" placeholder="caption" id="" required>
     <input type="submit">
     <select name="jenis" id="jenis">
         <option value="Agriculture_Mining">Agriculture&Mining</option>

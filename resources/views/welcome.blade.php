@@ -23,8 +23,12 @@
     </head>
 
     <body>
-
-        <!-- modal -->
+@if(isset($msg))
+    <div class="alert alert-danger">
+    {{ $msg }}
+    </div> 
+@endif      
+     <!-- modal -->
         <!-- ada 4 gambar sehingga ada 4 modal. sebenarnya cuma butuh 1 modal tinggal ntar diganti imgnya aja tapi w gak ngerti -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modal1" role="dialog" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

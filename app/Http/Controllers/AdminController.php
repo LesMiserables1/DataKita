@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use App\Video;
 class AdminController extends Controller
 {
     public function __construct(){
@@ -11,7 +12,7 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin');
+        return view('home');
     }
     public function approve(Request $request)
     {
@@ -20,6 +21,13 @@ class AdminController extends Controller
                 $photo = Photo::find($id);
                 $photo->approve = true;
                 $photo->save();   
+            }
+        }
+        if($request->checkvideo){
+            foreach($request->checkvideo as $id){
+                $video = Video::find($id);
+                $video->approve = true;
+                $video->save();
             }
         }
         return redirect('/');
@@ -51,6 +59,32 @@ class AdminController extends Controller
                 $prevCaption = $caption;
             }
         }
-        return view('approvephoto')->with('photos',$arrPhoto);
+        
+        $videos = Video::where('approve',false)->get();
+        $prevCaption = "";
+        $x = 0;
+        $arrVideo = array(array());
+        $visit = array();
+        for($k = 0;$k<count($videos) ; $k++){
+            $caption = $videos[$k]->caption;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $caption && !$visit[$k]){
+                $sortedVideo = [];
+                $i = 0;
+                $j = 0;        
+                foreach($videos as $video){
+                    if($caption == $video->caption){
+                        $sortedVideo[$j++] = $video;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrVideo[$x]['caption'] = $caption;
+                $arrVideo[$x]['video'] = $sortedVideo;
+                $x++;
+                $prevCaption = $caption;
+            }
+        }
+        return view('approve')->with('photos',$arrPhoto)->with('videos',$arrVideo);
     }
 }

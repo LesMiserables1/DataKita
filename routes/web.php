@@ -14,16 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Auth::routes();
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
 
-Route::get('/admin', 'AdminController@index')->name('home');
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/upload/foto','UploadController@showUploadPhoto');
 Route::post('/upload/foto','UploadController@storePhoto');
+Route::get('/upload/video','UploadController@showUploadVideo');
+Route::post('/upload/video','UploadController@storeVideo');
 
-Route::get('/approve/foto','AdminController@showApprove');
-Route::post('/approve/foto','AdminController@approve');
+Route::get('/admin/approve','AdminController@showApprove');
+Route::post('/admin/approve','AdminController@approve');
 
 Route::get('/Agriculture_Mining','HomeController@show_agri_mining');
 Route::get('/Economic_Trade','HomeController@show_eco_trade');
