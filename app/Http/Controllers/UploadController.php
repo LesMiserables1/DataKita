@@ -106,7 +106,7 @@ class UploadController extends Controller
         $video->caption = $request->caption;
         $video->save();
 
-        return redirect('/admin/approve');
+        return redirect('/');
     }
     public function storePhoto(Request $request)
     {

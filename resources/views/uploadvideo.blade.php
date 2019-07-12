@@ -11,7 +11,7 @@
 <body>
     <form action="/upload/video" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="video" id="" accept="video/*">
+        <input type="file" name="video" id="" accept="video/*" required>
         <input type="text" placeholder="caption" name="caption" required>
         <input type="text" placeholder="title" name="title" required>
         <input type="text" placeholder="description" name="description" required>
