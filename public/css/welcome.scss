@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/ypn1nlu.css");
 $colors: (
     dark-text: #212529,
     dark-bg: #010203,
@@ -10,54 +11,189 @@ $mobile: 575px;
 $spacer: 1rem;
 $big: 992px;
 
-@mixin tablet{
-    @media (max-width: #{$tablet}){
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
         @content;
     }
 }
-@mixin small{
-    @media (min-width: #{$small}){
+@mixin small {
+    @media (min-width: #{$small}) {
         @content;
     }
 }
-@mixin mobile{
-    @media (max-width: #{$mobile}){
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
         @content;
     }
 }
-@mixin big{
-    @media (min-width: #{$big}){
+@mixin big {
+    @media (min-width: #{$big}) {
         @content;
     }
 }
 
-@function color($color-name){
-    @return map-get($colors, $color-name) 
+@function color($color-name) {
+    @return map-get($colors, $color-name);
 }
 
-body{
+* {
+    font-family: "Poppins", sans-serif;
+}
+h1 {
+    font-weight: 600;
+}
+body {
     width: 100%;
     height: 100vh;
 }
-section, .page-footer{
-    margin-top: 50px;
+section {
+    margin-bottom: 50px;
 }
-#agliculture, #social, #economy{
-    height: 500px;
+#navbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    transition: 0.5s;
+}
+#nav-mhweb-hamburger {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    margin: 5px 0px 0px 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        span{
+            background: white;
+        }
+    }
+}
+
+#nav-mhweb-hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: rgba(255,255,255,.5);
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-mhweb-hamburger.open span {
+    margin-left: 3px;
+    margin-top: -4px;
+}
+
+#nav-mhweb-hamburger span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+#nav-mhweb-hamburger span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+#nav-mhweb-hamburger span:nth-child(1),
+#nav-mhweb-hamburger span:nth-child(2) {
+    top: 0px;
+}
+
+#nav-mhweb-hamburger span:nth-child(3),
+#nav-mhweb-hamburger span:nth-child(4) {
+    top: 10px;
+}
+
+#nav-mhweb-hamburger span:nth-child(5),
+#nav-mhweb-hamburger span:nth-child(6) {
+    top: 20px;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(1),
+#nav-mhweb-hamburger.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-mhweb-hamburger.open span:nth-child(2),
+#nav-mhweb-hamburger.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-mhweb-hamburger.open span:nth-child(1) {
+    left: 0px;
+    top: 9px;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 9px;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(5) {
+    left: 0px;
+    top: 19px;
+}
+
+#nav-mhweb-hamburger.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 19px;
+}
+.navbar-toggler{
     overflow: hidden;
-    .inner{
+    margin:0;
+    padding:0;
+    outline: none !important;
+    border:none;
+}
+#agriculture,
+#social,
+#economy {
+    height: 100vh;
+    overflow: hidden;
+    .inner {
         height: 100%;
         z-index: -1;
         width: 100%;
-        transition: all .8s;
-        .container-fluid{
+        transition: all 0.8s;
+        .container-fluid {
             height: 100%;
-            transition: all .8s;
-            .row{
+            transition: all 0.8s;
+            .row {
                 height: 100%;
             }
         }
-        &:before{
+        &:before {
             background: url(../images/agliculture.jpg);
             background-position: bottom;
             background-size: cover;
@@ -67,118 +203,164 @@ section, .page-footer{
             position: absolute;
             left: 0;
             right: 0;
-            height: 500px;
+            height: 100vh;
             width: 100%;
-            transition: all .8s;
-    
-            @include tablet{ height: 400px; }
+            transition: all 0.8s;
+
         }
-        &:hover{
+        &:hover {
             transform: scale(1.06);
-            .container-fluid{ transform: scale(0.95); }
-            &:before{
+            .container-fluid {
+                transform: scale(0.95);
+            }
+            &:before {
                 filter: grayscale(0) brightness(0.6);
                 -webkit-filter: grayscale(0) brightness(0.6);
             }
         }
     }
-    button{ width: 100%; }
-    .space{ padding: 10px; }
-    h1{ color: white; }
-    @include tablet{ height: 400px; }
+    button {
+        width: 100%;
+    }
+    .space {
+        padding: 10px;
+    }
+    h1 {
+        color: white;
+    }
 }
-#social{
-    .inner{
-        &:before{
+#social {
+    .inner {
+        &:before {
             background: url(../images/social.jpg);
             background-position: center;
         }
     }
 }
-#economy{
-    .inner{
-        &:before{
+#economy {
+    .inner {
+        &:before {
             background: url(../images/economy.jpg);
             background-position: center;
         }
     }
 }
-.dropdown-menu{
+.dropdown-menu {
     background-color: color(dark-text);
-    a{
+    border: none;
+    a {
         color: white;
-        &:hover{
+        &:hover {
             background: color(dark-bg);
             color: white;
         }
     }
-    @include tablet{
+    @include tablet {
         text-align: center;
         margin-left: $spacer;
     }
 }
-.navbar-nav{
-    @include tablet{ text-align: center; }
+.navbar-nav {
+    @include tablet {
+        text-align: center;
+    }
 }
-.form-inline{
-    @include tablet{ justify-content: center; }
+.form-inline {
+    @include tablet {
+        justify-content: center;
+    }
+    .form-control {
+        @include mobile() {
+            display: inline-block !important;
+            width: 60% !important;
+            vertical-align: middle !important;
+        }
+    }
 }
-.page-footer{
+.page-footer {
     color: white;
-    a{ color: white; }
-    .socmed{
+    a {
+        color: white;
+    }
+    .socmed {
         list-style: none;
-        li{
+        li {
             display: inline-block;
-            a{
-                &:hover{
+            a {
+                &:hover {
                     color: color(primary);
                 }
             }
         }
-        @include tablet{ margin-left: -2.5rem; }
+        @include tablet {
+            margin-left: -2.5rem;
+        }
     }
-    .text-right{
-        p{ margin-bottom: 0; }
+    .text-right {
+        p {
+            margin-bottom: 0;
+        }
     }
-    .respond, .counts{
-        @include tablet{ text-align: center !important; }
+    .respond,
+    .counts {
+        @include tablet {
+            text-align: center !important;
+        }
     }
-    .counts{ 
-        @include tablet{ display: block !important; }
+    .counts {
+        @include tablet {
+            display: block !important;
+        }
     }
 }
-#events{
-    .image{
+#events {
+    .image {
         overflow: hidden;
-        img{
+        &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+            @include mobile{ display: none; }
+        }
+        img {
             height: 200px;
             width: 100%;
             object-fit: cover;
             transition: all 0.75s;
-
-            &:hover{
-                filter: brightness(0.85);
-            }
         }
     }
 }
-.caption{
+.btn{
+    @include mobile(){
+        font-size: 12px;
+    }
+}
+.caption {
     max-height: 200px;
     overflow-y: auto;
 }
-.caption p, button span{
-    @include big{ font-size: 16px !important; }
-    @include tablet{ font-size: 14px; }
-    @include small{ font-size: 12px; }
-    @include mobile{ font-size: 11px; }
+.caption p,
+button span {
+    @include big {
+        font-size: 16px !important;
+    }
+    @include tablet {
+        font-size: 14px;
+    }
+    @include small {
+        font-size: 12px;
+    }
+    @include mobile {
+        font-size: 11px;
+    }
 }
-.close-small{
-    @include small{ display: none }
+.close-small {
+    @include small {
+        display: none;
+    }
 }
-.close-big{
+.close-big {
     visibility: hidden;
-    @include mobile{ display: none}
+    @include mobile {
+        display: none;
+    }
 }
 .carousel-wrap {
     margin: auto;
@@ -189,8 +371,8 @@ section, .page-footer{
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {
     position: relative;
-    z-index: 100; 
-} 
+    z-index: 100;
+}
 /* end fix */
 .owl-nav > div {
     margin-top: -26px;
@@ -198,21 +380,33 @@ section, .page-footer{
     top: 50%;
     color: #cdcbcd;
 }
-.owl-nav{
-    i{ font-size: 52px }
-    .owl-prev{ left: -30px; }
-    .owl-next{ right: -30px; }
+.owl-nav {
+    i {
+        font-size: 52px;
+    }
+    .owl-prev {
+        left: -30px;
+    }
+    .owl-next {
+        right: -30px;
+    }
 }
-.owl-dot.active span, .owl-dot:hover span{
-      background: color(primary) !important;
+.owl-dot.active span,
+.owl-dot:hover span {
+    background: color(primary) !important;
 }
-#infographics{
-    .item{
+#infographics {
+    .item {
         overflow: hidden;
-        img{
+        img {
             height: 300px;
             width: 100%;
             object-fit: cover;
         }
+    }
+}
+.btn-shadow {
+    &:hover {
+        box-shadow: 10px 15px 30px -12px rgba(0, 123, 255, 0.6) !important;
     }
 }
