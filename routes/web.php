@@ -33,9 +33,13 @@ Route::post('/upload/video','UploadController@storeVideo');
 Route::get('/admin/approve','AdminController@showApprove');
 Route::post('/admin/approve','AdminController@approve');
 
-Route::get('/Agriculture_Mining','HomeController@show_agri_mining');
-Route::get('/Economic_Trade','HomeController@show_eco_trade');
-Route::get('/Social_Population','HomeController@show_soc_pop');
+Route::get('/Agriculture-Mining','HomeController@show_agri_mining');
+Route::get('/Economic-Trade','HomeController@show_eco_trade');
+Route::get('/Social-Population','HomeController@show_soc_pop');
+Route::get('/Events-Experiences','HomeController@show_eve_exp');
+Route::get('/Infographics','HomeController@show_info');
+
+Route::get('/about','HomeController@about');
 
 Route::get('/show/foto/{nama_foto}','UploadController@showPhoto');
 

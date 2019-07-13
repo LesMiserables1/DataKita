@@ -33,5 +33,18 @@ class HomeController extends Controller
 
         return view('social_population')->with('photos',$foto)->with('videos',$video);
     }
+
+    public function show_eve_exp()
+    {
+        return view('events_experience');   
+    }
+    public function show_info()
+    {
+        return view('infographics');
+    }
+    public function about()
+    {
+        return view('about');
+    }
     
 }

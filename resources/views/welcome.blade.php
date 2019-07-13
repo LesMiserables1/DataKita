@@ -23,13 +23,14 @@
     </head>
 
     <body>
+        
 @if(session()->get('msg')!=null)
     <div class="alert alert-danger">
     {{ session()->get('msg') }}
     </div> 
 @endif 
         <nav class="navbar navbar-expand-md navbar-dark" id="navbar" style="background: #212529;">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <div id="nav-mhweb-hamburger">
                     <span></span>
@@ -44,7 +45,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active mr-lg-3 mr-0 mr-md-1">
                         <!-- link sini -->
-                        <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-lg-3 mr-0 mr-md-1">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,25 +53,24 @@
                         </a>
                         <!-- link sini -->
                         <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Agriculture & Mining</a></li>
-                            <li><a class="dropdown-item" href="#">Social & Population</a></li>
-                            <li><a class="dropdown-item" href="#">Economic & Trade</a></li>
-                            <li><a class="dropdown-item" href="#">Events & Experiences</a></li>
-                            <li><a class="dropdown-item" href="#">Infographics</a></li>
+                            <li><a class="dropdown-item" href="/Agriculture-Mining">Agriculture & Mining</a></li>
+                            <li><a class="dropdown-item" href="/Social-Population">Social & Population</a></li>
+                            <li><a class="dropdown-item" href="/Economic-Trade">Economic & Trade</a></li>
+                            <li><a class="dropdown-item" href="/Events-Experiences">Events & Experiences</a></li>
+                            <li><a class="dropdown-item" href="/Infographics">Infographics</a></li>
                         </ul>
                     </li>
                     <!-- link sini, tapi belum ada pagenya -->
                     <li class="nav-item mr-lg-3 mr-0 mr-md-1">
-                        <a class="nav-link" href="#"><i class="fa fa-address-card" aria-hidden="true"></i> About</a>
+                        <a class="nav-link" href="/about"><i class="fa fa-address-card" aria-hidden="true"></i> About</a>
                     </li>
                     <li class="nav-item dropdown mr-lg-3 mr-0 mr-md-1">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-upload"></i> Upload
                         </a>
-                        <!-- link sini -->
                         <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
-                            <li><a class="dropdown-item" href="#">Photo</a></li>
-                            <li><a class="dropdown-item" href="#">Video</a></li>
+                            <li><a class="dropdown-item" href="/upload/photo">Photo</a></li>
+                            <li><a class="dropdown-item" href="/upload/video">Video</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -95,8 +95,7 @@
                                 <div class="row space"></div>
                                 <div class="row justify-content-center">
                                     <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <!-- link sini -->
-                                        <a href="#"><button type="button" class="btn btn-primary">View Gallery</button></a>
+                                        <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View Gallery</button></a>
                                     </div>
                                 </div>    
                             </div>
@@ -118,8 +117,7 @@
                                 <div class="row space"></div>
                                 <div class="row justify-content-center">
                                     <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <!-- link sini -->
-                                        <a href="#"><button type="button" class="btn btn-primary">View Gallery</button></a>
+                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View Gallery</button></a>
                                     </div>
                                 </div>    
                             </div>
@@ -141,8 +139,7 @@
                                 <div class="row space"></div>
                                 <div class="row justify-content-center">
                                     <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <!-- link sini -->
-                                        <a href="#"><button type="button" class="btn btn-primary">View Gallery</button></a>
+                                        <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View Gallery</button></a>
                                     </div>
                                 </div>    
                             </div>
@@ -155,6 +152,7 @@
                 <div class="container">
                     <h1 class="text-center mt-4 mb-5">Events & Experiences</h1>
                     <div class="row text-center d-flex flex-wrap">
+                                    <!-- link sini -->
                     <!-- gambar gambar sini, div dan class sama semua, cuma link gambarnya yang beda -->
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4 h-100">
@@ -200,7 +198,7 @@
                     <div class="row">
                         <div class="col text-center">
                         <!-- link sini -->
-                            <a href="#"><button type="button" class="btn btn-primary btn-shadow">Load more</button></a>
+                            <a href="/Events-Experiences"><button type="button" class="btn btn-primary btn-shadow">Load more</button></a>
                         </div>
                     </div>
                 </div>
@@ -224,7 +222,7 @@
                     </div>
                     <div class="row">
                         <div class="col text-center">
-                            <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Load more</button></a>
+                            <a href="/Infographics"><button type="button" class="btn btn-primary btn-shadow mt-2">Load more</button></a>
                         </div>
                     </div>
                 </div>
@@ -235,8 +233,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">
-                    <!-- link sini -->
-                        <a href="#">Logo DataKita</a>
+                        <a href="/">Logo DataKita</a>
                         <p>This is text.</p>
                     </div>
                 </div>
