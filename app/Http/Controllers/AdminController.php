@@ -16,18 +16,34 @@ class AdminController extends Controller
     }
     public function approve(Request $request)
     {
-        if($request->check){
-            foreach ($request->check as $id ) { 
-                $photo = Photo::find($id);
-                $photo->approve = true;
-                $photo->save();   
+        if($request->status == "approve"){
+            if($request->check){
+                foreach ($request->check as $id ) { 
+                    $photo = Photo::find($id);
+                    $photo->approve = true;
+                    $photo->save();   
+                }
             }
-        }
-        if($request->checkvideo){
-            foreach($request->checkvideo as $id){
-                $video = Video::find($id);
-                $video->approve = true;
-                $video->save();
+            if($request->checkvideo){
+                foreach($request->checkvideo as $id){
+                    $video = Video::find($id);
+                    $video->approve = true;
+                    $video->save();
+                }
+            }
+     
+        }else{
+            if($request->check){
+                foreach ($request->check as $id ) { 
+                    $photo = Photo::find($id);
+                    $photo->delete();   
+                }
+            }
+            if($request->checkvideo){
+                foreach($request->checkvideo as $id){
+                    $video = Video::find($id);
+                    $video->delete();
+                }
             }
         }
         return redirect('/');

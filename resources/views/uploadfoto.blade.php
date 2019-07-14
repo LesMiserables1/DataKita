@@ -19,14 +19,13 @@
     <form action="/upload/foto" enctype="multipart/form-data" method="POST">
     @csrf
     <input type="file" name="foto[]" id="" accept="image/*" multiple required>
-    <input type="text" name="title" placeholder="judul" required>
     <input type="text" name="caption" placeholder="caption" id="" required>
-    <input type="submit">
     <select name="jenis" id="jenis">
         <option value="Agriculture_Mining">Agriculture&Mining</option>
         <option value="Social_Population">Social&Population</option>
         <option value="Economic_Trade">Economic&Trade</option>
     </select>
+    <input type="submit">
     </form>
 </body>
 </html>

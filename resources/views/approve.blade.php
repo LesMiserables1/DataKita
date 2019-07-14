@@ -19,7 +19,8 @@
             <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
         @endforeach
     @endforeach
- <input type="submit" value="approve">
+    <button type="submit" value="approve" name="status">approve</button>
+    <button type="submit" value="delete" name="status">delete</button>
 
 </form>
 </body>
