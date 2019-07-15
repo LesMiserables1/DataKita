@@ -2,8 +2,9 @@
 
 $colors: (
     dark-text: #212529,
-    dark-bg: #010203,
-    primary: #007bff
+    dark-bg: #1a1a1a,
+    primary: #007bff,
+    gray: #C8CCD4
 );
 
 $tablet: 767px;
@@ -11,6 +12,8 @@ $small: 576px;
 $mobile: 575px;
 $spacer: 1rem;
 $big: 992px;
+$laptop: 1200px;
+$ipad: 768px;
 
 @mixin tablet {
     @media (max-width: #{$tablet}) {
@@ -32,6 +35,16 @@ $big: 992px;
         @content;
     }
 }
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+@mixin ipad {
+    @media (min-width: #{$ipad}) {
+        @content;
+    }
+}
 
 @function color($color-name) {
     @return map-get($colors, $color-name);
@@ -40,15 +53,21 @@ $big: 992px;
 * {
     font-family: "Poppins", sans-serif;
 }
-h1 {
+h1,h3, h4, h6 {
     font-weight: 600;
 }
 body {
     width: 100%;
     height: 100vh;
 }
+main{
+    padding-top: 54px;
+}
 section {
     margin-bottom: 50px;
+}
+nav ul li a{
+    @media (min-width: 768px) and (max-width: 800px) { font-size: 14px;}
 }
 #navbar {
     position: fixed;
@@ -333,14 +352,9 @@ section {
         font-size: 12px;
     }
 }
-.caption {
-    max-height: 200px;
-    overflow-y: auto;
-}
-.caption p,
 button span {
     @include big {
-        font-size: 16px !important;
+        font-size: 16px;
     }
     @include tablet {
         font-size: 14px;
@@ -383,13 +397,35 @@ button span {
 }
 .owl-nav {
     i {
-        font-size: 52px;
+        font-size: 12px;
+        height: 25px;
+        width: 25px;
+        background: white;
+        color: color(primary);
+        border-radius: 50%;
+        padding-top: 6.5px;
+        box-shadow: 2px 3px 10px -3px rgba(0, 123, 255, 0.45);
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.2);
+            box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
+        }
     }
-    .owl-prev {
-        left: -30px;
+    .owl-prev{
+        position: absolute;
+        left: 0px;
+        top: 40%;
+        &:hover{
+            background: transparent !important;
+        }
     }
-    .owl-next {
-        right: -30px;
+    .owl-next{
+        position: absolute;
+        right: 0;
+        top: 40%;
+        &:hover{
+            background: transparent !important;
+        }
     }
 }
 .owl-dot.active span,
@@ -409,5 +445,183 @@ button span {
 .btn-shadow {
     &:hover {
         box-shadow: 10px 15px 30px -12px rgba(0, 123, 255, 0.6) !important;
+    }
+}
+.radio{
+    position: relative;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+    margin-right: 15px;
+    .label{
+        position: relative;
+        display: block;
+        float: left;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid color(gray);
+        border-radius: 100%;
+        -webkit-tap-highlight-color: transparent;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: color(primary);
+            transform: scale(0);
+            transition: all .2s ease;
+            opacity: .08;
+            pointer-events: none;
+        }  
+    }
+  &:hover{
+    .label:after{
+      transform: scale(3.6);
+    }
+  }
+}
+input[type="radio"]:checked + .label{
+  border-color: color(primary);
+  &:after{
+    transform: scale(1);
+    transition: all .2s cubic-bezier(.35,.9,.4,.9);
+    opacity: 1;
+  }
+}
+
+.hidden{
+  display: none;
+}
+.area{
+    display:none;
+    clear:both; 
+}
+#photo-gallery, #video-gallery{
+    .item {
+        overflow: hidden;
+        img, iframe {
+            width: 100%;
+            object-fit: contain;
+
+            @include laptop{ height: 36.75vw; }
+            @media (min-width: 992px) and (max-width:1199px){ height: 64vw; }
+            @media (min-width: 768px) and (max-width:991px){ height: 70vw; }
+            @media (min-width: 576px) and (max-width:767px){ height: 80vw; }
+            @include mobile{ height: 90vw; }
+        }
+        p{ font-size: 14px; }
+    }
+    .owl-nav {
+        i{
+            color: white;
+            background: color(primary);
+            box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
+        }
+        .owl-prev{
+            position: absolute;
+            left: 0px;
+            top: 16.375vw;
+            &:hover{
+                background: transparent !important;
+            }
+            @media (min-width: 992px) and (max-width:1199px){ top: 28vw; }
+            @media (min-width: 768px) and (max-width:991px){ top: 31vw; }
+            @media (min-width: 576px) and (max-width:767px){ top: 36vw; }
+            @include mobile{ top: 41vw; }
+        }
+        .owl-next{
+            position: absolute;
+            right: 0px;
+            top: 16.375vw;
+    
+            @include laptop{ left: 62.75%; }
+            &:hover{
+                background: transparent !important;
+            }
+            @media (min-width: 992px) and (max-width:1199px){ top: 28vw; }
+            @media (min-width: 768px) and (max-width:991px){ top: 31vw; }
+            @media (min-width: 576px) and (max-width:767px){ top: 36vw; }
+            @include mobile{ top: 41vw; }
+        }
+    }
+}
+.text-column{
+    overflow-y: auto;
+    @include laptop{ max-height: 40vw; }
+    .photo-by, .video-by{
+        p{ font-size: 15px !important;}
+    }
+}
+.pict-column, .video-column{
+    background: #efefef;
+    justify-content: center;
+}
+.time, .location, .photo-by, .video-by{
+    p{color: #666;}
+}
+.more-than-one{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shadow-pulse 1s infinite;
+}
+@keyframes shadow-pulse{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 -20px 20px 20px rgba(0, 123, 255, 0);
+  }
+}
+.carousel-modal {
+    .item {
+        overflow: hidden;
+        img, iframe {
+            width: 100%;
+            object-fit: contain;
+
+            @include laptop{ height: 36.75vw; }
+            @media (min-width: 992px) and (max-width:1199px){ height: 64vw; }
+            @media (min-width: 768px) and (max-width:991px){ height: 70vw; }
+            @media (min-width: 576px) and (max-width:767px){ height: 80vw; }
+            @include mobile{ height: 90vw; }
+        }
+        p{ font-size: 14px; }
+    }
+    .owl-nav {
+        i{
+            color: white;
+            background: color(primary);
+            box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
+        }
+        .owl-prev{
+            position: absolute;
+            left: 0px;
+            top: 16.375vw;
+            &:hover{
+                background: transparent !important;
+            }
+            @media (min-width: 992px) and (max-width:1199px){ top: 28vw; }
+            @media (min-width: 768px) and (max-width:991px){ top: 31vw; }
+            @media (min-width: 576px) and (max-width:767px){ top: 36vw; }
+            @include mobile{ top: 41vw; }
+        }
+        .owl-next{
+            position: absolute;
+            right: 0px;
+            top: 16.375vw;
+            &:hover{
+                background: transparent !important;
+            }
+            @media (min-width: 992px) and (max-width:1199px){ top: 28vw; }
+            @media (min-width: 768px) and (max-width:991px){ top: 31vw; }
+            @media (min-width: 576px) and (max-width:767px){ top: 36vw; }
+            @include mobile{ top: 41vw; }
+        }
     }
 }

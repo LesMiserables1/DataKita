@@ -259,9 +259,13 @@
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
-                animateOut: 'slideOutDown',
-                animateIn: 'flipInX',
+                animateOut: 'rollOut',
+                animateIn: 'jackInTheBox',
                 nav: true,
+                navText: [
+                    "<i class='fa fa-long-arrow-left'></i>",
+                    "<i class='fa fa-long-arrow-right'></i>"
+                ],
                 autoplay: false,
                 autoplayHoverPause: true,
                 responsive: {
