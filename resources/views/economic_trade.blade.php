@@ -97,28 +97,28 @@ video
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active mr-lg-3 mr-0 mr-md-1">
+                    <li class="nav-item mr-lg-4 mr-0 mr-md-1">
                         <!-- link sini -->
                         <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown mr-lg-3 mr-0 mr-md-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-image" aria-hidden="true"></i> Galleries
                         </a>
                         <!-- link sini -->
                         <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/Agriculture-Mining">Agriculture & Mining</a></li>
                             <li><a class="dropdown-item" href="/Social-Population">Social & Population</a></li>
-                            <li><a class="dropdown-item" href="/Economic-Trade">Economic & Trade</a></li>
+                            <li><a class="dropdown-item active" href="/Economic-Trade">Economic & Trade</a></li>
                             <li><a class="dropdown-item" href="/Events-Experiences">Events & Experiences</a></li>
                             <li><a class="dropdown-item" href="/Infographics">Infographics</a></li>
                         </ul>
                     </li>
                     <!-- link sini, tapi belum ada pagenya -->
-                    <li class="nav-item mr-lg-3 mr-0 mr-md-1">
+                    <li class="nav-item mr-lg-4 mr-0 mr-md-1">
                         <a class="nav-link" href="/about"><i class="fa fa-address-card" aria-hidden="true"></i> About</a>
                     </li>
-                    <li class="nav-item dropdown mr-lg-3 mr-0 mr-md-1">
+                    <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-upload"></i> Upload
                         </a>
@@ -495,26 +495,28 @@ video
         <footer class="page-footer" style="background: #212529;">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
                         <a href="/">Logo DataKita</a>
                         <p>This is text.</p>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 mr-auto d-flex align-items-center counts mt-md-3">
-                        929 website visits
-                    </div>
-                    <div class="col-sm-12 col-md-4 ml-auto text-right respond order-2 order-md-3 d-flex flex-column mt-md-3">
-                        <p>Respond us on</p>
-                        <ul class="socmed">
+                    <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
+                        <p class="mb-0">Respond us on</p>
+                        <ul class="socmed mb-0 pl-md-0">
                             <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
                             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-12 col-md-4 order-3 order-md-2 justify-content-center d-flex align-items-center copyright mt-md-3">
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 mr-auto d-flex align-items-center counts mt-md-3">
+                        929 website visits
+                    </div>
+                    <div class="col-sm-12 col-md-4 justify-content-center d-flex align-items-center copyright mt-md-3">
                         <span>&copy; 2019 DataKita | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>
                     </div>
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
                 </div>
             </div>
         </footer>

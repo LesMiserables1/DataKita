@@ -1,28 +1,62 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("fonts.css");
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Bahnschrift Regular", sans-serif;
 }
 
-h1, h3, h4, h6 {
+h1, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-body {
+html, body {
   width: 100%;
   height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: 0;
+  z-index: 1000;
 }
 
 main {
-  padding-top: 54px;
+  padding-top: 58px;
 }
 
 section {
   margin-bottom: 50px;
 }
 
-@media (min-width: 768px) and (max-width: 800px) {
-  nav ul li a {
-    font-size: 14px;
+nav ul li a, .form-control {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.text-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+
+.blue-line {
+  background: #007bff;
+  opacity: 0.9;
+  width: 18%;
+  height: 6px;
+}
+
+@media (max-width: 767px) {
+  .blue-line {
+    width: 40%;
   }
 }
 
@@ -32,6 +66,7 @@ section {
   width: 100%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  min-height: 60px;
 }
 
 #nav-mhweb-hamburger {
@@ -251,7 +286,7 @@ section {
 }
 
 .dropdown-menu a:hover {
-  background: #1a1a1a;
+  background: #007bff;
   color: white;
 }
 
@@ -331,6 +366,20 @@ section {
   overflow: hidden;
 }
 
+#events .image:hover img {
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+  -webkit-box-shadow: 0px 10px 25px -12px rgba(10, 10, 10, 0.3);
+          box-shadow: 0px 10px 25px -12px rgba(10, 10, 10, 0.3);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+#events .image:hover .img-detail {
+  opacity: 1;
+  top: 50%;
+}
+
 @media (max-width: 575px) {
   #events .image:nth-child(5), #events .image:nth-child(6), #events .image:nth-child(7), #events .image:nth-child(8) {
     display: none;
@@ -342,8 +391,29 @@ section {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: all 0.75s;
-  transition: all 0.75s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+#events .image .img-detail {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -68%);
+          transform: translate(-50%, -68%);
+  color: white;
+  opacity: 0;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+#events .image .img-detail .image-title {
+  margin-bottom: -5px;
+}
+
+#events .image .img-detail .tag {
+  font-size: 12px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 575px) {
@@ -414,13 +484,13 @@ section {
 }
 
 .owl-nav i {
-  font-size: 12px;
-  height: 25px;
-  width: 25px;
+  font-size: 18px;
+  height: 40px;
+  width: 40px;
   background: white;
   color: #007bff;
   border-radius: 50%;
-  padding-top: 6.5px;
+  padding-top: 11px;
   -webkit-box-shadow: 2px 3px 10px -3px rgba(0, 123, 255, 0.45);
           box-shadow: 2px 3px 10px -3px rgba(0, 123, 255, 0.45);
   -webkit-transition: 0.5s;
@@ -428,8 +498,8 @@ section {
 }
 
 .owl-nav i:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
   -webkit-box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
           box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
 }
@@ -437,7 +507,7 @@ section {
 .owl-nav .owl-prev {
   position: absolute;
   left: 0px;
-  top: 40%;
+  top: 36%;
 }
 
 .owl-nav .owl-prev:hover {
@@ -447,7 +517,7 @@ section {
 .owl-nav .owl-next {
   position: absolute;
   right: 0;
-  top: 40%;
+  top: 36%;
 }
 
 .owl-nav .owl-next:hover {
@@ -463,11 +533,33 @@ section {
   overflow: hidden;
 }
 
+#infographics .item:hover img {
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
+}
+
+#infographics .item:hover .image-title {
+  opacity: 1;
+  top: 50%;
+}
+
 #infographics .item img {
   height: 300px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#infographics .item .image-title {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -68%);
+          transform: translate(-50%, -68%);
+  color: white;
+  opacity: 0;
+  -webkit-transition: .75s;
+  transition: .75s;
 }
 
 .btn-shadow:hover {
@@ -631,7 +723,7 @@ input[type="radio"]:checked + .label:after {
 
 @media (min-width: 1200px) {
   #photo-gallery .owl-nav .owl-next, #video-gallery .owl-nav .owl-next {
-    left: 62.75%;
+    left: 61.37%;
   }
 }
 
@@ -667,6 +759,10 @@ input[type="radio"]:checked + .label:after {
   overflow-y: auto;
 }
 
+.text-column h4, .text-column h6, .text-column p, .text-column a {
+  font-family: 'Poppins',sans-serif;
+}
+
 @media (min-width: 1200px) {
   .text-column {
     max-height: 40vw;
@@ -696,6 +792,7 @@ input[type="radio"]:checked + .label:after {
           transform: translateX(-50%);
   -webkit-animation: shadow-pulse 1s infinite;
           animation: shadow-pulse 1s infinite;
+  font-family: 'Poppins';
 }
 
 @-webkit-keyframes shadow-pulse {
