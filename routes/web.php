@@ -25,8 +25,8 @@ Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/admin', 'AdminController@index');
 
-Route::get('/upload/foto','UploadController@showUploadPhoto');
-Route::post('/upload/foto','UploadController@storePhoto');
+Route::get('/upload/photo','UploadController@showUploadPhoto');
+Route::post('/upload/photo','UploadController@storePhoto');
 Route::get('/upload/video','UploadController@showUploadVideo');
 Route::post('/upload/video','UploadController@storeVideo');
 
