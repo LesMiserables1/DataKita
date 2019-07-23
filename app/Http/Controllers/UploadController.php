@@ -18,10 +18,9 @@ class UploadController extends Controller
     public function showUploadVideo()
     {
         session_start();
-
         $client = new \Google_Client();
         $client->setApplicationName('Data Kita');
-        $client->setAuthConfig('/home/lesmiserables/project_web/DataKita/client_secret_643209902818-9acmdn9apsm6pf6qkgbqav9vlovt5a6k.apps.googleusercontent.com.json');
+        $client->setAuthConfig(\Config::get('credential.client'));
         $client->addScope([
             'https://www.googleapis.com/auth/youtube.upload',
         ]);
