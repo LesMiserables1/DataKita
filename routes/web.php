@@ -40,6 +40,7 @@ Route::get('/Events-Experiences','HomeController@show_eve_exp');
 Route::get('/Infographics','HomeController@show_info');
 
 Route::get('/about','HomeController@about');
+Route::get('/search','HomeController@search');
 
 Route::get('/show/foto/{nama_foto}','UploadController@showPhoto');
 
