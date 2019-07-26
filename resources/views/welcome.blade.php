@@ -9,8 +9,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+        <!-- animate.css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
 
+        <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/95df692867.js"></script>
 
         <!-- Styles -->
@@ -75,7 +77,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -85,7 +87,7 @@
             <section id="agriculture">
                 <div class="inner">
                     <div class="container-fluid">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center wow fadeInUp" data-wow-duration="1.5s">
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
@@ -107,7 +109,7 @@
             <section id="social">
                 <div class="inner">
                     <div class="container-fluid">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center wow fadeInUp" data-wow-duration="1.5s">
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
@@ -129,7 +131,7 @@
             <section id="economy">
                 <div class="inner">
                     <div class="container-fluid">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center wow fadeInUp" data-wow-duration="1.5s">
                             <div class="col">
                                 <div class="row">
                                     <div class="col">
@@ -149,7 +151,7 @@
             </section>
             
             <section id="events">
-                <div class="container">
+                <div class="container wow fadeInUp" data-wow-duration="1.5s">
                     <h1 class="text-center text-title mt-4 mb-2">Events & Experiences</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
                     <div class="row text-center d-flex flex-wrap">
@@ -157,22 +159,30 @@
                     <!-- gambar gambar sini, div dan class sama semua, cuma link gambarnya yang beda -->
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
+                                <!-- gambar -->
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/6YmzwamGzCg" alt="">
                                 <div class="img-detail">
+                                    <!-- judul gambar -->
                                     <h5 class="image-title">Judul</h5>
+                                    <!-- tag -->
                                     <span class="tag">#events</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4 ">
+                                <!-- gambar -->
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/JXDohZk64Mw" alt="">
                                 <div class="img-detail">
+                                    <!-- judul gambar -->
                                     <h5 class="image-title">Judul</h5>
+                                    <!-- tag, div lain juga kek gini intinya -->
                                     <span class="tag">#events</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4 ">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/Jrl_UQcZqOc" alt="">
@@ -182,6 +192,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/dI9KhXi0ooE" alt="">
@@ -191,6 +202,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/WwD-LlmXp5o" alt="">
@@ -200,6 +212,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/ahzw2Tg7IXs" alt="">
@@ -209,6 +222,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/_oNISBwMTwo" alt="">
@@ -218,6 +232,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
                             <div class="d-block mb-4">
                                 <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/tuQWhQuaCO0" alt="">
@@ -228,8 +243,10 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- button show more -->
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-center wow fadeInUp" data-wow-duration="1.5s">
                         <!-- link sini -->
                             <a href="/Events-Experiences"><button type="button" class="btn btn-primary btn-shadow">Show more</button></a>
                         </div>
@@ -238,48 +255,60 @@
             </section>
 
             <section id="infographics">
-                <div class="container">
+                <div class="container wow fadeInUp" data-wow-duration="1.5s">
                     <h1 class="text-center text-title mt-4 mb-2">Infographics</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
                     <div class="row carousel-wrap">
                         <div class="owl-carousel owl-theme">
+
                         <!-- gambar gambar sini -->
                             <div class="item">
+                                <!-- gambar -->
                                 <img src="https://source.unsplash.com/T9Gsevu_N8Y">
+                                <!-- judul gambar -->
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/s87ngBxo4xg">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/PgNKq33I-Fk">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/VtppxC-GfZs">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/9PUHwNnFIVc">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/fsdWYNTymjI">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/qgEKJkf4sKY">
                                 <h5 class="image-title">Judul</h5>
                             </div>
+
                             <div class="item">
                                 <img src="https://source.unsplash.com/zglUlG8k47I">
                                 <h5 class="image-title">Judul</h5>
                             </div>
                         </div>
                     </div>
+
+                    <!-- button inform more -->
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-center wow fadeInUp" data-wow-duration="1.5s">
                             <a href="/Infographics"><button type="button" class="btn btn-primary btn-shadow mt-2">Inform more</button></a>
                         </div>
                     </div>
@@ -287,6 +316,7 @@
             </section>
         </main>
 
+        <!-- footer -->
         <footer class="page-footer" style="background: #212529;">
             <div class="container-fluid">
                 <div class="row">
@@ -315,8 +345,16 @@
                 </div>
             </div>
         </footer>
+
+        <!-- go to top button -->
         <a href="#agriculture"><button class="go-to-top btn btn-primary btn-shadow"><i class="fa fa-long-arrow-up"></i></button></a>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script>
+            // wow.js activator
+            new WOW().init();
+
+            // owlCarousel activator and customization
             $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 10,
@@ -345,6 +383,7 @@
                 }
             });
 
+            // applying box shadow and displaying go to top button when user scroll 100vh
             var prevScrollpos = window.pageYOffset;
             $(window).on("scroll", function(){
                 if($(window).scrollTop() > $(window).height()){
@@ -367,6 +406,7 @@
                 }
             });
 
+            // toggle hamburger
             $(document).ready(function(){
                 $('#nav-mhweb-hamburger').click(function(){
                 $(this).toggleClass('open');

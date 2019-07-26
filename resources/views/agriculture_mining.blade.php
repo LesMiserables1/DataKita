@@ -126,7 +126,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -158,6 +158,8 @@
                         <!-- foto2 beserta caption di dalam owl-carousel, masing2 foto ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 pict-column dst. pict-column untuk container gambar, text-column untuk container caption  -->
                         <div class="row item">
+
+                        <!-- kolom untuk gambar -->
                             <div class="col-12 col-xl-8">
                                 <div class="pict-column">
                                     <!-- image goes here -->
@@ -173,18 +175,23 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
                             <div class="col-12 col-xl-4">
                                 <div class="text-column p-4 p-xl-2">
+
                                     <!-- judul caption -->
                                     <div class="title">
                                         <h4>Disappointing End</h4>
                                         <hr class="mt-3 mb-3">
                                     </div>
+
                                     <div class="photo-by">
                                         <!-- nama user -->
                                         <h6 class="mb-1">Photo and Caption by</h6>
                                         <p>Jean Kirschtein</p>
                                     </div>
+
                                     <div class="caption text-justify">
                                         <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
                                     lebih dari satu p tag -->
@@ -192,16 +199,19 @@
                                         with someone burning my bones without even knowing who they belonged to.
                                         </p>
                                     </div>
+
                                     <div class="time">
                                         <!-- upload time -->
                                         <h6 class="mb-1">Uploaded on</h6>
                                         <p>09/01/2017</p>
                                     </div>
+
                                     <div class="location">
                                         <!-- lokasi -->
                                         <h6 class="mb-1">Location</h6>
                                         <p>Asilah, Morocco</p>
                                     </div>
+
                                     <!-- link download -->
                                     <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                                 </div>
@@ -209,35 +219,43 @@
                         </div>
 
                         <div class="row item">
+
                             <div class="col-12 col-xl-8">
                                 <div class="pict-column">
                                     <img src="https://source.unsplash.com/B04Xpnu5JQ4">
                                 </div>
                             </div>
+
                             <div class="col-12 col-xl-4">
                                 <div class="text-column p-4 p-xl-2">
+
                                     <div class="title">
                                         <h4>Going Against the Flow</h4>
                                         <hr class="mt-3 mb-3">
                                     </div>
+
                                     <div class="photo-by">
                                         <h6 class="mb-1">Photo and Caption by</h6>
                                         <p>Annie Leonhart</p>
                                     </div>
+
                                     <div class="caption text-justify">
                                         <p>Going against the flow takes a lot of courage. I respect that. 
                                         Maybe people who can do it are just stupid. But… Well,
                                         what I’m sure of is that people like that are rare.
                                         </p>
                                     </div>
+
                                     <div class="time">
                                         <h6 class="mb-1">Uploaded on</h6>
                                         <p>19/07/2018</p>
                                     </div>
+
                                     <div class="location">
                                         <h6 class="mb-1">Location</h6>
                                         <p>Oro Oro Ombo, Lumajang</p>
                                     </div>
+                                    
                                     <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                                 </div>
                             </div>
