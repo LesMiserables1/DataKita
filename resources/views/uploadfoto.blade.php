@@ -242,16 +242,11 @@
                 }
             });
 
-            //capitalize function
-            function upperFirst(string){
-                return string.charAt(0).toUpperCase() + string.slice(1);
-            }
-
             //controlling UI if the tags entered more than 6
             var warn = document.getElementById("tags-warning");
             $('#tags').on("change", function(){
                 //var to be stored
-                var len = $('#tags').val().split(",").map(upperFirst);
+                var len = $('#tags').val().split(',');
                 console.log(len);
                 if(len.length >= 6) warn.innerHTML = "You can't add more tags.";
                 else warn.innerHTML = "";

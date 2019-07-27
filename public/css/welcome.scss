@@ -309,7 +309,7 @@
     #agriculture, #social, #economy {
         height: 100vh;
         overflow: hidden;
-        @media (min-height: 901px){ height: 900px }
+        @media (min-height: 845px){ height: 844px }
 
         //some kind of container. just to make it easier styling the background using :before
         .inner {
@@ -327,7 +327,7 @@
 
             //setting background using :before to apply filter on background only, not the entire components
             &:before {
-                background: url(../images/agliculture.jpg);
+                background: url(../images/agriculture.jpg);
                 background-position: bottom;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -369,7 +369,7 @@
         .inner {
             &:before {
                 background: url(../images/social.jpg);
-                background-position: -120px center;
+                background-position: -150px center;
             }
         }
     }
@@ -763,7 +763,7 @@
     =============
  */
     //main section
-    #photoupload {
+    #photoupload, #videoupload {
         width: 100%;
 
         //container for the image beside the form

@@ -253,9 +253,9 @@ nav ul li a, .search-box {
   overflow: hidden;
 }
 
-@media (min-height: 901px) {
+@media (min-height: 845px) {
   #agriculture, #social, #economy {
-    height: 900px;
+    height: 844px;
   }
 }
 
@@ -278,7 +278,7 @@ nav ul li a, .search-box {
 }
 
 #agriculture .inner:before, #social .inner:before, #economy .inner:before {
-  background: url(../images/agliculture.jpg);
+  background: url(../images/agriculture.jpg);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -329,7 +329,7 @@ nav ul li a, .search-box {
 
 #social .inner:before {
   background: url(../images/social.jpg);
-  background-position: -120px center;
+  background-position: -150px center;
 }
 
 #economy .inner:before {
@@ -758,28 +758,28 @@ input[type="radio"]:checked + .label:after {
      upload page
     =============
  */
-#photoupload {
+#photoupload, #videoupload {
   width: 100%;
 }
 
-#photoupload .upload {
+#photoupload .upload, #videoupload .upload {
   max-height: 450px;
   width: 95%;
 }
 
 @media (max-width: 991px) {
-  #photoupload .upload {
+  #photoupload .upload, #videoupload .upload {
     width: 70%;
   }
 }
 
 @media (min-width: 992px) {
-  #photoupload .upload {
+  #photoupload .upload, #videoupload .upload {
     margin-top: -240px;
   }
 }
 
-#photoupload #uploadfile {
+#photoupload #uploadfile, #videoupload #uploadfile {
   cursor: pointer !important;
 }
 
