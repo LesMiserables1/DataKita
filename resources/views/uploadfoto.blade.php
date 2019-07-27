@@ -164,7 +164,7 @@
                                 <!-- input tags -->
                                 <div class="form-group">
                                     <label for="your-title">Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
-                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences, Love, Journey" required>
+                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" required>
                                     <span class="text-danger" id="tags-warning" class="warning"></span>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Upload">
@@ -242,16 +242,11 @@
                 }
             });
 
-            //capitalize function
-            function upperFirst(string){
-                return string.charAt(0).toUpperCase() + string.slice(1);
-            }
-
             //controlling UI if the tags entered more than 6
             var warn = document.getElementById("tags-warning");
             $('#tags').on("change", function(){
                 //var to be stored
-                var len = $('#tags').val().split(",").map(upperFirst);
+                var len = $('#tags').val().split(',');
                 console.log(len);
                 if(len.length >= 6) warn.innerHTML = "You can't add more tags.";
                 else warn.innerHTML = "";

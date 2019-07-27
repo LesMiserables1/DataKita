@@ -7,15 +7,19 @@
     "use strict";
   
     var defaultOptions = {
-      capitalize: function(item) {
-            return item ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item;
-      },
+      titleCase: function(str) {
+        var splitStr = str.toLowerCase().split(' ');
+        for (var i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+        }
+        return splitStr.join(' '); 
+     },
       tagClass: function(item) {
         return 'label label-info';
       },
       focusClass: 'focus',
       itemValue: function(item) {
-        return item ? item.toString() : item;
+        return  this.titleCase(item);
       },
       itemText: function(item) {
         return this.itemValue(item);
