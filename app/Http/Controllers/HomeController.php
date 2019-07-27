@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Photo;
 use Illuminate\Support\Facades\Storage;
 use App\Video;
+use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -45,6 +47,10 @@ class HomeController extends Controller
     public function about()
     {
         return view('about');
+    }
+    public function search(Request $request)
+    {
+        dd('test');
     }
     
 }
