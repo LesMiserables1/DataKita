@@ -16,6 +16,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+        $photoInfo =  Photo::where('jenis','Infographics')->where('approve',true)->get();
+        $photoEve = Photo::where('jenis','Event_Experience')->where('approve',true)->get()->take(8);
+        return view('welcome')->with('photoInfo',$photoInfo)->with('photoEve',$photoEve);
+    }
     public function show_agri_mining()
     {
         $foto = Photo::where('jenis','Agriculture_Mining')->where('approve',true)->get();
@@ -38,11 +44,15 @@ class HomeController extends Controller
 
     public function show_eve_exp()
     {
-        return view('events_experience');   
+        $foto = Photo::where('jenis','Event_Experience')->where('approve',true)->get();
+        $video = Video::where('jenis','Event_Experience')->where('approve',true)->get();
+        return view('events_experience')->with('photos',$foto)->with('videos',$video);   
     }
     public function show_info()
     {
-        return view('infographics');
+        $foto = Photo::where('jenis','Infographics')->where('approve',true)->get();
+        $video = Video::where('jenis','Infographics')->where('approve',true)->get();
+        return view('infographics')->with('photos',$foto)->with('videos',$video);
     }
     public function about()
     {

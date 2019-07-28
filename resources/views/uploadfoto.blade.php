@@ -101,7 +101,11 @@
 
                         <!-- input form section -->
                         <div class="col-12 col-lg-6">
-                            <form action="/upload/foto" enctype="multipart/form-data" method="POST">
+<<<<<<< HEAD
+                            <form action="/upload/foto" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
+=======
+                            <form action="/upload/photo" enctype="multipart/form-data" method="POST">
+>>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 @csrf
 
                                 <!-- upload file -->
@@ -117,25 +121,25 @@
                                 <!-- input nama -->
                                 <div class="form-group">
                                     <label for="your-name">Name <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Your name goes here." data-placement="right"></i></label>
-                                    <input type="text" class="form-control" id="your-name" placeholder="John Doe" required>
+                                    <input type="text" class="form-control" id="your-name" placeholder="John Doe" name="author" required >
                                 </div>
 
                                 <!-- input lokasi -->
                                 <div class="form-group">
                                     <label for="your-location">Location <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="The location in which you took your photo." data-placement="right"></i></label>
-                                    <input type="text" class="form-control" id="your-location" placeholder="Bandung, West Java" required>
+                                    <input type="text" class="form-control" id="your-location" placeholder="Bandung, West Java" name="location" required>
                                 </div>
 
                                 <!-- input judul -->
                                 <div class="form-group">
                                     <label for="your-title">Caption Title <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can write your desired title for the caption!" data-placement="right"></i></label>
-                                    <input type="text" class="form-control" id="your-title" placeholder="Dreamy Days" required>
+                                    <input type="text" class="form-control" id="your-title" placeholder="Dreamy Days" name="title" required>
                                 </div>
 
                                 <!-- input caption -->
                                 <div class="form-group">
                                     <label for="your-caption">Caption</label>
-                                    <textarea class="form-control" id="your-caption" rows="6" placeholder="Your caption goes here..." required></textarea>
+                                    <textarea class="form-control" id="your-caption" rows="6" placeholder="Your caption goes here..." name="caption" required></textarea>
                                 </div>
 
                                 <!-- input category -->
@@ -144,19 +148,19 @@
                                     
                                     <!-- radio atas -->
                                     <div class="toggle mb-0 justify-content-center">
-                                        <input class="form-check-input" type="radio" name="sizeBy" value="agri" id="agri" checked="checked" />
+                                        <input class="form-check-input" type="radio" name="jenis" value="Agriculture_Mining" id="agri" checked="checked" />
                                         <label for="agri">Agriculture & Mining</label>
-                                        <input class="form-check-input" type="radio" name="sizeBy" value="soci" id="soci" />
+                                        <input class="form-check-input" type="radio" name="jenis" value="Social_Population" id="soci" />
                                         <label for="soci">Social & Population</label>
                                     </div>
 
                                     <!-- radio bawah -->
                                     <div class="toggle toggle2">
-                                        <input class="form-check-input" type="radio" name="sizeBy" value="eco" id="eco" />
+                                        <input class="form-check-input" type="radio" name="jenis" value="Economic_Trade" id="eco" />
                                         <label for="eco">Economic & Trade</label>
-                                        <input class="form-check-input" type="radio" name="sizeBy" value="eve" id="eve" />
+                                        <input class="form-check-input" type="radio" name="jenis" value="Event_Experiences" id="eve" />
                                         <label for="eve">Events & Experiences</label>
-                                        <input class="form-check-input" type="radio" name="sizeBy" value="inf" id="inf" />
+                                        <input class="form-check-input" type="radio" name="jenis" value="Infographics" id="inf" />
                                         <label for="inf"  class="d-flex align-items-center">Infographics</label>
                                     </div>
                                 </div>
@@ -164,7 +168,7 @@
                                 <!-- input tags -->
                                 <div class="form-group">
                                     <label for="your-title">Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
-                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" required>
+                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" name="tags" required>
                                     <span class="text-danger" id="tags-warning" class="warning"></span>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Upload">
@@ -176,7 +180,7 @@
         </main>
 
         <!-- footer -->
-        <footer class="page-footer mt-5" style="background: #212529;">
+        <footer id="page-footer" class="mt-5" style="background: #212529;">
             <div class="container-fluid">
 
                 <!-- atas  -->
@@ -221,6 +225,9 @@
             //custom file input activator
             $(document).ready(function () {
                 bsCustomFileInput.init();
+                $('#nav-mhweb-hamburger').click(function(){
+                $(this).toggleClass('open');
+                });
             });
 
             //to activate tooltip
@@ -252,11 +259,24 @@
                 else warn.innerHTML = "";
             });
 
-            // toggle hamburger
-            $(document).ready(function(){
-                $('#nav-mhweb-hamburger').click(function(){
-                $(this).toggleClass('open');
-                });
+            var prevScrollpos = window.pageYOffset;
+            $(window).on("scroll", function(){
+                if($(window).scrollTop() > $(window).height()*0.25){
+                    $('nav').css('box-shadow', '0 1px 30px 12px rgba(33, 37, 41, 0.3)')
+                }
+                else{
+                    $('nav').css('box-shadow', '0 1px 30px 12px rgba(33, 37, 41, 0)')
+                }
+                //to hide navbar after user scrolling down 100vw-50px from top and redisplay it when user scrolls up
+                var currentScrollPos = window.pageYOffset;
+                if($(window).scrollTop() > $(window).height() - 400){
+                    if(prevScrollpos > currentScrollPos){
+                        document.getElementById("navbar").style.top = "0";
+                    } else{
+                        document.getElementById("navbar").style.top = "-120px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
             });
         </script>
     </body>

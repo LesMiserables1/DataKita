@@ -128,7 +128,7 @@
 
                         <!-- input form section -->
                         <div class="col-12 col-lg-6">
-                            <form action="/upload/video" enctype="multipart/form-data" method="POST">
+                            <form action="/upload/video" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
                                 @csrf
 
                                 <!-- upload file -->
@@ -203,7 +203,7 @@
         </main>
 
         <!-- footer -->
-        <footer class="page-footer mt-5" style="background: #212529;">
+        <footer id="page-footer" class="mt-5" style="background: #212529;">
             <div class="container-fluid">
 
                 <!-- atas  -->
@@ -248,6 +248,9 @@
             //custom file input activator
             $(document).ready(function () {
                 bsCustomFileInput.init();
+                $('#nav-mhweb-hamburger').click(function(){
+                    $(this).toggleClass('open');
+                });
             });
 
             //to activate tooltip
@@ -279,11 +282,24 @@
                 else warn.innerHTML = "";
             });
 
-            // toggle hamburger
-            $(document).ready(function(){
-                $('#nav-mhweb-hamburger').click(function(){
-                $(this).toggleClass('open');
-                });
+            var prevScrollpos = window.pageYOffset;
+            $(window).on("scroll", function(){
+                if($(window).scrollTop() > $(window).height()*0.25){
+                    $('nav').css('box-shadow', '0 1px 30px 12px rgba(33, 37, 41, 0.3)')
+                }
+                else{
+                    $('nav').css('box-shadow', '0 1px 30px 12px rgba(33, 37, 41, 0)')
+                }
+                //to hide navbar after user scrolling down 100vw-50px from top and redisplay it when user scrolls up
+                var currentScrollPos = window.pageYOffset;
+                if($(window).scrollTop() > $(window).height() - 400){
+                    if(prevScrollpos > currentScrollPos){
+                        document.getElementById("navbar").style.top = "0";
+                    } else{
+                        document.getElementById("navbar").style.top = "-120px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
             });
         </script>
     </body>

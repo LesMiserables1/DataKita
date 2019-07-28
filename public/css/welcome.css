@@ -9,6 +9,10 @@
      global styling
     ================
  */
+main {
+  padding-top: 58px;
+}
+
 * {
   font-family: "Bahnschrift Regular", sans-serif;
 }
@@ -21,10 +25,6 @@ html, body {
   width: 100%;
   height: 100vh;
   scroll-behavior: smooth;
-}
-
-main {
-  padding-top: 58px;
 }
 
 section {
@@ -101,6 +101,7 @@ nav ul li a, .search-box {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   min-height: 60px;
+  background: #212529;
 }
 
 #navbar .navbar-toggler {
@@ -111,9 +112,22 @@ nav ul li a, .search-box {
   border: none;
 }
 
+#navbar .dropdown.show .dropdown-menu {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0;
+}
+
 #navbar .dropdown-menu {
   background-color: #212529;
   border: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: -15px;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
 }
 
 #navbar .dropdown-menu a {
@@ -152,6 +166,10 @@ nav ul li a, .search-box {
     width: 60% !important;
     vertical-align: middle !important;
   }
+}
+
+.home-nav {
+  background: rgba(33, 37, 41, 0.9) !important;
 }
 
 #nav-mhweb-hamburger {
@@ -248,6 +266,14 @@ nav ul li a, .search-box {
      welcome page
     ==============
  */
+#fullpage {
+  padding-top: 0;
+}
+
+#agriculture .search-button, #agriculture .navbar-toggler {
+  width: unset !important;
+}
+
 #agriculture, #social, #economy {
   height: 100vh;
   overflow: hidden;
@@ -255,7 +281,7 @@ nav ul li a, .search-box {
 
 @media (min-height: 845px) {
   #agriculture, #social, #economy {
-    height: 844px;
+    background-repeat: no-repeat;
   }
 }
 
@@ -279,11 +305,11 @@ nav ul li a, .search-box {
 
 #agriculture .inner:before, #social .inner:before, #economy .inner:before {
   background: url(../images/agriculture.jpg);
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: brightness(0.6) grayscale(1);
-  -webkit-filter: brightness(0.6) grayscale(1);
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
   content: "";
   position: absolute;
   left: 0;
@@ -294,25 +320,23 @@ nav ul li a, .search-box {
   transition: all 1.4s;
 }
 
-@media (min-height: 901px) {
+@media (min-height: 845px) {
   #agriculture .inner:before, #social .inner:before, #economy .inner:before {
-    height: 900px;
+    height: 844px;
   }
 }
 
-#agriculture .inner:hover, #social .inner:hover, #economy .inner:hover {
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
-}
-
-#agriculture .inner:hover .container-fluid, #social .inner:hover .container-fluid, #economy .inner:hover .container-fluid {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+@media (min-width: 1200px) {
+  #agriculture .inner:before, #social .inner:before, #economy .inner:before {
+    background-position-x: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
 }
 
 #agriculture .inner:hover:before, #social .inner:hover:before, #economy .inner:hover:before {
-  filter: grayscale(0) brightness(0.6);
-  -webkit-filter: grayscale(0) brightness(0.6);
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
 }
 
 #agriculture button, #social button, #economy button {
@@ -332,9 +356,36 @@ nav ul li a, .search-box {
   background-position: -150px center;
 }
 
+@media (max-width: 575px) {
+  #social .inner:before {
+    background-position: -240px center;
+  }
+}
+
+@media (min-width: 1200px) {
+  #social .inner:before {
+    background-position-x: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+}
+
 #economy .inner:before {
   background: url(../images/economy.jpg);
   background-position: center;
+}
+
+@media (min-width: 1200px) {
+  #economy .inner:before {
+    background-position-x: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+}
+
+#events {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
 }
 
 #events .image {
@@ -362,12 +413,24 @@ nav ul li a, .search-box {
 }
 
 #events .image img {
-  height: 200px;
+  height: 210px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
+}
+
+@media (max-width: 767px) {
+  #events .image img {
+    height: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #events .image img {
+    height: 180px;
+  }
 }
 
 #events .image .img-detail {
@@ -389,6 +452,12 @@ nav ul li a, .search-box {
 #events .image .img-detail .tag {
   font-size: 12px;
   margin-bottom: 0;
+}
+
+#infographics {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  margin-bottom: 24px;
 }
 
 #infographics .item {
@@ -425,16 +494,28 @@ nav ul li a, .search-box {
 }
 
 /* special components */
-.go-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  opacity: 0;
-  z-index: 1000;
+#fp-nav ul li a span {
+  background: white !important;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+#fp-nav ul li a span.blue-background {
+  background: #007bff !important;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+#fp-nav ul li .fp-tooltip {
+  font-family: "Bahnschrift Regular", sans-serif !important;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+.blue-color {
+  color: #007bff !important;
+  -webkit-transition: .75s;
+  transition: .75s;
 }
 
 .text-title {
@@ -635,7 +716,7 @@ input[type="radio"]:checked + .label:after {
   }
 }
 
-#photo-gallery .item p, #video-gallery .item p, .carousel-modal .item p {
+#photo-gallery .item p, #photo-gallery .item li, #video-gallery .item p, #video-gallery .item li, .carousel-modal .item p, .carousel-modal .item li {
   font-size: 14px;
 }
 
@@ -701,7 +782,7 @@ input[type="radio"]:checked + .label:after {
 
 @media (min-width: 1200px) {
   .text-column {
-    max-height: 40vw;
+    max-height: 37vw;
   }
 }
 
@@ -718,6 +799,20 @@ input[type="radio"]:checked + .label:after {
 
 .time p, .location p, .photo-by p, .video-by p {
   color: #666;
+}
+
+.tags {
+  list-style: none;
+}
+
+.tags li {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  background: #dbdbdb;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 2px;
+  margin-bottom: 4px;
 }
 
 .more-than-one {
@@ -981,40 +1076,41 @@ input[type="radio"]:checked + .label:after {
         footer
     ==============
 */
-.page-footer {
+#page-footer {
+  margin-top: 50px;
   color: white;
 }
 
-.page-footer a {
+#page-footer a {
   color: white;
 }
 
-.page-footer .socmed {
+#page-footer .socmed {
   list-style: none;
 }
 
-.page-footer .socmed li {
+#page-footer .socmed li {
   display: inline-block;
 }
 
-.page-footer .socmed li a:hover {
+#page-footer .socmed li a:hover {
   color: #007bff;
 }
 
 @media (max-width: 767px) {
-  .page-footer .socmed {
+  #page-footer .socmed {
     margin-left: -2.5rem;
   }
 }
 
 @media (max-width: 767px) {
-  .page-footer .respond, .page-footer .counts {
+  #page-footer .respond, #page-footer .counts {
     text-align: center !important;
   }
 }
 
 @media (max-width: 767px) {
-  .page-footer .counts {
+  #page-footer .counts {
     display: block !important;
   }
 }

@@ -13,7 +13,9 @@
         primary: #007bff,
         gray: #c8ccd4,
         placeholder: #a89797,
-        dot-color: #c1c1c1
+        dot-color: #c1c1c1,
+        bright-gray: #dbdbdb,
+        navbar-bg: rgba(33, 37, 41, 0.9)
     );
 
     $darkNavy: #213140;
@@ -80,6 +82,9 @@
      global styling
     ================
  */
+    main{
+        padding-top: 58px;
+    }
     * {
         font-family: "Bahnschrift Regular", sans-serif;
     }
@@ -90,10 +95,6 @@
         width: 100%;
         height: 100vh;
         scroll-behavior: smooth;
-    }
-
-    main {
-        padding-top: 58px;
     }
 
     section {
@@ -143,6 +144,7 @@
         width: 100%;
         transition: 0.5s;
         min-height: 60px;
+        background: color(dark-text);
 
         .navbar-toggler {
             overflow: hidden;
@@ -150,11 +152,26 @@
             padding: 0;
             outline: none !important;
             border: none;
+        }        
+        .dropdown.show .dropdown-menu {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 0;
         }
 
         .dropdown-menu {
             background-color: color(dark-text);
             border: none;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            margin-top: -15px;
+            max-height: 0;
+            display: block;
+            overflow: hidden;
+            opacity: 0;
             a {
                 color: white;
                 &:hover {
@@ -189,6 +206,10 @@
                 }
             }
         }
+    }
+    
+    .home-nav{
+        background: color(navbar-bg) !important;
     }
 
     //hamburger button
@@ -305,11 +326,20 @@
      welcome page
     ==============
  */
+
+    #fullpage{
+        padding-top: 0;
+    }
+    #agriculture{
+        .search-button, .navbar-toggler{
+            width: unset !important;
+        }
+    }
     //agriculture, social, economy section styling
     #agriculture, #social, #economy {
         height: 100vh;
         overflow: hidden;
-        @media (min-height: 845px){ height: 844px }
+        @media (min-height: 845px){ background-repeat: no-repeat; }
 
         //some kind of container. just to make it easier styling the background using :before
         .inner {
@@ -328,11 +358,11 @@
             //setting background using :before to apply filter on background only, not the entire components
             &:before {
                 background: url(../images/agriculture.jpg);
-                background-position: bottom;
+                background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                filter: brightness(0.6) grayscale(1);
-                -webkit-filter: brightness(0.6) grayscale(1);
+                filter: brightness(0.6);
+                -webkit-filter: brightness(0.6);
                 content: "";
                 position: absolute;
                 left: 0;
@@ -341,17 +371,14 @@
                 width: 100%;
                 transition: all 1.4s;
 
-                @media (min-height: 901px){ height: 900px }
+                @media (min-height: 845px){ height: 844px }
+                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
 
             &:hover {
-                transform: scale(1.06);
-                .container-fluid {
-                    transform: scale(0.95);
-                }
                 &:before {
-                    filter: grayscale(0) brightness(0.6);
-                    -webkit-filter: grayscale(0) brightness(0.6);
+                    filter: brightness(0.6);
+                    -webkit-filter: brightness(0.6);
                 }
             }
         }
@@ -370,6 +397,8 @@
             &:before {
                 background: url(../images/social.jpg);
                 background-position: -150px center;
+                @include mobile{ background-position: -240px center;}
+                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
         }
     }
@@ -379,12 +408,14 @@
             &:before {
                 background: url(../images/economy.jpg);
                 background-position: center;
+                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
         }
     }
 
     //events and experiences section
     #events {
+        transform: translateY(-15px);
         //image container
         .image {
             overflow: hidden;
@@ -412,10 +443,14 @@
             }
 
             img {
-                height: 200px;
+                height: 210px;
                 width: 100%;
                 object-fit: cover;
                 transition: all 0.8s;
+
+                @include tablet{ height: 150px; }
+
+                @include laptop{ height: 180px; }
             }
 
             .img-detail {
@@ -441,6 +476,8 @@
 
     //infographics section
     #infographics {
+        transform: translateY(-30px);
+        margin-bottom: 24px;
         //image container
         .item {
             overflow: hidden;
@@ -475,16 +512,27 @@
     }
 
     /* special components */
-    //go to top button
-    .go-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        transition: 0.5s;
-        opacity: 0;
-        z-index: 1000;
+    //fp-nav
+    #fp-nav ul li{
+        a span{
+            background: white !important;
+            transition: .75s;
+        }
+
+        a span.blue-background{
+            background: color(primary) !important;
+            transition: .75s;
+        }
+
+        .fp-tooltip{
+            font-family: "Bahnschrift Regular", sans-serif !important;
+            transition: .75s;
+        }
+    }
+    
+    .blue-color{
+        color: color(primary) !important;
+        transition: .75s;
     }
 
     //title of the gallery
@@ -665,7 +713,7 @@
             }
 
             //the paragraph used in gallery details
-            p { font-size: 14px; }
+            p, li { font-size: 14px; }
         }
 
         //navigation button in owlCarousel
@@ -719,7 +767,7 @@
             font-family: "Poppins", sans-serif;
         }
 
-        @include laptop { max-height: 40vw; }
+        @include laptop { max-height: 37vw; }
 
         //the uploader name
         .photo-by, .video-by {
@@ -735,6 +783,20 @@
 
     .time, .location, .photo-by, .video-by {
         p { color: #666; }
+    }
+
+    .tags{
+        list-style: none;
+
+        li{
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            background: color(bright-gray);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+        }
     }
 
     //button that triggers modal if the slide has more than one photo/video
@@ -951,9 +1013,9 @@
         footer
     ==============
 */
-    .page-footer {
+    #page-footer {
+        margin-top: 50px;
         color: white;
-
         a { color: white; }
 
         //social media list

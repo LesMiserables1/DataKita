@@ -115,13 +115,19 @@ class UploadController extends Controller
         ], $message);
         foreach ($request->foto as $foto) {
             $time = date('YHis');
+            $date = date('d/m/Y');
             $nama_foto = hash('sha256', $foto->getClientOriginalName() . $time);
             $image = Image::make($foto->getRealPath())->stream();
             Storage::disk('foto')->put($nama_foto, $image);
             $photo = new Photo;
+            $photo->author = $request->author;
+            $photo->title = $request->title;
+            $photo->location = $request->location;
+            $photo->tags = $request->tags;
             $photo->jenis = $request->jenis;
             $photo->nama_foto = $nama_foto;
             $photo->caption = $request->caption;
+            $photo->date = $date;
             $photo->save();
         }
         return redirect('/');
