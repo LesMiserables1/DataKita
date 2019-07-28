@@ -142,72 +142,11 @@
                     @foreach($photos as $photo)
                     <!-- foto2 beserta caption di dalam owl-carousel, masing2 foto ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 pict-column dst. pict-column untuk container gambar, text-column untuk container caption  -->
-<<<<<<< HEAD
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <!-- image goes here -->
-                                    <img src="https://source.unsplash.com/S_VbdMTsdiA">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>No Matter What</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <!-- nama user -->
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Historia Reiss</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
-                                    lebih dari satu p tag -->
-                                        <p>Even if you have your reasons and there are things you can’t tell me, 
-                                        no matter what, I’m on your side. 
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <!-- upload time -->
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>3/10/2016</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <!-- lokasi -->
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Algonquin Park, Canada</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Gathering</li>
-                                            <li>Bonfire</li>
-                                            <li>Friends</li>
-                                            <li>Night</li>
-                                            <li>Forest</li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- link download -->
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-=======
                     <div class="row item">
                         <div class="col-12 col-xl-8">
                             <div class="pict-column">
                                 <!-- image goes here -->
                                 <img src="/show/foto/{{$photo->nama_foto}}">
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                             </div>
                         </div>
                         <div class="col-12 col-xl-4">
@@ -217,55 +156,10 @@
                                     <h4>{{$photo->title}}</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
-<<<<<<< HEAD
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Worst-Case Scenarios</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Levi Ackerman</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>A lot of the time, you’re going into a situation you know nothing about. 
-                                        So what you need is to be quick to act and make tough decisions in worst-case scenarios.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>28/05/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Chicago, United States</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Motorcycle</li>
-                                            <li>Street</li>
-                                            <li>Harley Davidson</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="photo-by">
                                     <!-- nama user -->
                                     <h6 class="mb-1">Photo and Caption by</h6>
                                     <p>{{$photo->author}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                                 <div class="caption text-justify">
                                     <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
@@ -274,51 +168,6 @@
                                         {{$photo->caption}}
                                     </p>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Something We Simply Can't Accept</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Hange Zoe</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>Ever since I joined the survey corps, I’ve had people dying on me everyday. 
-                                        But you understand, don’t you? One day or another, everyone you care about eventually dies. 
-                                        It’s something we simply can’t accept. It’s a realization that could drive you insane.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>18/05/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Trost District</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Flower</li>
-                                            <li>Rose</li>
-                                            <li>Gloomy</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="time">
                                     <!-- upload time -->
                                     <h6 class="mb-1">Uploaded on</h6>
@@ -328,7 +177,6 @@
                                     <!-- lokasi -->
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
@@ -340,58 +188,6 @@
             </div>
         </section>
 
-<<<<<<< HEAD
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/OwqLxCvoVxI">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>We Can't Win</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Erwin Smith</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>If we only focus on making the best moves, we will never get the better of our opponent. 
-                                        When necessary, we must be willing to take big risks, and be prepared to lose everything. 
-                                        Unless we change how we fight, we cannot win.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>07/05/2018</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Asilah, Morocco</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Fight</li>
-                                            <li>Battle</li>
-                                            <li>Men</li>
-                                            <li>Crowd</li>
-                                            <li>Red</li>
-                                        </ul>
-                                    </div>
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-=======
         <section id="video-gallery" class="area">
             <div class="container carousel-wrap">
                 <div class="owl-carousel owl-theme gallery">
@@ -405,7 +201,6 @@
                                 <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
                                     See full slide
                                 </button>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                             </div>
                         </div>
                         <div class="col-12 col-xl-4">
@@ -415,116 +210,6 @@
                                     <h4>Contoh Interview Kerja Fresh Graduate</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
-<<<<<<< HEAD
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Behind the Mask</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Ymir</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>Do you always want to live hiding behind the mask you put up for the sake of others? 
-                                        You’re you, and there’s nothing wrong with that.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>30/07/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Hollywell, United Kingdom</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Smoke</li>
-                                            <li>Mask</li>
-                                            <li>Anonymous</li>
-                                        </ul>
-                                    </div>
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="video-gallery" class="area">
-                <div class="container carousel-wrap">
-                    <div class="owl-carousel owl-theme gallery">
-
-                        <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
-                        begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="video-column">
-                                    <!-- video goes here -->
-                                    <iframe src="https://www.youtube.com/embed/VCII-H2EJW4" allowfullscreen></iframe>
-                                        <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                        See full slide
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>Contoh Interview Kerja Fresh Graduate</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <!-- nama user -->
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Eza Hazami</p>
-                                    </div>
-
-                                    <!-- caption -->
-                                    <div class="caption text-justify">
-                                        <p>Ketika baru lulus sekolah/kuliah, pasti bingung kan diinterview HRD apa aja yg ditanya?
-                                            Tonton video ini sampe habis ya buat jawabannya :)
-                                        </p>
-                                    </div>
-
-                                    <!-- upload time -->
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>08/05/2019</p>
-                                    </div>
-
-                                    <!-- lokasi -->
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Bandung, West Java</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Job</li>
-                                            <li>Interview</li>
-                                            <li>Fresh Graduate</li>
-                                        </ul>
-                                    </div>
-=======
                                 <!-- nama user -->
                                 <div class="video-by">
                                     <h6 class="mb-1">Video and Caption by</h6>
@@ -545,46 +230,22 @@
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
                                     <p>Bandung, West Java</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </section>
-        </main>
-        
-        <!-- footer slebew -->
-        <footer id="page-footer" style="background: #212529;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
-                        <a href="/">Logo DataKita</a>
-                        <p>This is text.</p>
-                    </div>
-                    <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
-                        <p class="mb-0">Respond us on</p>
-                        <ul class="socmed mb-0 pl-md-0">
-                            <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
-=======
             </div>
         </section>
     </main>
 
     <!-- footer slebew -->
-    <footer class="page-footer" style="background: #212529;">
+    <footer id="page-footer" style="background: #212529;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
                     <a href="/">Logo DataKita</a>
                     <p>This is text.</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                 </div>
                 <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                     <p class="mb-0">Respond us on</p>

@@ -177,68 +177,10 @@
                                     satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
                                     karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
                                     modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
-<<<<<<< HEAD
-                                    <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#photoModal">
-                                        See full slide
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>Disappointing End</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <!-- nama user -->
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Jean Kirschtein</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
-                                    lebih dari satu p tag -->
-                                        <p>I just really don't wanna meet a disappointing end, 
-                                        with someone burning my bones without even knowing who they belonged to.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <!-- upload time -->
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>09/01/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <!-- lokasi -->
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Asilah, Morocco</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Man</li>
-                                            <li>Fire</li>
-                                            <li>Night</li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- link download -->
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-=======
                                 <button type="button" class="btn btn-primary more-than-one" data-toggle="modal"
                                     data-target="#photoModal">
                                     See full slide
                                 </button>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                             </div>
                         </div>
                         <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
@@ -251,211 +193,30 @@
                                     <hr class="mt-3 mb-3">
                                 </div>
 
-<<<<<<< HEAD
-                                    <div class="caption text-justify">
-                                        <p>Going against the flow takes a lot of courage. I respect that. 
-                                        Maybe people who can do it are just stupid. But… Well,
-                                        what I’m sure of is that people like that are rare.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>19/07/2018</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Oro Oro Ombo, Lumajang</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Rice Field</li>
-                                            <li>Mountain</li>
-                                            <li>Village</li>
-                                            <li>Nature</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="photo-by">
                                     <!-- nama user -->
                                     <h6 class="mb-1">Photo and Caption by</h6>
                                     <p>{{$photo->author}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
 
-<<<<<<< HEAD
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/4pcTRyJdrJ4">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>You're Not a Strong Person</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Marco Bott</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>You’re not a strong person, so you can really understand how weak people feel. 
-                                        I mean, most humans are weak, including me. But if I got an order from someone who saw things like I do,
-                                         no matter how tough it was, I’d do my damnedest to carry it out.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>09/01/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Oro Oro Ombo, Lumajang</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Nature</li>
-                                            <li>Farmer</li>
-                                            <li>Rice Field</li>
-                                            <li>Daylight</li>
-                                            <li>Peaceful Day</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="caption text-justify">
                                     <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
                                     lebih dari satu p tag -->
                                     <p>
                                         {{$photo->caption}}
                                     </p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
 
-<<<<<<< HEAD
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/iY1k44Aa4uQ">
-                                </div>
-                            </div>
-                            
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Potatoes</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Sasha Braus</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>Potatoes are more delicious when they're hot
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>08/11/2018</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Malahalli, India</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Farm</li>
-                                            <li>Potatoes</li>
-                                            <li>Vegetables</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="time">
                                     <!-- upload time -->
                                     <h6 class="mb-1">Uploaded on</h6>
                                     <p>{{$photo->date}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
 
-<<<<<<< HEAD
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/2E_dT65fyxo">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>I Will Go Back</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Reiner Braun</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>I have to go back home, even though there's nothing left to go to home to. 
-                                        That purpose is all that left inside me. I will go back, no matter what.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>22/07/2016</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Campo Verde, Brazil</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Farm</li>
-                                            <li>Wheat</li>
-                                            <li>Afternoon</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="location">
                                     <!-- lokasi -->
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
 
                                 <!-- link download -->
@@ -471,12 +232,8 @@
             <section id="video-gallery" class="area">
                 <div class="container carousel-wrap">
                     <div class="owl-carousel owl-theme gallery">
-<<<<<<< HEAD
-                        
-=======
                         @foreach($videos as $video)
 
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                         <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
                         <div class="row item">
@@ -537,7 +294,6 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
 
                         <div class="row item">
                             <div class="col-12 col-xl-8">
@@ -593,9 +349,7 @@
                                 </div>
                             </div>
                         </div>
-=======
                         @endforeach
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
 
                         <div class="row item">
                             <div class="col-12 col-xl-8">
@@ -659,7 +413,6 @@
                     </div>
                 </div>
             </section>
-<<<<<<< HEAD
         </main>
         
         <!-- footer slebew -->
@@ -670,27 +423,6 @@
                         <a href="/">Logo DataKita</a>
                         <p>This is text.</p>
                     </div>
-                    <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
-                        <p class="mb-0">Respond us on</p>
-                        <ul class="socmed mb-0 pl-md-0">
-                            <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
-=======
-    </main>
-
-    <!-- footer slebew -->
-    <footer class="page-footer" style="background: #212529;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
-                    <a href="/">Logo DataKita</a>
-                    <p>This is text.</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
-                </div>
                 <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                     <p class="mb-0">Respond us on</p>
                     <ul class="socmed mb-0 pl-md-0">

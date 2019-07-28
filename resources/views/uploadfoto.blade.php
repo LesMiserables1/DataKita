@@ -101,11 +101,7 @@
 
                         <!-- input form section -->
                         <div class="col-12 col-lg-6">
-<<<<<<< HEAD
                             <form action="/upload/foto" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
-=======
-                            <form action="/upload/photo" enctype="multipart/form-data" method="POST">
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 @csrf
 
                                 <!-- upload file -->

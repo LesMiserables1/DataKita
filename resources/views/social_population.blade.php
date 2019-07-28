@@ -136,192 +136,6 @@
                         </label>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </section>
-            
-            <section id="photo-gallery" class="area">
-                <div class="container carousel-wrap">
-                    <div class="owl-carousel owl-theme gallery">
-                        
-                        <!-- foto2 beserta caption di dalam owl-carousel, masing2 foto ada di dalam class row item, 
-                        begitu juga dengan div2 anaknya seperti col-12 pict-column dst. pict-column untuk container gambar, text-column untuk container caption  -->
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <!-- image goes here -->
-                                    <img src="https://source.unsplash.com/I7iYOlDyFjE">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>Average Men</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <!-- nama user -->
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Keith Shadis</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
-                                    lebih dari satu p tag -->
-                                        <p>Do you know why average men can live out their lives and die without accomplishing anything? 
-                                            First off, because they lack imagination. They never find anything more valuable than their own lives. 
-                                            So they live and die, shamelessly creating nothing but shit. Great deeds can never be accomplished by 
-                                            those on the level of ordinary men.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <!-- upload time -->
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>17/12/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <!-- lokasi -->
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Ellsworth, United States</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Man</li>
-                                            <li>Winter</li>
-                                            <li>Alone</li>
-                                            <li>Snow</li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- link download -->
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/_es6l-aPDA0">
-                                    <!-- Button trigger modal -->
-                                    <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
-                                    bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
-                                    satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
-                                    karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
-                                    modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
-                                    <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#photoModal">
-                                        See full slide
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Slaves to Something</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Kenny Ackerman</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>Every last person I've seen was the same way. Whether it was booze, women, or even God. 
-                                        Family, the king, dreams, children, power... They couldn't keep going unless they were drunk on
-                                         something. They were all slaves to something, even him.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>10/12/2014</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Tate Modern Museum, London</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Monochrome</li>
-                                            <li>Meeting</li>
-                                            <li>Peopke</li>
-                                            <li>Building</li>
-                                            <li>Work</li>
-                                            <li>Dark</li>
-                                        </ul>
-                                    </div>
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="pict-column">
-                                    <img src="https://source.unsplash.com/rk_Zz3b7G2Y">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Being Special</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Carla Yeager</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>Do you really have to be special? Do you really need people's recognition? 
-                                            I don't think so. At the very least, not when it comes to this child. 
-                                            He doesn't need to become special. Why would he have to be better than everyone else? 
-                                            Just look at him. Don't you see how cute he is? He's already special because he was born 
-                                            into this world.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>01/09/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Montreux, Switzerland</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Child</li>
-                                            <li>Sky</li>
-                                            <li>Cloud</li>
-                                            <li>Painting</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
             </div>
         </section>
 
@@ -344,121 +158,28 @@
                                 <div class="title">
                                     <h4>{{$photo->title}}</h4>
                                     <hr class="mt-3 mb-3">
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                                 <div class="photo-by">
                                     <!-- nama user -->
                                     <h6 class="mb-1">Photo and Caption by</h6>
                                     <p>{{$photo->author}}</p>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-                            
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Nothing Could Have Made a Difference</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Bertholdt Hoover</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>I feel like any outcome would be acceptable. That's right. No one's at fault here. 
-                                        Nothing could have made a difference. Not in a world that is this cruel.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>04/05/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Base sous-marine, Bordeaux, France</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Crowd</li>
-                                            <li>Night</li>
-                                            <li>Lights</li>
-                                            <li>Party</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="caption text-justify">
                                     <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
                                     lebih dari satu p tag -->
                                     <p>
                                         {{$photo->caption}}
                                     </p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                                 <div class="time">
                                     <!-- upload time -->
                                     <h6 class="mb-1">Uploaded on</h6>
                                     <p>{{$photo->date}}</p>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>No Such Thing as Truth</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="photo-by">
-                                        <h6 class="mb-1">Photo and Caption by</h6>
-                                        <p>Eren Kruger</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>There is no such thing as truth in this world. That is our reality. 
-                                        Anyone can become a good person or even a devil. All it takes is for someone to claim that to be the truth.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>22/11/2017</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>New York, United States</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Dark</li>
-                                            <li>Man</li>
-                                            <li>Alone</li>
-                                            <li>Blue</li>
-                                        </ul>
-                                    </div>
-
-                                    <a href="#"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
-=======
                                 <div class="location">
                                     <!-- lokasi -->
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
@@ -467,15 +188,6 @@
                     </div>
                     @endforeach
                 </div>
-<<<<<<< HEAD
-            </section>
-            
-            <section id="video-gallery" class="area">
-                <div class="container carousel-wrap">
-                    <div class="owl-carousel owl-theme gallery">
-
-                        <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
-=======
             </div>
         </section>
 
@@ -483,7 +195,6 @@
             <div class="container carousel-wrap">
                 <div class="owl-carousel owl-theme gallery">
                     <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
                     <div class="row item">
                         <div class="col-12 col-xl-8">
@@ -491,52 +202,6 @@
                                 <!-- video goes here -->
                                 <iframe src="https://www.youtube.com/embed/384qFPXCuO4" allowfullscreen></iframe>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>The Worst Animated Stories On Youtube (My Story Animated)</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <!-- nama user -->
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>jarvis Johnson</p>
-                                    </div>
-
-                                    <!-- caption -->
-                                    <div class="caption text-justify">
-                                        <p>Hello and welcome back to old man shouting at cloud. 
-                                        I’m Jarvis and today we're talking about my story animated which is the latest 
-                                        in clickbait animation channels full of overdramatic and probably fake stories “submitted by kids”
-                                        </p>
-                                    </div>
-
-                                    <!-- upload time -->
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>12/04/2019</p>
-                                    </div>
-
-                                    <!-- lokasi -->
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>San Francisco, California</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Daily Life</li>
-                                            <li>Animation</li>
-                                        </ul>
-                                    </div>
-=======
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
@@ -566,7 +231,6 @@
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
                                     <p>San Francisco, California</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                             </div>
                         </div>
@@ -577,48 +241,6 @@
                             <div class="video-column">
                                 <iframe src="https://www.youtube.com/embed/jT5nYLND7co" allowfullscreen></iframe>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Understanding Neural Networks</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Massachusetts Institute of Technology (MIT)</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>MIT-IBM Watson AI lab research team member David Bau explains how computers show evidence of 
-                                        learning the structure of the physical world.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>26/06/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Massachusetts, United States</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>MIT</li>
-                                            <li>Technology</li>
-                                            <li>Computer Science</li>
-                                            <li>Neural Network</li>
-                                        </ul>
-                                    </div>
-=======
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
@@ -642,7 +264,6 @@
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
                                     <p>Massachusetts, United States</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                             </div>
                         </div>
@@ -653,48 +274,6 @@
                             <div class="video-column">
                                 <iframe src="https://www.youtube.com/embed/hqFb7pvYWiQ" allowfullscreen></iframe>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Adobe XD Dark Theme App Design Tutorial</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Caler Edwards</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>In this video we will design a dark theme app using Adobe XD. This project focuses on app design, 
-                                        User interface (UI) design and User experience (UX) design. Make sure you vote in the poll at the end of 
-                                        the video for a possible part 2. Enjoy the video :D
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>07/07/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Richmond, Kentucky</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Adobe</li>
-                                            <li>User Experience</li>
-                                            <li>App</li>
-                                        </ul>
-                                    </div>
-=======
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
@@ -719,7 +298,6 @@
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
                                     <p>Richmond, Kentucky</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                             </div>
                         </div>
@@ -734,61 +312,6 @@
                                     See full slide
                                 </button>
                             </div>
-<<<<<<< HEAD
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>Downloading My Private Google Data, This is What I Found</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Devon Crawford</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <!-- contoh kalau user nginput caption lebih dari satu paragraf -->
-                                        <p>
-                                        Took a look at my private data and found some pretty weird stuff, 
-                                        possible security vulnerability with Google Photos, third-party data from eBay and Amazon as well as 
-                                        audio recordings from "Ok, Google". 
-                                        </p>
-                                        <p>
-                                        These are just my personal findings and I cannot claim this happens for everyone. 
-                                        Luckily most people watching this video have a YouTube account and therefore a Google 
-                                        account. You can all download your own data and look for what I found in this video, 
-                                        I didn't even have to do any heavy digging, its all pretty much out in the open once you 
-                                        throw stuff into your text editor. This content is not intended to harm any entity or 
-                                        person but rather share some concerns with the current state of data privacy on large 
-                                        websites such as Google.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>12/04/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Guelph, Ontario, Canada</p>
-                                    </div>
-
-                                    <!-- tags ada di sini -->
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Data</li>
-                                            <li>Private</li>
-                                            <li>Daily Life</li>
-                                            <li>Google</li>
-                                        </ul>
-                                    </div>
-
-=======
                         </div>
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
@@ -824,46 +347,22 @@
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
                                     <p>Guelph, Ontario, Canada</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </section>
-        </main>
-        
-        <!-- footer slebew -->
-        <footer id="page-footer" style="background: #212529;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
-                        <a href="/">Logo DataKita</a>
-                        <p>This is text.</p>
-                    </div>
-                    <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
-                        <p class="mb-0">Respond us on</p>
-                        <ul class="socmed mb-0 pl-md-0">
-                            <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
-=======
             </div>
         </section>
     </main>
 
     <!-- footer slebew -->
-    <footer class="page-footer" style="background: #212529;">
+    <footer id="page-footer" style="background: #212529;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
                     <a href="/">Logo DataKita</a>
                     <p>This is text.</p>
->>>>>>> 0fede738e31fc1d91865ff8d23ee79d3e530ceca
                 </div>
                 <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                     <p class="mb-0">Respond us on</p>
