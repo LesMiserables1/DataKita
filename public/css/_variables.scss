@@ -1,0 +1,79 @@
+/*  ==============
+     starter pack
+    ==============
+ */
+    // import fonts
+    @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+    @import url("fonts.css");
+
+    // variabel
+    $colors: (
+        dark-text: #212529,
+        dark-bg: #1a1a1a,
+        primary: #007bff,
+        gray: #c8ccd4,
+        placeholder: #a89797,
+        dot-color: #c1c1c1,
+        bright-gray: #dbdbdb,
+        navbar-bg: rgba(33, 37, 41, 0.9)
+    );
+
+    $darkNavy: #213140;
+    $teal1: #66b3fb;
+    $teal2: #4b9dea;
+    $charcoal: #555555;
+    $gold: #b6985a;
+
+    $activeShadow: 0 0 10px rgba($teal1, 0.5);
+
+    $tablet: 767px;
+    $small: 576px;
+    $mobile: 575px;
+    $spacer: 1rem;
+    $big: 992px;
+    $laptop: 1200px;
+    $ipad: 768px;
+
+    // mixins
+    @mixin hideInput {
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 0px;
+    }
+    @mixin tablet {
+        @media (max-width: #{$tablet}) {
+            @content;
+        }
+    }
+    @mixin small {
+        @media (min-width: #{$small}) {
+            @content;
+        }
+    }
+    @mixin mobile {
+        @media (max-width: #{$mobile}) {
+            @content;
+        }
+    }
+    @mixin big {
+        @media (min-width: #{$big}) {
+            @content;
+        }
+    }
+    @mixin laptop {
+        @media (min-width: #{$laptop}) {
+            @content;
+        }
+    }
+    @mixin ipad {
+        @media (min-width: #{$ipad}) {
+            @content;
+        }
+    }
+
+    // fungsi color
+    @function color($color-name) {
+        @return map-get($colors, $color-name);
+    }
+    /* end of starter pack*/

@@ -1,0 +1,227 @@
+@import 'variables';
+
+/*  ==============
+     gallery page
+    ==============
+ */
+    //radio input for photo and video
+    .radio {
+        position: relative;
+        cursor: pointer;
+        line-height: 20px;
+        font-size: 14px;
+        margin-right: 15px;
+
+        .label {
+            position: relative;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid color(gray);
+            border-radius: 100%;
+            -webkit-tap-highlight-color: transparent;
+
+            //change the red dot into better blue circle
+            &:after {
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: color(primary);
+                transform: scale(0);
+                transition: all 0.2s ease;
+                opacity: 0.08;
+                pointer-events: none;
+            }
+        }
+
+        &:hover {
+            .label:after {
+                transform: scale(3.6);
+            }
+        }
+    }
+
+    //will turn blue if the radio is checked
+    input[type="radio"]:checked + .label {
+        border-color: color(primary);
+
+        &:after {
+            transform: scale(1);
+            transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+            opacity: 1;
+        }
+    }
+
+    //hiding that ugly default radio
+    .hidden, .area {
+        display: none;
+    }
+
+    //custom owlCarousel used in photo video gallery and the modal
+    #photo-gallery, #video-gallery, .carousel-modal {
+        //item container
+        .item {
+            overflow: hidden;
+
+            ///the image and video
+            img, iframe {
+                width: 100%;
+                object-fit: contain;
+
+                @include laptop { height: 36.75vw; }
+
+                @media (min-width: 992px) and (max-width: 1199px) { height: 64vw; }
+
+                @media (min-width: 768px) and (max-width: 991px) { height: 70vw; }
+
+                @media (min-width: 576px) and (max-width: 767px) { height: 80vw; }
+
+                @include mobile { height: 90vw; }
+            }
+
+            //the paragraph used in gallery details
+            p, li { font-size: 14px; }
+        }
+
+        //carousel container
+        .carousel-wrap {
+            margin: auto;
+            padding: 0;
+            width: 100%;
+            position: relative;
+        }
+
+        //carousel item container
+        .owl-carousel .item {
+            position: relative;
+            z-index: 100;
+        }
+        
+        .owl-nav > div {
+            margin-top: -26px;
+            position: absolute;
+            top: 50%;
+            color: #cdcbcd;
+        }
+        
+        //navigation button in owlCarousel
+        .owl-nav {
+            i {
+                color: white;
+                background: color(primary);
+                box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
+                font-size: 18px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                padding-top: 11px;
+                transition: 0.5s;
+
+                &:hover {
+                    transform: scale(1.12);
+                    box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
+                }
+            }
+
+            .owl-prev, .owl-next {
+                position: absolute;
+                left: 0px;
+                top: 16.375vw;
+
+                &:hover {
+                    background: transparent !important;
+                }
+                &:focus { outline: none; }
+
+                @media (min-width: 992px) and (max-width: 1199px) { top: 28vw; }
+
+                @media (min-width: 768px) and (max-width: 991px) { top: 31vw; }
+
+                @media (min-width: 576px) and (max-width: 767px) { top: 36vw; }
+
+                @include mobile { top: 41vw; }
+            }
+
+            .owl-next {
+                left: unset;
+                right: 0;
+            }
+        }
+    }
+
+    //changing the position of owl-next in gallery
+    #photo-gallery, #video-gallery {
+        .owl-nav {
+            .owl-next {
+                @include laptop { left: 61.37%; }
+            }
+        }
+    }
+
+    //gallery details
+    .text-column {
+        overflow-y: auto;
+
+        //change the font into Poppins
+        h4, h6, p, a {
+            font-family: "Poppins", sans-serif;
+        }
+
+        @include laptop { max-height: 37vw; }
+
+        //the uploader name
+        .photo-by, .video-by {
+            p { font-size: 15px !important; }
+        }
+    }
+
+    //image and video container
+    .pict-column, .video-column {
+        background: #efefef;
+        justify-content: center;
+    }
+
+    .time, .location, .photo-by, .video-by {
+        p { color: #666; }
+    }
+
+    .tags{
+        list-style: none;
+
+        li{
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            background: color(bright-gray);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-right: 2px;
+            margin-bottom: 4px;
+        }
+    }
+
+    //button that triggers modal if the slide has more than one photo/video
+    .more-than-one {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: shadow-pulse 1s infinite;
+        font-family: "Poppins";
+    }
+
+    //animation for the button above
+    @keyframes shadow-pulse {
+        0% {
+            box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.3);
+        }
+        100% {
+            box-shadow: 0 -20px 20px 20px rgba(0, 123, 255, 0);
+        }
+    }
+/* end of gallery page */

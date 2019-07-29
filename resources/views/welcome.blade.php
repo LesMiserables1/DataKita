@@ -18,6 +18,7 @@
 
     <!-- style -->
     <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
 
     <!-- default passive events for performance optimization -->
     <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>

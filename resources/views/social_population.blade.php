@@ -21,7 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/gallery.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
 
     <!-- OwlCarousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">

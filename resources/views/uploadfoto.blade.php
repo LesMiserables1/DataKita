@@ -25,7 +25,8 @@
         <script src="{!! asset('js/typeahead.js') !!}"></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
+        <link rel="stylesheet" href="{!! asset('css/upload.css') !!}">
+        <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
     </head>
     <body>
         @if ($errors->any())
