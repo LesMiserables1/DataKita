@@ -13,13 +13,14 @@
   padding-top: 0;
 }
 
-#agriculture .search-button, #agriculture .navbar-toggler {
-  width: unset !important;
-}
-
 #agriculture, #social, #economy {
   height: 100vh;
   overflow: hidden;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  -webkit-transition: all 1.4s;
+  transition: all 1.4s;
 }
 
 @media (min-height: 845px) {
@@ -28,25 +29,17 @@
   }
 }
 
-#agriculture .inner, #social .inner, #economy .inner {
-  height: 100%;
-  z-index: -1;
-  width: 100%;
-  -webkit-transition: all 1.4s;
-  transition: all 1.4s;
-}
-
-#agriculture .inner .container-fluid, #social .inner .container-fluid, #economy .inner .container-fluid {
+#agriculture .container-fluid, #social .container-fluid, #economy .container-fluid {
   height: 100%;
   -webkit-transition: all 1.4s;
   transition: all 1.4s;
 }
 
-#agriculture .inner .container-fluid .row, #social .inner .container-fluid .row, #economy .inner .container-fluid .row {
+#agriculture .container-fluid .row, #social .container-fluid .row, #economy .container-fluid .row {
   height: 100%;
 }
 
-#agriculture .inner:before, #social .inner:before, #economy .inner:before {
+#agriculture:before, #social:before, #economy:before {
   background: url(../images/agriculture.jpg);
   background-position: center;
   background-size: cover;
@@ -64,20 +57,20 @@
 }
 
 @media (min-height: 845px) {
-  #agriculture .inner:before, #social .inner:before, #economy .inner:before {
+  #agriculture:before, #social:before, #economy:before {
     height: 844px;
   }
 }
 
 @media (min-width: 1200px) {
-  #agriculture .inner:before, #social .inner:before, #economy .inner:before {
+  #agriculture:before, #social:before, #economy:before {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
   }
 }
 
-#agriculture .inner:hover:before, #social .inner:hover:before, #economy .inner:hover:before {
+#agriculture:hover:before, #social:hover:before, #economy:hover:before {
   filter: brightness(0.6);
   -webkit-filter: brightness(0.6);
 }
@@ -94,32 +87,32 @@
   color: white;
 }
 
-#social .inner:before {
+#social:before {
   background: url(../images/social.jpg);
   background-position: -150px center;
 }
 
 @media (max-width: 575px) {
-  #social .inner:before {
+  #social:before {
     background-position: -240px center;
   }
 }
 
 @media (min-width: 1200px) {
-  #social .inner:before {
+  #social:before {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
   }
 }
 
-#economy .inner:before {
+#economy:before {
   background: url(../images/economy.jpg);
   background-position: center;
 }
 
 @media (min-width: 1200px) {
-  #economy .inner:before {
+  #economy:before {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -249,7 +242,7 @@
   transition: .75s;
 }
 
-#fp-nav ul li .fp-tooltip {
+.fp-tooltip {
   font-family: "Bahnschrift Regular", sans-serif !important;
   -webkit-transition: .75s;
   transition: .75s;
@@ -325,21 +318,21 @@
           box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
 }
 
-.owl-nav .owl-prev, .owl-nav .owl-next {
+.owl-prev, .owl-next {
   position: absolute;
   left: 0px;
   top: 36%;
 }
 
-.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover {
+.owl-prev:hover, .owl-next:hover {
   background: transparent !important;
 }
 
-.owl-nav .owl-prev:focus, .owl-nav .owl-next:focus {
+.owl-prev:focus, .owl-next:focus {
   outline: none;
 }
 
-.owl-nav .owl-next {
+.owl-next {
   left: unset;
   right: 0;
 }

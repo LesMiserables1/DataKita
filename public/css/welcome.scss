@@ -8,11 +8,6 @@
     #fullpage{
         padding-top: 0;
     }
-    #agriculture{
-        .search-button, .navbar-toggler{
-            width: unset !important;
-        }
-    }
     //agriculture, social, economy section styling
     #agriculture, #social, #economy {
         height: 100vh;
@@ -20,7 +15,6 @@
         @media (min-height: 845px){ background-repeat: no-repeat; }
 
         //some kind of container. just to make it easier styling the background using :before
-        .inner {
             height: 100%;
             z-index: -1;
             width: 100%;
@@ -59,7 +53,6 @@
                     -webkit-filter: brightness(0.6);
                 }
             }
-        }
 
         //button inside the three main gallery only
         button { width: 100%; }
@@ -71,24 +64,20 @@
     }
 
     #social {
-        .inner {
             &:before {
                 background: url(../images/social.jpg);
                 background-position: -150px center;
                 @include mobile{ background-position: -240px center;}
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
-        }
     }
 
     #economy {
-        .inner {
             &:before {
                 background: url(../images/economy.jpg);
                 background-position: center;
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
-        }
     }
 
     //events and experiences section
@@ -201,11 +190,11 @@
             background: color(primary) !important;
             transition: .75s;
         }
+    }
 
-        .fp-tooltip{
-            font-family: "Bahnschrift Regular", sans-serif !important;
-            transition: .75s;
-        }
+    .fp-tooltip{
+        font-family: "Bahnschrift Regular", sans-serif !important;
+        transition: .75s;
     }
     
     .blue-color{
@@ -275,22 +264,22 @@
                 box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
             }
         }
+    }
 
-        //previous button
-        .owl-prev, .owl-next {
-            position: absolute;
-            left: 0px;
-            top: 36%;
+    //previous button
+    .owl-prev, .owl-next {
+        position: absolute;
+        left: 0px;
+        top: 36%;
 
-            &:hover { background: transparent !important; }
-            &:focus { outline: none; }
-        }
+        &:hover { background: transparent !important; }
+        &:focus { outline: none; }
+    }
 
-        //next button
-        .owl-next {
-            left: unset;
-            right: 0;
-        }
+    //next button
+    .owl-next {
+        left: unset;
+        right: 0;
     }
 
     //dots to indicate the item's position in the carousel
