@@ -15,6 +15,9 @@
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/95df692867.js"></script>
 
+        <!-- default passive events for performance optimization -->
+        <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
+
         <!-- file input plugin -->
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
 

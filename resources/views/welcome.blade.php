@@ -19,6 +19,9 @@
     <!-- style -->
     <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
 
+    <!-- default passive events for performance optimization -->
+    <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
+
     <!-- fullpage.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"></script>
@@ -121,6 +124,12 @@
                                         <h1 class="text-center text-title">Social & Population</h1>
                                     </div>
                                 </div>
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -137,6 +146,12 @@
                                         <h1 class="text-center text-title">Economy & Trade</h1>
                                     </div>
                                 </div>
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
                     </div>
@@ -269,6 +284,8 @@
                     scrollHorizontally: true,
                     anchors: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
                     navigation: true,
+                    autoScrolling: true,
+                    scrollingSpeed: 900,
                     navigationPosition: 'left',
                     navigationTooltips: ['Agriculture & Mining', 'Social & Population', 'Economy & Trade', 'Events & Experiences', 'Infographics', 'Footer'],
                     onLeave: function(origin, destination, direction){
@@ -288,7 +305,7 @@
                         else $('#navbar').css("opacity", "1");
                     }
                 });
-                $.fn.fullpage.setAllowScrolling(false);
+                $.fn.fullpage.setAllowScrolling(true);
             });
     </script>
 </body>
