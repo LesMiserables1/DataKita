@@ -272,32 +272,32 @@ section {
   color: white;
 }
 
-#page-footer .socmed {
+.socmed {
   list-style: none;
 }
 
-#page-footer .socmed li {
+.socmed li {
   display: inline-block;
 }
 
-#page-footer .socmed li a:hover {
+.socmed li a:hover {
   color: #007bff;
 }
 
 @media (max-width: 767px) {
-  #page-footer .socmed {
+  .socmed {
     margin-left: -2.5rem;
   }
 }
 
 @media (max-width: 767px) {
-  #page-footer .respond, #page-footer .counts {
+  .respond, .counts {
     text-align: center !important;
   }
 }
 
 @media (max-width: 767px) {
-  #page-footer .counts {
+  .counts {
     display: block !important;
   }
 }

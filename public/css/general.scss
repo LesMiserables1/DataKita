@@ -256,28 +256,28 @@ button span {
     margin-top: 50px;
     color: white;
     a { color: white; }
+}
 
-    //social media list
-    .socmed {
-        list-style: none;
+//social media list
+.socmed {
+    list-style: none;
 
-        li {
-            display: inline-block;
+    li {
+        display: inline-block;
 
-            a {
-                &:hover { color: color(primary); }
-            }
+        a {
+            &:hover { color: color(primary); }
         }
-
-        @include tablet { margin-left: -2.5rem; }
     }
 
-    .respond, .counts {
-        @include tablet { text-align: center !important; }
-    }
+    @include tablet { margin-left: -2.5rem; }
+}
 
-    .counts {
-        @include tablet { display: block !important; }
-    }
+.respond, .counts {
+    @include tablet { text-align: center !important; }
+}
+
+.counts {
+    @include tablet { display: block !important; }
 }
 /* end of footer*/

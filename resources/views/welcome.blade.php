@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
 
     <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/95df692867.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
     <!-- style -->
     <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
@@ -94,66 +94,61 @@
 
         <main id="fullpage">
             <section id="agriculture" class="section" data-anchor="first">
-                <div class="inner">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-center text-title">Agriculture & Mining</h1>
-                                    </div>
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center text-title">Agriculture & Mining</h1>
                                 </div>
-                                <div class="row space"></div>
-                                <div class="row justify-content-center">
-                                    <div class="col-5 col-md-3 col-lg-2 text-center">
-                                        <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                    </div>
-                                </div>    
                             </div>
+
+                            <div class="row space"></div>
+                            <div class="row justify-content-center">
+                                <div class="col-5 col-md-3 col-lg-2 text-center">
+                                    <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="social" class="section" data-anchor="second">
-                <div class="inner">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-center text-title">Social & Population</h1>
-                                    </div>
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center text-title">Social & Population</h1>
                                 </div>
-                                <div class="row space"></div>
-                                <div class="row justify-content-center">
-                                    <div class="col-5 col-md-3 col-lg-2 text-center">
-                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                    </div>
-                                </div>    
                             </div>
+                            <div class="row space"></div>
+                            <div class="row justify-content-center">
+                                <div class="col-5 col-md-3 col-lg-2 text-center">
+                                    <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="economy" class="section" data-anchor="third">
-                <div class="inner">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-center text-title">Economy & Trade</h1>
-                                    </div>
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center text-title">Economy & Trade</h1>
                                 </div>
-                                <div class="row space"></div>
-                                <div class="row justify-content-center">
-                                    <div class="col-5 col-md-3 col-lg-2 text-center">
-                                        <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                    </div>
-                                </div>    
                             </div>
+                            <div class="row space"></div>
+                            <div class="row justify-content-center">
+                                <div class="col-5 col-md-3 col-lg-2 text-center">
+                                    <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -244,71 +239,7 @@
             </footer>
         </main>
 
-        <script>
-            // owlCarousel activator and customization
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                animateOut: 'rollOut',
-                animateIn: 'jackInTheBox',
-                nav: true,
-                navText: [
-                    "<i class='fa fa-long-arrow-left'></i>",
-                    "<i class='fa fa-long-arrow-right'></i>"
-                ],
-                autoplay: false,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    576: {
-                        items: 2
-                    },
-                    768: {
-                        items: 3
-                    },
-                    992: {
-                        items: 4
-                    }
-                }
-            });
-
-            // toggle hamburger
-            $(document).ready(function(){
-                $('#nav-mhweb-hamburger').click(function(){
-                    $(this).toggleClass('open');
-                });
-
-                //fullpage activator
-                $('#fullpage').fullpage({
-                    scrollHorizontally: true,
-                    anchors: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'],
-                    navigation: true,
-                    autoScrolling: true,
-                    scrollingSpeed: 900,
-                    navigationPosition: 'left',
-                    navigationTooltips: ['Agriculture & Mining', 'Social & Population', 'Economy & Trade', 'Events & Experiences', 'Infographics', 'Footer'],
-                    onLeave: function(origin, destination, direction){
-                        //change indicator color
-                        var destIndex = destination.index;
-                        if(destIndex >= 3){
-                            $('.fp-tooltip').addClass('blue-color');
-                            $('#fp-nav ul li a span').addClass('blue-background');
-                        }
-                        else{
-                            $('.fp-tooltip').removeClass('blue-color');
-                            $('#fp-nav ul li a span').removeClass('blue-background');
-                        }
-
-                        //change navbar opacity
-                        if(direction == "down") $('#navbar').css("opacity", "0");
-                        else $('#navbar').css("opacity", "1");
-                    }
-                });
-                $.fn.fullpage.setAllowScrolling(true);
-            });
-    </script>
+        <script src="{!! asset('js/home.js') !!}"></script>
 </body>
 
 </html>
