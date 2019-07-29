@@ -195,7 +195,7 @@
                                 <!-- input tags -->
                                 <div class="form-group">
                                     <label for="your-title">Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
-                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" required>
+                                    <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" name="tags" required>
                                     <span class="text-danger" id="tags-warning" class="warning"></span>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Upload">

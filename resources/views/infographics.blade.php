@@ -60,8 +60,7 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
                         @foreach($videos as $video)
-                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}"
-                                allowfullscreen></iframe></div>
+                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe></div>
                         @endforeach
                     </div>
                 </div>
@@ -183,6 +182,14 @@
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($photo->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
@@ -194,70 +201,70 @@
         </section>
 
         <section id="video-gallery" class="area">
-                <div class="container carousel-wrap">
-                    <div class="owl-carousel owl-theme gallery">
-                        @foreach($videos as $video)
+            <div class="container carousel-wrap">
+                <div class="owl-carousel owl-theme gallery">
+                    @foreach($videos as $video)
 
-                        <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
+                    <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="video-column">
-                                    <!-- video goes here -->
-                                    <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>{{$video->title}}</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <!-- nama user -->
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>{{$video->name}}</p>
-                                    </div>
-
-                                    <!-- caption -->
-                                    <div class="caption text-justify">
-                                        <p>
-                                            {{$video->caption}}
-                                        </p>
-                                    </div>
-
-                                    <!-- upload time -->
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>{{$video->date}}</p>
-                                    </div>
-
-                                    <!-- lokasi -->
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>{{$video->location}}</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            @foreach($video->tags as $tag)
-                                            <li>{{$tag}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-
-                                </div>
+                    <div class="row item">
+                        <div class="col-12 col-xl-8">
+                            <div class="video-column">
+                                <!-- video goes here -->
+                                <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                             </div>
                         </div>
-                        @endforeach
+
+                        <div class="col-12 col-xl-4">
+                            <div class="text-column p-4 p-xl-2">
+
+                                <!-- judul caption -->
+                                <div class="title">
+                                    <h4>{{$video->title}}</h4>
+                                    <hr class="mt-3 mb-3">
+                                </div>
+
+                                <!-- nama user -->
+                                <div class="video-by">
+                                    <h6 class="mb-1">Video and Caption by</h6>
+                                    <p>{{$video->name}}</p>
+                                </div>
+
+                                <!-- caption -->
+                                <div class="caption text-justify">
+                                    <p>
+                                        {{$video->caption}}
+                                    </p>
+                                </div>
+
+                                <!-- upload time -->
+                                <div class="time">
+                                    <h6 class="mb-1">Uploaded on</h6>
+                                    <p>{{$video->date}}</p>
+                                </div>
+
+                                <!-- lokasi -->
+                                <div class="location">
+                                    <h6 class="mb-1">Location</h6>
+                                    <p>{{$video->location}}</p>
+                                </div>
+
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($video->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+                    @endforeach
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
 
     <!-- footer slebew -->

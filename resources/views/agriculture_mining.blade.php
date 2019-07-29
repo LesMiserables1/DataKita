@@ -222,7 +222,14 @@
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
-
+                                <div class="tags">
+                                        <h6 class="mb-1">Tags</h6>
+                                        <ul class="pl-0">
+                                            @foreach($photo->tags as $tag)
+                                            <li>{{$tag}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button"
                                         class="btn btn-primary btn-shadow mt-2">Download</button></a>

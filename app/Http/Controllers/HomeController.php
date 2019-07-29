@@ -27,6 +27,13 @@ class HomeController extends Controller
         $foto = Photo::where('jenis','Agriculture_Mining')->where('approve',true)->get();
         $video = Video::where('jenis','Agriculture_Mining')->where('approve',true)->get();
         $x = 0;
+        foreach($foto as $ph){
+            $tag = $ph->tags;
+            $tag = explode(',',$tag);
+            $foto[$x]['tags'] = $tag; 
+            $x++;
+        }
+        $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
             $tag = explode(',',$tag);
@@ -40,6 +47,13 @@ class HomeController extends Controller
         $foto = Photo::where('jenis','Economic_Trade')->where('approve',true)->get();
         $video = Video::where('jenis','Economic_Trade')->where('approve',true)->get();
         $x = 0;
+        foreach($foto as $ph){
+            $tag = $ph->tags;
+            $tag = explode(',',$tag);
+            $foto[$x]['tags'] = $tag; 
+            $x++;
+        }
+        $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
             $tag = explode(',',$tag);
@@ -52,6 +66,13 @@ class HomeController extends Controller
     {
         $foto = Photo::where('jenis','Social_Population')->where('approve',true)->get();
         $video = Video::where('jenis','Social_Population')->where('approve',true)->get();
+        $x = 0;
+        foreach($foto as $ph){
+            $tag = $ph->tags;
+            $tag = explode(',',$tag);
+            $foto[$x]['tags'] = $tag; 
+            $x++;
+        }
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -67,6 +88,13 @@ class HomeController extends Controller
         $foto = Photo::where('jenis','Event_Experience')->where('approve',true)->get();
         $video = Video::where('jenis','Event_Experience')->where('approve',true)->get();
         $x = 0;
+        foreach($foto as $ph){
+            $tag = $ph->tags;
+            $tag = explode(',',$tag);
+            $foto[$x]['tags'] = $tag; 
+            $x++;
+        }
+        $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
             $tag = explode(',',$tag);
@@ -79,6 +107,13 @@ class HomeController extends Controller
     {
         $foto = Photo::where('jenis','Infographics')->where('approve',true)->get();
         $video = Video::where('jenis','Infographics')->where('approve',true)->get();
+        $x = 0;
+        foreach($foto as $ph){
+            $tag = $ph->tags;
+            $tag = explode(',',$tag);
+            $foto[$x]['tags'] = $tag; 
+            $x++;
+        }
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
