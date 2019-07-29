@@ -99,10 +99,16 @@ class UploadController extends Controller
             $msg = 'Video Gagal di Upload';
             return redirect('/')->with('msg', $msg);
         }
+        $date = date('d/m/Y');
         $video = new Video;
         $video->video_id = $response->id;
         $video->jenis = $request->jenis;
         $video->caption = $request->caption;
+        $video->title = $request->judul;
+        $video->location = $request->lokasi;
+        $video->name = $request->nama;
+        $video->date = $date;
+        $video->tags = $request->tags;
         $video->save();
 
         return redirect('/');

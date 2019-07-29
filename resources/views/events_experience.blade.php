@@ -59,10 +59,10 @@
                 <div class="modal-body carousel-wrap">
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
-                        <div class="item"><iframe src="https://www.youtube.com/embed/d0v7Gjx__To" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/9TnkDFeDnoE" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/FvIochG6ghA" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/TxeHNbzQEKA" allowfullscreen></iframe></div>
+                        @foreach($videos as $video)
+                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}"
+                                allowfullscreen></iframe></div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -194,195 +194,70 @@
         </section>
 
         <section id="video-gallery" class="area">
-            <div class="container carousel-wrap">
-                <div class="owl-carousel owl-theme gallery">
-                    <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
+                <div class="container carousel-wrap">
+                    <div class="owl-carousel owl-theme gallery">
+                        @foreach($videos as $video)
+
+                        <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <!-- video goes here -->
-                                <iframe src="https://www.youtube.com/embed/1G0lqiXzsE4?" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <!-- judul caption -->
-                                <div class="title">
-                                    <h4>Ashiaaaaaaap</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <!-- nama user -->
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Freddie Mercury</p>
-                                </div>
-                                <!-- caption -->
-                                <div class="caption text-justify">
-                                    <p>Ashiaaaaaaaaaaaaaaaappp!!!!
-                                    </p>
-                                </div>
-                                <!-- upload time -->
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>22/02/2019</p>
-                                </div>
-                                <!-- lokasi -->
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Wembley Stadium, London</p>
+                        <div class="row item">
+                            <div class="col-12 col-xl-8">
+                                <div class="video-column">
+                                    <!-- video goes here -->
+                                    <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/QAfiIeqO2Bk" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Ada Bapak-Bapak</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Rizky Mistis</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>Eh ada orang. Ada bapak-bapak, temen-temen. Serius ada bapak-bapak.
-                                        Ada bapak-bapak. Pak? Eh, lagi tapa dia. Assalamu'alaikum, Pak.
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>10/05/2019</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Pinggir Pantai Pelabuhan Ratu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="col-12 col-xl-4">
+                                <div class="text-column p-4 p-xl-2">
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/9SH6QcPNfT4" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Karena Subscribe itu Gratis</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Atta Halilintar</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>Terima kasih sudah klik video ini. Tapi jangan lupa guys, klik tombol subscribe
-                                        karena subscribe itu gratis. Dengan subscribe, kamu subscribe channel ini terus
-                                        untuk upload hampir setiap hari. Inget, subscribe itu gratis. Gratis. Gaada ruginya
-                                        kamu klik tombol subscribe. Selamat menonton. ENJOYYYYYYYYYYYYYYYY
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>01/04/2019</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Istana Negara, Jakarta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <!-- judul caption -->
+                                    <div class="title">
+                                        <h4>{{$video->title}}</h4>
+                                        <hr class="mt-3 mb-3">
+                                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/zBogEzh6R60" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>When a Girl Truly Falls in Love</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Sakura Haruno</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>When a girl truly falls in love, her feelings don't change that easily.
-                                        They can't change. I understand how she feels very well.
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>06/12/2014</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Somewhere far away from Konoha</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                    <!-- nama user -->
+                                    <div class="video-by">
+                                        <h6 class="mb-1">Video and Caption by</h6>
+                                        <p>{{$video->name}}</p>
+                                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/d0v7Gjx__To" allowfullscreen></iframe>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                    See full slide
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Ketika Selera Tidak Sesuai Salary</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Picky Picks</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <!-- contoh kalau user nginput caption lebih dari satu paragraf -->
-                                    <p>
-                                        Mencoba untuk membuka pikiran anak anak muda hypebeast jaman now yang sedang menjalani dunia yang fana ini, anjas~
-                                    </p>
-                                    <p>
-                                        HIDUP TUH MURAH, YANG MAHAL GENGSINYA.
-                                    </p>
-                                    <p>
-                                        pis, lov, & gawl.
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>15/02/2018</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Jakarta</p>
+                                    <!-- caption -->
+                                    <div class="caption text-justify">
+                                        <p>
+                                            {{$video->caption}}
+                                        </p>
+                                    </div>
+
+                                    <!-- upload time -->
+                                    <div class="time">
+                                        <h6 class="mb-1">Uploaded on</h6>
+                                        <p>{{$video->date}}</p>
+                                    </div>
+
+                                    <!-- lokasi -->
+                                    <div class="location">
+                                        <h6 class="mb-1">Location</h6>
+                                        <p>{{$video->location}}</p>
+                                    </div>
+
+                                    <div class="tags">
+                                        <h6 class="mb-1">Tags</h6>
+                                        <ul class="pl-0">
+                                            @foreach($video->tags as $tag)
+                                            <li>{{$tag}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </main>
 
     <!-- footer slebew -->
