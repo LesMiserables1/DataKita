@@ -70,11 +70,9 @@ video
                 <div class="modal-body carousel-wrap">
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
-                        <div class="item"><iframe src="https://www.youtube.com/embed/-Y9x-imQBBs" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/MlR2qnfYJUc" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/u1CurC9VAdM" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/k5Y8YcKnRm0" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/gF8CtggKafc" allowfullscreen></iframe></div>
+                        @foreach($videos as $video)
+                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe></div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -195,6 +193,14 @@ video
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($photo->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
@@ -208,137 +214,65 @@ video
         <section id="video-gallery" class="area">
             <div class="container carousel-wrap">
                 <div class="owl-carousel owl-theme gallery">
+                    @foreach($videos as $video)
+
                     <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
                     <div class="row item">
                         <div class="col-12 col-xl-8">
                             <div class="video-column">
                                 <!-- video goes here -->
-                                <iframe src="https://www.youtube.com/embed/-Y9x-imQBBs" allowfullscreen></iframe>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                    See full slide
-                                </button>
+                                <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                             </div>
                         </div>
+
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
+
                                 <!-- judul caption -->
                                 <div class="title">
-                                    <h4>Create Your Perfect Digital Signature in Photoshop</h4>
+                                    <h4>{{$video->title}}</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
+
                                 <!-- nama user -->
                                 <div class="video-by">
                                     <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>PiXimperfect</p>
+                                    <p>{{$video->name}}</p>
                                 </div>
+
                                 <!-- caption -->
                                 <div class="caption text-justify">
-                                    <p>Easily Create Your Digital Autograph or Signature with this New Feature in Photoshop! Learn how to use
-                                        "Brush Smoothing" along with pressure sensitivity and pen tilt feature in Wacom Tablets to create beautiful
-                                        signatures for branding, watermark, or simply signing your work.
-                                    </p>
                                     <p>
-                                        In this tutorial, we will walk you through the entire process of creating the
-                                        design, followed by the best practices to export it. Then, we will learn how
-                                        to add the signature or design to your images. In the end, we'll look into
-                                        converting your digital signature to a vector graphic using Adobe Illustrator
-                                        so that it never pixelates no matter how large you make it.
+                                        {{$video->caption}}
                                     </p>
                                 </div>
+
                                 <!-- upload time -->
                                 <div class="time">
                                     <h6 class="mb-1">Uploaded on</h6>
-                                    <p>27/02/2019</p>
+                                    <p>{{$video->date}}</p>
                                 </div>
+
                                 <!-- lokasi -->
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
-                                    <p>Mumbai, India</p>
+                                    <p>{{$video->location}}</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/anDvD_qzbOM" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>How to Create GLITCH ANIMATION in Photoshop | GIF Effect Tutorial</h4>
-                                    <hr class="mt-3 mb-3">
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($video->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Photoshop Tutorials | Photo effects</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>In this photoshop tutorial we will see how to create glitch animation.
-                                        I my self did not know how to do it properly but now i can say it that its really
-                                        easy effect.
-                                    </p>
-                                    <p>
-                                        All you need to do is find proper image and apply different glitch effect and use
-                                        frame animation, entire photo effect can be done under 15 minutes.
-                                    </p>
-                                    <p>
-                                        Not to mention that there are million different glitch effects you can create
-                                        using the same trick. That is actually the reason keep coming back to this photo
-                                        effect.
-                                    </p>
-                                    <p>I hope you learn something from this photoshop tutorial, have a good day.</p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>24/05/2018</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>India</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/WGMDXOr4LmI" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>How to make your photos LOOK BETTER FAST! Photoshop Tutorial</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Peter McKinnon</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>What's up guys! In this tutorial, I'm going over some techniques to make your
-                                        photos pop, stand out and generally just look better, fast!
-                                    </p>
-                                    <p>If you are looking for ways to step up your editing game and enter the ring with photoshop -
-                                        this video is for you. </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>23/01/2017</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Toronto, Canada</p>
-                                </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>

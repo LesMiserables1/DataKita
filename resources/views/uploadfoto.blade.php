@@ -105,7 +105,7 @@
 
                         <!-- input form section -->
                         <div class="col-12 col-lg-6">
-                            <form action="/upload/foto" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
+                            <form action="/upload/photo" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
                                 @csrf
 
                                 <!-- upload file -->

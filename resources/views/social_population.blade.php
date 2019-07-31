@@ -185,6 +185,14 @@
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($photo->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
@@ -198,163 +206,65 @@
         <section id="video-gallery" class="area">
             <div class="container carousel-wrap">
                 <div class="owl-carousel owl-theme gallery">
+                    @foreach($videos as $video)
+
                     <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
                     <div class="row item">
                         <div class="col-12 col-xl-8">
                             <div class="video-column">
                                 <!-- video goes here -->
-                                <iframe src="https://www.youtube.com/embed/384qFPXCuO4" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                             </div>
                         </div>
+
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
+
                                 <!-- judul caption -->
                                 <div class="title">
-                                    <h4>The Worst Animated Stories On Youtube (My Story Animated)</h4>
+                                    <h4>{{$video->title}}</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
+
                                 <!-- nama user -->
                                 <div class="video-by">
                                     <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>jarvis Johnson</p>
+                                    <p>{{$video->name}}</p>
                                 </div>
+
                                 <!-- caption -->
                                 <div class="caption text-justify">
-                                    <p>Hello and welcome back to old man shouting at cloud.
-                                        I’m Jarvis and today we're talking about my story animated which is the latest
-                                        in clickbait animation channels full of overdramatic and probably fake stories “submitted by kids”
+                                    <p>
+                                        {{$video->caption}}
                                     </p>
                                 </div>
+
                                 <!-- upload time -->
                                 <div class="time">
                                     <h6 class="mb-1">Uploaded on</h6>
-                                    <p>12/04/2019</p>
+                                    <p>{{$video->date}}</p>
                                 </div>
+
                                 <!-- lokasi -->
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
-                                    <p>San Francisco, California</p>
+                                    <p>{{$video->location}}</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/jT5nYLND7co" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Understanding Neural Networks</h4>
-                                    <hr class="mt-3 mb-3">
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($video->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Massachusetts Institute of Technology (MIT)</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>MIT-IBM Watson AI lab research team member David Bau explains how computers show evidence of
-                                        learning the structure of the physical world.
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>26/06/2019</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Massachusetts, United States</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/hqFb7pvYWiQ" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Adobe XD Dark Theme App Design Tutorial</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Caler Edwards</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <p>In this video we will design a dark theme app using Adobe XD. This project focuses on app design,
-                                        User interface (UI) design and User experience (UX) design. Make sure you vote in the poll at the end of
-                                        the video for a possible part 2. Enjoy the video :D
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>07/07/2019</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Richmond, Kentucky</p>
-                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="row item">
-                        <div class="col-12 col-xl-8">
-                            <div class="video-column">
-                                <iframe src="https://www.youtube.com/embed/hLjht9uJWgw" allowfullscreen></iframe>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                    See full slide
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <div class="title">
-                                    <h4>Downloading My Private Google Data, This is What I Found</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-                                <div class="video-by">
-                                    <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Devon Crawford</p>
-                                </div>
-                                <div class="caption text-justify">
-                                    <!-- contoh kalau user nginput caption lebih dari satu paragraf -->
-                                    <p>
-                                        Took a look at my private data and found some pretty weird stuff,
-                                        possible security vulnerability with Google Photos, third-party data from eBay and Amazon as well as
-                                        audio recordings from "Ok, Google".
-                                    </p>
-                                    <p>
-                                        These are just my personal findings and I cannot claim this happens for everyone.
-                                        Luckily most people watching this video have a YouTube account and therefore a Google
-                                        account. You can all download your own data and look for what I found in this video,
-                                        I didn't even have to do any heavy digging, its all pretty much out in the open once you
-                                        throw stuff into your text editor. This content is not intended to harm any entity or
-                                        person but rather share some concerns with the current state of data privacy on large
-                                        websites such as Google.
-                                    </p>
-                                </div>
-                                <div class="time">
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>12/04/2019</p>
-                                </div>
-                                <div class="location">
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>Guelph, Ontario, Canada</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

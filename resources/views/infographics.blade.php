@@ -59,9 +59,9 @@
                 <div class="modal-body carousel-wrap">
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
-                        <div class="item"><iframe src="https://www.youtube.com/embed/VCII-H2EJW4" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/nmrQi-6B2P8" allowfullscreen></iframe></div>
-                        <div class="item"><iframe src="https://www.youtube.com/embed/YgzZSS_tvOI" allowfullscreen></iframe></div>
+                        @foreach($videos as $video)
+                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe></div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -182,6 +182,14 @@
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($photo->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
@@ -195,49 +203,65 @@
         <section id="video-gallery" class="area">
             <div class="container carousel-wrap">
                 <div class="owl-carousel owl-theme gallery">
+                    @foreach($videos as $video)
+
                     <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
                     <div class="row item">
                         <div class="col-12 col-xl-8">
                             <div class="video-column">
                                 <!-- video goes here -->
-                                <iframe src="https://www.youtube.com/embed/VCII-H2EJW4" allowfullscreen></iframe>
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                    See full slide
-                                </button>
+                                <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                             </div>
                         </div>
+
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
+
                                 <!-- judul caption -->
                                 <div class="title">
-                                    <h4>Contoh Interview Kerja Fresh Graduate</h4>
+                                    <h4>{{$video->title}}</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
+
                                 <!-- nama user -->
                                 <div class="video-by">
                                     <h6 class="mb-1">Video and Caption by</h6>
-                                    <p>Eza Hazami</p>
+                                    <p>{{$video->name}}</p>
                                 </div>
+
                                 <!-- caption -->
                                 <div class="caption text-justify">
-                                    <p>Ketika baru lulus sekolah/kuliah, pasti bingung kan diinterview HRD apa aja yg ditanya?
-                                        Tonton video ini sampe habis ya buat jawabannya :)
+                                    <p>
+                                        {{$video->caption}}
                                     </p>
                                 </div>
+
                                 <!-- upload time -->
                                 <div class="time">
                                     <h6 class="mb-1">Uploaded on</h6>
-                                    <p>08/05/2019</p>
+                                    <p>{{$video->date}}</p>
                                 </div>
+
                                 <!-- lokasi -->
                                 <div class="location">
                                     <h6 class="mb-1">Location</h6>
-                                    <p>Bandung, West Java</p>
+                                    <p>{{$video->location}}</p>
                                 </div>
+
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($video->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>

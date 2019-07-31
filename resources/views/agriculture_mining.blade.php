@@ -222,7 +222,14 @@
                                     <h6 class="mb-1">Location</h6>
                                     <p>{{$photo->location}}</p>
                                 </div>
-
+                                <div class="tags">
+                                        <h6 class="mb-1">Tags</h6>
+                                        <ul class="pl-0">
+                                            @foreach($photo->tags as $tag)
+                                            <li>{{$tag}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo->nama_foto}}"><button type="button"
                                         class="btn btn-primary btn-shadow mt-2">Download</button></a>
@@ -244,7 +251,7 @@
                             <div class="col-12 col-xl-8">
                                 <div class="video-column">
                                     <!-- video goes here -->
-                                    <iframe src="https://www.youtube.com/embed/384qFPXCuO4" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
                                 </div>
                             </div>
 
@@ -253,167 +260,48 @@
 
                                     <!-- judul caption -->
                                     <div class="title">
-                                        <h4>Magic Tricks Shots for Dads</h4>
+                                        <h4>{{$video->title}}</h4>
                                         <hr class="mt-3 mb-3">
                                     </div>
 
                                     <!-- nama user -->
                                     <div class="video-by">
                                         <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Zach King</p>
+                                        <p>{{$video->name}}</p>
                                     </div>
 
                                     <!-- caption -->
                                     <div class="caption text-justify">
-                                        <p>Using my magic tricks for dad life is awesome! Share with a parent of
-                                            young kids!
-                                            We had so much fun making this, hope it brought a little joy to your
-                                            day!
+                                        <p>
+                                            {{$video->caption}}
                                         </p>
                                     </div>
 
                                     <!-- upload time -->
                                     <div class="time">
                                         <h6 class="mb-1">Uploaded on</h6>
-                                        <p>15/05/2019</p>
+                                        <p>{{$video->date}}</p>
                                     </div>
 
                                     <!-- lokasi -->
                                     <div class="location">
                                         <h6 class="mb-1">Location</h6>
-                                        <p>Los Angeles, California</p>
+                                        <p>{{$video->location}}</p>
                                     </div>
 
                                     <div class="tags">
                                         <h6 class="mb-1">Tags</h6>
                                         <ul class="pl-0">
-                                            <li>Family</li>
-                                            <li>Father</li>
-                                            <li>Holiday</li>
-                                            <li>Children</li>
-                                            <li>Parenting</li>
+                                            @foreach($video->tags as $tag)
+                                            <li>{{$tag}}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="video-column">
-                                    <iframe src="https://www.youtube.com/embed/1ZyDCt8QLxE" allowfullscreen></iframe>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary more-than-one" data-toggle="modal" data-target="#videoModal">
-                                        See full slide
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>How to Create a Responsive Website from Scratch</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Kevin Powell</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p>In this series, I look at how to create a responsive agency / portfolio style website from start to finish. 
-                                        </p>
-                                        <p>
-                                        This is the first video of the series. In this video, I write all the markup (or HTML) for the site - though I did miss one small part (the Call to Action), which I'll code up once I get to that part.
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>16/11/2016</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Montréal, Québec</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Web</li>
-                                            <li>Design</li>
-                                            <li>Responsive</li>
-                                            <li>Tech</li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
-
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="video-column">
-                                    <iframe src="https://www.youtube.com/embed/y_MTsIQuNEo" allowfullscreen></iframe>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <div class="title">
-                                        <h4>New UI Design Trends - Vibrant Gradients & Colored Drop Shadows!
-                                        </h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>Gary Simon</p>
-                                    </div>
-
-                                    <div class="caption text-justify">
-                                        <p> Hey all! Today, we're checking out a couple new UI design trends
-                                            I've spotted.
-                                            First, I'm noticing the use of vibrant color gradients that go from
-                                            one hue to
-                                            another in various UI elements.
-                                            Second, I'm noticing the use of large, soft drop shadows -- even
-                                            colored drop
-                                            shadows. I'm going to show you
-                                            best practices and a few rules for integrating both of these trends
-                                            into your
-                                            projects!
-                                        </p>
-                                    </div>
-
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>05/07/2019</p>
-                                    </div>
-
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>Youngstown, Ohio</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            <li>Trend</li>
-                                            <li>Design</li>
-                                            <li>Gradient</li>
-                                            <li>Colors</li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

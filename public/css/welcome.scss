@@ -15,17 +15,11 @@
         @media (min-height: 845px){ background-repeat: no-repeat; }
 
         //some kind of container. just to make it easier styling the background using :before
-            height: 100%;
             z-index: -1;
             width: 100%;
             transition: all 1.4s;
 
-            .container-fluid {
-                height: 100%;
-                transition: all 1.4s;
-
                 .row { height: 100%; }
-            }
 
             //setting background using :before to apply filter on background only, not the entire components
             &:before {
@@ -43,7 +37,10 @@
                 width: 100%;
                 transition: all 1.4s;
 
-                @media (min-height: 845px){ height: 844px }
+                @media (min-height: 845px){ 
+                    background: url(../images/agriculture2.jpg); 
+                    background-position: center;
+                }
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
             }
 
@@ -69,6 +66,11 @@
                 background-position: -150px center;
                 @include mobile{ background-position: -240px center;}
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
+
+                @media (min-height: 845px){ 
+                    background: url(../images/social2.jpg);
+                    background-position: bottom;
+                 }
             }
     }
 
@@ -77,6 +79,11 @@
                 background: url(../images/economy.jpg);
                 background-position: center;
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
+
+                @media (min-height: 845px){ 
+                    background: url(../images/economy2.jpg); 
+                    background-position: center center;
+                }
             }
     }
 
@@ -180,7 +187,8 @@
 
     /* special components */
     //fp-nav
-    #fp-nav ul li{
+    #fp-nav{
+        transition: .3s;
         a span{
             background: white !important;
             transition: .75s;
@@ -191,6 +199,30 @@
             transition: .75s;
         }
     }
+
+    .fp-nav-bottom{
+        @media (max-width:1200px){
+            top: unset !important;
+            bottom: 7px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+
+        li{
+            @media (max-width:1200px){
+                display: inline-block !important;
+            }
+        }
+
+        .fp-tooltip{
+            @media (max-width:1200px){
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                top: -20px !important;
+            }
+        }
+    }
+    
 
     .fp-tooltip{
         font-family: "Bahnschrift Regular", sans-serif !important;

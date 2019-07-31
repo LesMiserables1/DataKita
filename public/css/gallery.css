@@ -77,7 +77,7 @@ input[type="radio"]:checked + .label:after {
      object-fit: contain;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
     height: 36.75vw;
   }
@@ -194,7 +194,7 @@ input[type="radio"]:checked + .label:after {
   right: 0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #photo-gallery .owl-nav .owl-next, #video-gallery .owl-nav .owl-next {
     left: 61.37%;
   }
@@ -208,7 +208,7 @@ input[type="radio"]:checked + .label:after {
   font-family: "Poppins", sans-serif;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   .text-column {
     max-height: 37vw;
   }

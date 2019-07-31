@@ -40,6 +40,7 @@
                     navigation: true,
                     autoScrolling: true,
                     scrollingSpeed: 900,
+                    scrollOverflow: true,
                     navigationPosition: 'left',
                     navigationTooltips: ['Agriculture & Mining', 'Social & Population', 'Economy & Trade', 'Events & Experiences', 'Infographics', 'Footer'],
                     onLeave: function(origin, destination, direction){
@@ -48,15 +49,25 @@
                         if(destIndex >= 3){
                             $('.fp-tooltip').addClass('blue-color');
                             $('#fp-nav ul li a span').addClass('blue-background');
+
+                            if(destIndex != 5) $('#fp-nav').addClass('fp-nav-bottom');
+                            else $('#fp-nav').removeClass('fp-nav-bottom');
                         }
                         else{
                             $('.fp-tooltip').removeClass('blue-color');
                             $('#fp-nav ul li a span').removeClass('blue-background');
                         }
 
+                        if(destIndex != 5) $('#fp-nav').addClass('fp-nav-bottom');
+                        else $('#fp-nav').removeClass('fp-nav-bottom');
+
                         //change navbar opacity
                         if(direction == "down") $('#navbar').css("opacity", "0");
                         else $('#navbar').css("opacity", "1");
+                    },
+                    afterLoad: function(origin, destination, direction){
+                        var dest = destination.index;
+                        if(dest == 0) $('#fp-nav').addClass('fp-nav-bottom');
                     }
                 });
                 $.fn.fullpage.setAllowScrolling(true);

@@ -16,7 +16,6 @@
 #agriculture, #social, #economy {
   height: 100vh;
   overflow: hidden;
-  height: 100%;
   z-index: -1;
   width: 100%;
   -webkit-transition: all 1.4s;
@@ -29,13 +28,7 @@
   }
 }
 
-#agriculture .container-fluid, #social .container-fluid, #economy .container-fluid {
-  height: 100%;
-  -webkit-transition: all 1.4s;
-  transition: all 1.4s;
-}
-
-#agriculture .container-fluid .row, #social .container-fluid .row, #economy .container-fluid .row {
+#agriculture .row, #social .row, #economy .row {
   height: 100%;
 }
 
@@ -58,11 +51,12 @@
 
 @media (min-height: 845px) {
   #agriculture:before, #social:before, #economy:before {
-    height: 844px;
+    background: url(../images/agriculture2.jpg);
+    background-position: center;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #agriculture:before, #social:before, #economy:before {
     background-position-x: center;
     background-size: auto;
@@ -98,11 +92,18 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #social:before {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
+  }
+}
+
+@media (min-height: 845px) {
+  #social:before {
+    background: url(../images/social2.jpg);
+    background-position: bottom;
   }
 }
 
@@ -111,11 +112,18 @@
   background-position: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #economy:before {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
+  }
+}
+
+@media (min-height: 845px) {
+  #economy:before {
+    background: url(../images/economy2.jpg);
+    background-position: center center;
   }
 }
 
@@ -163,7 +171,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
   #events .image img {
     height: 180px;
   }
@@ -230,16 +238,46 @@
 }
 
 /* special components */
-#fp-nav ul li a span {
+#fp-nav {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#fp-nav a span {
   background: white !important;
   -webkit-transition: .75s;
   transition: .75s;
 }
 
-#fp-nav ul li a span.blue-background {
+#fp-nav a span.blue-background {
   background: #007bff !important;
   -webkit-transition: .75s;
   transition: .75s;
+}
+
+@media (max-width: 1200px) {
+  .fp-nav-bottom {
+    top: unset !important;
+    bottom: 7px !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fp-nav-bottom li {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fp-nav-bottom .fp-tooltip {
+    left: 50% !important;
+    -webkit-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
+    top: -20px !important;
+  }
 }
 
 .fp-tooltip {

@@ -19,6 +19,11 @@ class CreateVideosTable extends Migration
             $table->boolean('approve')->default(false);
             $table->string('jenis');
             $table->string('caption');
+            $table->string('title');
+            $table->string('name');
+            $table->string('date');
+            $table->string('location');
+            $table->string('tags');
             $table->timestamps();
         });
     }
