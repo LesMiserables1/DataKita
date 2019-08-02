@@ -162,9 +162,9 @@
                     <div class="row text-center d-flex flex-wrap">
                         @foreach($photoEve as $photo)
                         <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
-                            <div class="d-block mb-4">
+                            <div class="d-block img-container mb-4">
                                 <!-- gambar -->
-                                <img class="img-fluid img-thumbnail" src="/show/foto/{{$photo->nama_foto}}" alt="">
+                                <img class="img-fluid img-thumbnail lazy" data-src="/show/foto/{{$photo->nama_foto}}" alt="">
                                 <div class="img-detail">
                                     <!-- judul gambar -->
                                     <h5 class="image-title">{{$photo->title}}</h5>
@@ -193,7 +193,7 @@
                             @foreach($photoInfo as $photo)
                             <div class="item">
                                 <!-- gambar -->
-                                <img src="/show/foto/{{$photo->nama_foto}}">
+                                <img class="lazy" data-src="/show/foto/{{$photo->nama_foto}}">
                                 <!-- judul gambar -->
                                 <h5 class="image-title">{{$photo->title}}</h5>
                             </div>
@@ -210,7 +210,7 @@
             </section>
 
             <!-- footer -->
-            <footer id="page-footer" class="section fp-auto-height mt-n4" style="background: #212529;" data-anchor="sixth">
+            <footer id="home-footer" class="section fp-auto-height mt-n4" style="background: #212529;" data-anchor="sixth">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
@@ -240,6 +240,9 @@
             </footer>
         </main>
 
+        <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+        <script src="{!! asset('js/lazy.js') !!}"></script>
         <script src="{!! asset('js/home.js') !!}"></script>
 </body>
 

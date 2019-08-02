@@ -40,7 +40,7 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
                         @foreach($photos as $photo)
-                        <div class="item"><img src="/show/foto/{{$photo->nama_foto}}"></div>
+                        <div class="item"><img class="lazy" data-src="/show/foto/{{$photo->nama_foto}}"></div>
                         @endforeach
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                         <div class="col-12 col-xl-8">
                             <div class="pict-column">
                                 <!-- image goes here -->
-                                <img src="/show/foto/{{$photo->nama_foto}}">
+                                <img class="lazy" data-src="/show/foto/{{$photo->nama_foto}}">
                             </div>
                         </div>
                         <div class="col-12 col-xl-4">
@@ -297,7 +297,11 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
     <script src="{!! asset('js/gallery.js') !!}"></script>
+    <script src="{!! asset('js/lazy.js') !!}"></script>
+    <script src="{!! asset('js/header.js') !!}"></script>
 </body>
 
 </html>

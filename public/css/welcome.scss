@@ -87,12 +87,36 @@
             }
     }
 
+@-webkit-keyframes gradientBackground {
+    0%{background-position:0% 59%}
+    50%{background-position:100% 42%}
+    100%{background-position:0% 59%}
+}
+@-moz-keyframes gradientBackground {
+    0%{background-position:0% 59%}
+    50%{background-position:100% 42%}
+    100%{background-position:0% 59%}
+}
+@keyframes gradientBackground { 
+    0%{background-position:0% 59%}
+    50%{background-position:100% 42%}
+    100%{background-position:0% 59%}
+}
     //events and experiences section
     #events {
         transform: translateY(-15px);
         //image container
         .image {
             overflow: hidden;
+
+            .img-container{
+                background: linear-gradient(90deg, rgba(238, 118, 82, 0.596), rgba(231, 60, 126, 0.582), rgba(35, 165, 213, 0.541), rgba(35, 213, 171, 0.493));
+                background-size: 400% 400%;
+
+                -webkit-animation: gradientBackground 2s ease-in-out infinite;
+                -moz-animation: gradientBackground 2s ease-in-out infinite;
+                animation: gradientBackground 2s ease-in-out infinite;
+            }
 
             &:hover {
                 //the image itself
@@ -155,6 +179,13 @@
         //image container
         .item {
             overflow: hidden;
+
+            background: linear-gradient(90deg, rgba(238, 118, 82, 0.596), rgba(231, 60, 126, 0.582), rgba(35, 165, 213, 0.541), rgba(35, 213, 171, 0.493));
+            background-size: 400% 400%;
+
+            -webkit-animation: gradientBackground 2s ease-in-out infinite;
+            -moz-animation: gradientBackground 2s ease-in-out infinite;
+            animation: gradientBackground 2s ease-in-out infinite;
 
             &:hover {
                 img {

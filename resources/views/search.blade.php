@@ -191,5 +191,7 @@
         <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
         <script src="{!! asset('js/search.js') !!}"></script>
+        <script src="{!! asset('js/lazy.js') !!}"></script>
+        <script src="{!! asset('js/header.js') !!}"></script>
     </body>
 </html>

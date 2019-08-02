@@ -216,5 +216,6 @@
         <!-- wow.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="{!! asset('js/photo.js') !!}"></script>
+        <script src="{!! asset('js/header.js') !!}"></script>
     </body>
 </html>

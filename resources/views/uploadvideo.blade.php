@@ -139,7 +139,7 @@
                                 <div class="form-group">
                                     <label for="uploadfile">Upload <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can upload up to 8 videos." data-placement="right"></i></label>
                                     <div class="custom-file">
-                                        <input type="file" name="video" id="uploadfile" accept="video/*" class="custom-file-input" multiple required>
+                                        <input type="file" name="video" id="uploadfile" accept="video/*" class="custom-file-input"required>
                                         <label class="custom-file-label" for="validatedCustomFile" id="upload-label">No file choosen</label>
                                         <span class="text-danger" id="upload-warning" class="warning"></span>
                                     </div>  
@@ -243,5 +243,6 @@
         <!-- wow.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="{!! asset('js/video.js') !!}"></script>
+        <script src="{!! asset('js/header.js') !!}"></script>
     </body>
 </html>

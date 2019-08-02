@@ -1,5 +1,19 @@
+/*  ==============
+     starter pack
+    ==============
+ */
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("fonts.css");
+/* end of starter pack*/
 #search-intro {
   margin-left: 1.5em;
+}
+
+@media (max-width: 575px) {
+  #search-intro {
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 .radio {
@@ -65,9 +79,13 @@ input[type="radio"]:checked + .type {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  background: #a8c6e2d0;
   min-height: 200px;
   position: relative;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(238, 118, 82, 0.596)), color-stop(rgba(231, 60, 126, 0.582)), color-stop(rgba(35, 165, 213, 0.541)), to(rgba(35, 213, 171, 0.493)));
+  background: linear-gradient(90deg, rgba(238, 118, 82, 0.596), rgba(231, 60, 126, 0.582), rgba(35, 165, 213, 0.541), rgba(35, 213, 171, 0.493));
+  background-size: 400% 400%;
+  -webkit-animation: gradientBackground 2s ease-in-out infinite;
+  animation: gradientBackground 2s ease-in-out infinite;
 }
 
 @media (max-width: 575px) {
@@ -142,6 +160,30 @@ input[type="radio"]:checked + .type {
   opacity: 0;
 }
 
+@-webkit-keyframes gradientBackground {
+  0% {
+    background-position: 0% 59%;
+  }
+  50% {
+    background-position: 100% 42%;
+  }
+  100% {
+    background-position: 0% 59%;
+  }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 59%;
+  }
+  50% {
+    background-position: 100% 42%;
+  }
+  100% {
+    background-position: 0% 59%;
+  }
+}
+
 img:not([src]) {
   visibility: hidden;
 }
@@ -163,7 +205,7 @@ img:not([src]) {
   font-weight: 600;
 }
 
-@media (min-wdith: 768px) {
+@media (min-width: 768px) {
   .not-found p, .not-found span {
     font-size: 16px;
   }
