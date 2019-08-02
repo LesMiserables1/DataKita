@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- search title -->
-        <title>Search : Random | DataKita</title>
+        <title>Search : {{$query}} | DataKita</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -82,13 +82,13 @@
             <section id="search-intro" class="mt-5">
                 <div class="container-fluid">
                     <!-- search query -->
-                    <h1 class="search-query">Random</h1>
+                    <h1 class="search-query">{{$query}}</h1>
 
                     <!-- photo option -->
                     <label for="opt1" class="radio">
                         <input type="radio" name="rdo" id="opt1" class="hidden" value="photo-search" checked/>
                         <span class="type mr-3">
-                            <span class="result-number">10</span>
+                            <span class="result-number">{{$photos->count()}}</span>
                             Photos
                         </span>
                     </label>
@@ -97,7 +97,7 @@
                     <label for="opt2" class="radio">
                         <input type="radio" name="rdo" id="opt2" class="hidden" value="video-search"/>
                         <span class="type">
-                            <span class="result-number">3</span>
+                            <span class="result-number">{{$videos->count()}}</span>
                             Videos
                         </span>
                     </label>
@@ -107,138 +107,53 @@
             <section id="photo-search" class="area">
                 <div class="container-fluid">
                     <div class="grid">
-
+                        @foreach($photos as $photo)
                         <!-- container gambar -->
                         <div class="grid-item">
                             <!-- gambar -->
-                            <img class="lazy" data-src="https://source.unsplash.com/AaRflAurGmg">
+                            <img class="lazy" data-src="/show/foto/$photo->nama_foto">
                             <!-- judul dan author gambar -->
                             <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
+                                <h5 class="image-title">{{$photo->title}}</h5>
+                                <h6 class="author">By: {{$photo->author}}</h6>
                             </div>
                             <!-- link download -->
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                            <a href="/show/foto/$photo->nama_foto"><i class="fa fa-arrow-down download"></i></a>
                         </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/zp-0uEqBwpU">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/rkT-8d6FNbM">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-                            
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/fwy6hhTVbaI">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/As4BeyfqUHw">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/9kolGu3BNKs">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/m-TaB8a8Bwg">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/J-qS7KbOHWY">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/QC-Wstu0EvI">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-
-                        <div class="grid-item">
-                            <img class="lazy" data-src="https://source.unsplash.com/dZUgYPgteRQ">
-                            <div class="image-details">
-                                <h5 class="image-title">Judul</h5>
-                                <h6 class="author">By: Nyeck Nyobe</h6>
-                            </div>
-                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
-                        </div>
-                    </div>
-
+                        @endforeach
                     <!-- ditampilkan kalau gaada foto ditemukan -->
+                    @if($photos->count()==0)
                     <div class="row not-found">
                         <div class="col text-center">
-                            <p class="mb-4">Sorry, we couldn't find any photo for '<span class="query">random</span>'.</p>
+                            <p class="mb-4">Sorry, we couldn't find any photo for '<span class="query">{{$query}}</span>'.</p>
                             <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
                         </div>
                     </div>
+                    @endif
                 </div>
             </section>
 
             <section id="video-search" class="area">
                 <div class="container-fluid">
                     <div class="grid">
-
+                        @foreach($videos as $video)
                         <!-- video container -->
                         <div class="grid-item">
                             <!-- video -->
-                            <iframe src="https://www.youtube.com/embed/HOUJyYaDDhw" class="lazy" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" class="lazy" allowfullscreen></iframe>
                         </div>
-
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/LV_954I-pqk" class="lazy" allowfullscreen></iframe>
-                        </div>
-
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/_imH1Rr592M" class="lazy" allowfullscreen></iframe>
-                        </div>
+                        @endforeach
                     </div>
 
                     <!-- ditampilkan kalau video tidak ditemukan -->
+                    @if($videos->count() == 0)
                     <div class="row not-found">
                         <div class="col text-center">
-                            <p class="mb-4">Sorry, we couldn't find any video for '<span class="query">random</span>'.</p>
+                            <p class="mb-4">Sorry, we couldn't find any video for '<span class="query">{{$query}}</span>'.</p>
                             <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
                         </div>
                     </div>
+                    @endif
                 </div>
             </section>
         </main>

@@ -129,7 +129,9 @@ class HomeController extends Controller
     }
     public function search(Request $request)
     {
-        dd('test');
+        $foto = Photo::where('title','like','%'.$request->search_query.'%')->orWhere('tags','like','%'.$request->search_query.'%')->get();
+        $video = Video::where('title','like','%'.$request->search_query.'%')->orWhere('tags','like','%'.$request->search_query.'%')->get();
+        return view('search')->with('photos',$foto)->with('videos',$video)->with('query',$request->search_query);
     }
     
 }
