@@ -1,0 +1,174 @@
+//radio input for photo and video
+#search-intro{
+    margin-left: 1.5em;
+}
+.radio {
+    position: relative;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.type{
+    color: #a89797;
+    transition: .3s;
+
+    &:hover{
+        color: black;
+    }
+}
+
+//will turn blue if the radio is checked
+input[type="radio"]:checked + .type {
+    color: black;
+}
+
+//hiding that ugly default radio
+.hidden, .area {
+    display: none;
+}
+
+.grid { /* grid container */
+    -webkit-column-count: 3;
+    -moz-column-count:3;
+    column-count: 3;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+    margin: 1.5em;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+
+    @media (max-width: 575px){
+        -webkit-column-count: 1;
+        -moz-column-count:1;
+        column-count: 1;
+        margin: 0;
+    }
+
+    @media (min-width:576px) and (max-width: 991px){
+        -webkit-column-count: 2;
+        -moz-column-count:2;
+        column-count: 2;
+    }
+}
+.grid-item {
+    display: block;
+    margin: 0 0 1.5em;
+    width: 100%;
+    transition: 1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #a8c6e2d0;
+    min-height: 200px;
+    position: relative;
+
+    @media (max-width: 575px){
+        margin-bottom: 2rem;
+        min-height: 150px;
+    }
+
+    img{
+        max-width:100%;
+        height: auto;
+        transition: .6s;
+    }
+
+    iframe{
+        width: 100%;
+        height: 300px;
+    }
+
+    &:hover {
+        img {
+            filter: brightness(0.5);
+            box-shadow: 5px 12px 30px -12px rgba(20, 17, 17, 0.5);
+            transform: scale(1.01);
+        }
+
+        .image-details, .download {
+            opacity: 1;
+        }
+
+        .image-details{
+            top: 50%;
+        }
+    }
+
+    .image-details {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        opacity: 0;
+        text-align: center;
+        transition: 0.75s;
+    }
+
+    .author, .image-title{
+        font-family: Poppins, sans-serif;
+        font-size: 12px;
+    }
+
+    .image-title{
+        font-size: 20px;
+    }
+
+    .download{
+        transition: .7s;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #555555;
+        background: #ececec;
+        padding: 7px 11px;
+        border-radius: 3px;
+        font-size: 1rem;
+        opacity: 0;
+    }
+}
+
+img:not([src]) {
+    visibility: hidden;
+}
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+    img:-moz-loading {
+        visibility: hidden;
+    }
+}
+
+#video-search{
+    .grid-item{
+        background: transparent;
+    }
+}
+
+.not-found{
+    p, span{
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+
+        @media (min-wdith: 768px){
+            font-size: 16px;
+        }
+        @media (min-width: 992px){
+            font-size: 20px;
+        }
+    }
+}
+
+.img-notfound{
+    width: 80%;
+
+    @media (min-width: 625px){
+        width: 500px;
+    }
+}

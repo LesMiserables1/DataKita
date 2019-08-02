@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- search title -->
+        <title>Search : Random | DataKita</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
+        <link rel="stylesheet" href="{!! asset('css/search.css') !!}">
+    </head>
+
+    <body>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark" id="navbar" style="background: #212529;">
+            <a class="navbar-brand" href="/">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div id="nav-mhweb-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mr-lg-4 mr-0 mr-md-1">
+                        <!-- link sini -->
+                        <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-image" aria-hidden="true"></i> Galleries
+                        </a>
+                        <!-- link sini -->
+                        <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/Agriculture-Mining">Agriculture & Mining</a></li>
+                            <li><a class="dropdown-item" href="/Social-Population">Social & Population</a></li>
+                            <li><a class="dropdown-item" href="/Economic-Trade">Economic & Trade</a></li>
+                            <li><a class="dropdown-item" href="/Events-Experiences">Events & Experiences</a></li>
+                            <li><a class="dropdown-item" href="/Infographics">Infographics</a></li>
+                        </ul>
+                    </li>
+                    <!-- link sini, tapi belum ada pagenya -->
+                    <li class="nav-item mr-lg-4 mr-0 mr-md-1">
+                        <a class="nav-link" href="/about"><i class="fa fa-address-card" aria-hidden="true"></i> About</a>
+                    </li>
+                    <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-upload"></i> Upload
+                        </a>
+                        <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="/upload/photo">Photo</a></li>
+                            <li><a class="dropdown-item" href="/upload/video">Video</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </nav>
+        
+        <main>
+            <section id="search-intro" class="mt-5">
+                <div class="container-fluid">
+                    <!-- search query -->
+                    <h1 class="search-query">Random</h1>
+
+                    <!-- photo option -->
+                    <label for="opt1" class="radio">
+                        <input type="radio" name="rdo" id="opt1" class="hidden" value="photo-search" checked/>
+                        <span class="type mr-3">
+                            <span class="result-number">10</span>
+                            Photos
+                        </span>
+                    </label>
+
+                    <!-- video option -->
+                    <label for="opt2" class="radio">
+                        <input type="radio" name="rdo" id="opt2" class="hidden" value="video-search"/>
+                        <span class="type">
+                            <span class="result-number">3</span>
+                            Videos
+                        </span>
+                    </label>
+                </div>
+            </section>
+            
+            <section id="photo-search" class="area">
+                <div class="container-fluid">
+                    <div class="grid">
+
+                        <!-- container gambar -->
+                        <div class="grid-item">
+                            <!-- gambar -->
+                            <img class="lazy" data-src="https://source.unsplash.com/AaRflAurGmg">
+                            <!-- judul dan author gambar -->
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <!-- link download -->
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/zp-0uEqBwpU">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/rkT-8d6FNbM">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+                            
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/fwy6hhTVbaI">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/As4BeyfqUHw">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/9kolGu3BNKs">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/m-TaB8a8Bwg">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/J-qS7KbOHWY">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/QC-Wstu0EvI">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+
+                        <div class="grid-item">
+                            <img class="lazy" data-src="https://source.unsplash.com/dZUgYPgteRQ">
+                            <div class="image-details">
+                                <h5 class="image-title">Judul</h5>
+                                <h6 class="author">By: Nyeck Nyobe</h6>
+                            </div>
+                            <a href="#"><i class="fa fa-arrow-down download"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- ditampilkan kalau gaada foto ditemukan -->
+                    <div class="row not-found">
+                        <div class="col text-center">
+                            <p class="mb-4">Sorry, we couldn't find any photo for '<span class="query">random</span>'.</p>
+                            <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video-search" class="area">
+                <div class="container-fluid">
+                    <div class="grid">
+
+                        <!-- video container -->
+                        <div class="grid-item">
+                            <!-- video -->
+                            <iframe src="https://www.youtube.com/embed/HOUJyYaDDhw" class="lazy" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="grid-item">
+                            <iframe src="https://www.youtube.com/embed/LV_954I-pqk" class="lazy" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="grid-item">
+                            <iframe src="https://www.youtube.com/embed/_imH1Rr592M" class="lazy" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- ditampilkan kalau video tidak ditemukan -->
+                    <div class="row not-found">
+                        <div class="col text-center">
+                            <p class="mb-4">Sorry, we couldn't find any video for '<span class="query">random</span>'.</p>
+                            <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- footer slebew -->
+        <footer id="page-footer" style="background: #212529;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
+                        <a href="/">Logo DataKita</a>
+                        <p>This is text.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
+                        <p class="mb-0">Respond us on</p>
+                        <ul class="socmed mb-0 pl-md-0">
+                            <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 mr-auto d-flex align-items-center counts mt-md-3">
+                        929 website visits
+                    </div>
+                    <div class="col-sm-12 col-md-4 justify-content-center d-flex align-items-center copyright mt-md-3">
+                        <span>&copy; 2019 DataKita | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+        <script src="{!! asset('js/search.js') !!}"></script>
+    </body>
+</html>

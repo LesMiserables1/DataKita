@@ -1,0 +1,187 @@
+#search-intro {
+  margin-left: 1.5em;
+}
+
+.radio {
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.type {
+  color: #a89797;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.type:hover {
+  color: black;
+}
+
+input[type="radio"]:checked + .type {
+  color: black;
+}
+
+.hidden, .area {
+  display: none;
+}
+
+.grid {
+  /* grid container */
+  -webkit-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+  margin: 1.5em;
+  padding: 0;
+  -webkit-column-gap: 1.5em;
+  column-gap: 1.5em;
+  font-size: .85em;
+}
+
+@media (max-width: 575px) {
+  .grid {
+    -webkit-column-count: 1;
+    column-count: 1;
+    margin: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .grid {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+.grid-item {
+  display: block;
+  margin: 0 0 1.5em;
+  width: 100%;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #a8c6e2d0;
+  min-height: 200px;
+  position: relative;
+}
+
+@media (max-width: 575px) {
+  .grid-item {
+    margin-bottom: 2rem;
+    min-height: 150px;
+  }
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+.grid-item iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.grid-item:hover img {
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+  -webkit-box-shadow: 5px 12px 30px -12px rgba(20, 17, 17, 0.5);
+          box-shadow: 5px 12px 30px -12px rgba(20, 17, 17, 0.5);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.grid-item:hover .image-details, .grid-item:hover .download {
+  opacity: 1;
+}
+
+.grid-item:hover .image-details {
+  top: 50%;
+}
+
+.grid-item .image-details {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  text-align: center;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+
+.grid-item .author, .grid-item .image-title {
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+}
+
+.grid-item .image-title {
+  font-size: 20px;
+}
+
+.grid-item .download {
+  -webkit-transition: .7s;
+  transition: .7s;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #555555;
+  background: #ececec;
+  padding: 7px 11px;
+  border-radius: 3px;
+  font-size: 1rem;
+  opacity: 0;
+}
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+  img:-moz-loading {
+    visibility: hidden;
+  }
+}
+
+#video-search .grid-item {
+  background: transparent;
+}
+
+.not-found p, .not-found span {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (min-wdith: 768px) {
+  .not-found p, .not-found span {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .not-found p, .not-found span {
+    font-size: 20px;
+  }
+}
+
+.img-notfound {
+  width: 80%;
+}
+
+@media (min-width: 625px) {
+  .img-notfound {
+    width: 500px;
+  }
+}
+/*# sourceMappingURL=search.css.map */
