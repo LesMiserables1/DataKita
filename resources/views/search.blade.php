@@ -111,7 +111,7 @@
                         <!-- container gambar -->
                         <div class="grid-item">
                             <!-- gambar -->
-                            <img class="lazy" data-src="/show/foto/$photo->nama_foto">
+                            <img class="lazy" data-src="/show/foto/$photo->nama_foto" alt="{{$photo->title}}">
                             <!-- judul dan author gambar -->
                             <div class="image-details">
                                 <h5 class="image-title">{{$photo->title}}</h5>
@@ -121,6 +121,7 @@
                             <a href="/show/foto/$photo->nama_foto"><i class="fa fa-arrow-down download"></i></a>
                         </div>
                         @endforeach
+                    </div>
                     <!-- ditampilkan kalau gaada foto ditemukan -->
                     @if($photos->count()==0)
                     <div class="row not-found">
