@@ -100,17 +100,17 @@
 
                         <!-- gambar upload -->
                         <div class="col-12 col-lg-6 d-flex align-items-center">
-                            <img class="upload mx-auto ml-lg-0 wow jackInTheBox" data-wow-duration="1.5s" src="../images/upload.png">
+                            <img class="upload mx-auto ml-lg-0" src="../images/upload.png">
                         </div>
 
                         <!-- input form section -->
                         <div class="col-12 col-lg-6">
-                            <form action="/upload/photo" enctype="multipart/form-data" method="POST" class="wow fadeInRight" data-wow-duration="1.5s" data-wow-offset="40">
+                            <form action="/upload/photo" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                 <!-- upload file -->
                                 <div class="form-group">
-                                    <label for="uploadfile">Upload <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can upload up to 10 photos." data-placement="right"></i></label>
+                                    <label>Upload <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can upload up to 10 photos." data-placement="right"></i></label>
                                     <div class="custom-file">
                                         <input type="file" name="foto[]" id="uploadfile" accept="image/*" class="custom-file-input" multiple required>
                                         <label class="custom-file-label" for="validatedCustomFile" id="upload-label">No file choosen</label>
@@ -120,31 +120,31 @@
 
                                 <!-- input nama -->
                                 <div class="form-group">
-                                    <label for="your-name">Name <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Your name goes here." data-placement="right"></i></label>
+                                    <label>Name <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Your name goes here." data-placement="right"></i></label>
                                     <input type="text" class="form-control" id="your-name" placeholder="John Doe" name="author" required >
                                 </div>
 
                                 <!-- input lokasi -->
                                 <div class="form-group">
-                                    <label for="your-location">Location <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="The location in which you took your photo." data-placement="right"></i></label>
+                                    <label>Location <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="The location in which you took your photo." data-placement="right"></i></label>
                                     <input type="text" class="form-control" id="your-location" placeholder="Bandung, West Java" name="location" required>
                                 </div>
 
                                 <!-- input judul -->
                                 <div class="form-group">
-                                    <label for="your-title">Caption Title <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can write your desired title for the caption!" data-placement="right"></i></label>
+                                    <label>Caption Title <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can write your desired title for the caption!" data-placement="right"></i></label>
                                     <input type="text" class="form-control" id="your-title" placeholder="Dreamy Days" name="title" required>
                                 </div>
 
                                 <!-- input caption -->
                                 <div class="form-group">
-                                    <label for="your-caption">Caption</label>
+                                    <label>Caption</label>
                                     <textarea class="form-control" id="your-caption" rows="6" placeholder="Your caption goes here..." name="caption" required></textarea>
                                 </div>
 
                                 <!-- input category -->
                                 <div class="form-group">
-                                    <label for="category">Category <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Pick one category based on your photo." data-placement="right"></i></label>
+                                    <label>Category <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Pick one category based on your photo." data-placement="right"></i></label>
                                     
                                     <!-- radio atas -->
                                     <div class="toggle mb-0 justify-content-center">
@@ -167,7 +167,7 @@
 
                                 <!-- input tags -->
                                 <div class="form-group">
-                                    <label for="your-title">Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
+                                    <label>Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
                                     <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" name="tags" required>
                                     <span class="text-danger" id="tags-warning" class="warning"></span>
                                 </div>
@@ -213,8 +213,6 @@
             </div>
         </footer>
 
-        <!-- wow.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="{!! asset('js/photo.js') !!}"></script>
         <script src="{!! asset('js/header.js') !!}"></script>
     </body>
