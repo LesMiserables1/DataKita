@@ -9,10 +9,6 @@
      global styling
     ================
  */
-main {
-  padding-top: 58px;
-}
-
 * {
   font-family: "Bahnschrift Regular", sans-serif;
 }
@@ -103,7 +99,7 @@ section {
   color: white;
 }
 
-#navbar {
+nav, .home-nav {
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -111,6 +107,14 @@ section {
   transition: 0.5s;
   min-height: 60px;
   background: #212529;
+}
+
+#navbar {
+  position: fixed;
+}
+
+main {
+  padding-top: 58px;
 }
 
 .navbar-toggler {
@@ -174,7 +178,7 @@ section {
 }
 
 .home-nav {
-  background: rgba(33, 37, 41, 0.9) !important;
+  background: transparent;
 }
 
 #nav-mhweb-hamburger {
@@ -291,8 +295,9 @@ section {
 }
 
 #home-footer {
-  margin-top: 50px;
+  margin-top: 60px;
   color: white;
+  margin-bottom: 0;
 }
 
 #home-footer a {

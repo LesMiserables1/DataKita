@@ -95,6 +95,26 @@
 
         <main id="fullpage">
             <section id="main-category" class="section">
+                <section id="social" class="slide">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h1 class="text-center text-title">Social & Population</h1>
+                                        </div>
+                                    </div>
+                                    <div class="row space"></div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-5 col-md-3 col-lg-2 text-center">
+                                            <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                 <section id="agriculture" class="slide">
                     <div class="container-fluid">
                         <div class="row align-items-center">
@@ -109,26 +129,6 @@
                                 <div class="row justify-content-center">
                                     <div class="col-5 col-md-3 col-lg-2 text-center">
                                         <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                    </div>
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="social" class="slide">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-center text-title">Social & Population</h1>
-                                    </div>
-                                </div>
-                                <div class="row space"></div>
-                                <div class="row justify-content-center">
-                                    <div class="col-5 col-md-3 col-lg-2 text-center">
-                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
                                     </div>
                                 </div>    
                             </div>
@@ -246,6 +246,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
         <script src="{!! asset('js/lazy.js') !!}"></script>
         <script src="{!! asset('js/home.js') !!}"></script>
+        <script src="{!! asset('js/header.js') !!}"></script>
 </body>
 
 </html>

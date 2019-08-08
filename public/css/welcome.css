@@ -382,12 +382,16 @@
           box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
 }
 
+.navbar-bg {
+  background: rgba(33, 37, 41, 0.9) !important;
+}
+
 .fp-prev i, .fp-next i {
   text-align: center;
   font-size: 15px;
   width: 30px;
   height: 30px;
-  padding-top: 5px;
+  padding-top: 5.5px;
 }
 
 .fp-controlArrow.fp-prev {

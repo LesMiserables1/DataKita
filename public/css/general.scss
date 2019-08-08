@@ -3,9 +3,6 @@
      global styling
     ================
  */
-main{
-    padding-top: 58px;
-}
 * {
     font-family: "Bahnschrift Regular", sans-serif;
 }
@@ -68,13 +65,21 @@ button span {
 }
 
 //navbar container
-#navbar {
+nav, .home-nav{
     position: fixed;
     z-index: 100;
     width: 100%;
     transition: 0.5s;
     min-height: 60px;
     background: color(dark-text);
+}
+
+#navbar{
+    position: fixed;
+}
+
+main{
+    padding-top: 58px;
 }
 
 //hamburger button
@@ -141,7 +146,7 @@ button span {
 }
 
 .home-nav{
-    background: color(navbar-bg) !important;
+    background: transparent;
 }
 
 //hamburger button
@@ -273,9 +278,10 @@ button span {
 }
 
 #home-footer{
-    margin-top: 50px;
+    margin-top: 60px;
     color: white;
     a { color: white; }
+    margin-bottom: 0;
 }
 
 //social media list

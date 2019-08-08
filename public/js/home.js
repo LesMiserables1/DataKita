@@ -30,24 +30,26 @@
 // toggle hamburger
 $(document).ready(function(){
     $('#nav-mhweb-hamburger').click(function(){
-        $(this).toggleClass('open');
+        $('#navbar').toggleClass('navbar-bg');
     });
 
     //fullpage activator
     $('#fullpage').fullpage({
-        scrollHorizontally: true,
+        responsiveWidth: 2000,
         navigation: true,
+        scrollBar: true,
         autoScrolling: true,
-        scrollingSpeed: 1200,
-        scrollOverflow: true,
+        scrollingSpeed: 1000,
+        // scrollOverflow: true,
         navigationPosition: 'left',
-        navigationTooltips: ['Main Content', 'Events & Experiences', 'Infographics', 'Footer'],
+        navigationTooltips: ['Main Category', 'Events & Experiences', 'Infographics', 'Footer'],
         onLeave: function(origin, destination, direction){
             //change indicator color
             var destIndex = destination.index;
             if(destIndex >= 1){
                 $('.fp-tooltip').addClass('blue-color');
                 $('#fp-nav ul li a span').addClass('blue-background');
+                $('.home-nav').css('background', 'rgba(33, 37, 41, 0.9)');
 
                 if(destIndex != 3) $('#fp-nav').addClass('fp-nav-bottom');
                 else $('#fp-nav').removeClass('fp-nav-bottom');
@@ -55,18 +57,15 @@ $(document).ready(function(){
             else{
                 $('.fp-tooltip').removeClass('blue-color');
                 $('#fp-nav ul li a span').removeClass('blue-background');
+                $('.home-nav').css('background', 'transparent');
             }
 
             if(destIndex != 3) $('#fp-nav').addClass('fp-nav-bottom');
             else $('#fp-nav').removeClass('fp-nav-bottom');
-
-            //change navbar opacity
-            if(direction == "down") $('#navbar').css("opacity", "0");
-            else $('#navbar').css("opacity", "1");
+  
         },
         afterLoad: function(origin, destination, direction){
             var dest = destination.index;
-            console.log(dest);
             if(dest == 0) $('#fp-nav').addClass('fp-nav-bottom');
         }
     });
