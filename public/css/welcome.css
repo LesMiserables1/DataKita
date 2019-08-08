@@ -2,7 +2,7 @@
      starter pack
     ==============
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap");
 @import url("fonts.css");
 /* end of starter pack*/
 /*  ==============
@@ -13,12 +13,21 @@
   padding-top: 0;
 }
 
+.fp-controlArrow {
+  border-color: transparent !important;
+}
+
 #agriculture, #social, #economy {
   height: 100vh;
   overflow: hidden;
   z-index: -1;
   width: 100%;
   -webkit-transition: all 1.4s;
+  transition: all 1.4s;
+  background: url(../images/agriculture.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: all 1.4s;
 }
 
@@ -28,45 +37,19 @@
   }
 }
 
-#agriculture .row, #social .row, #economy .row {
-  height: 100%;
-}
-
-#agriculture:before, #social:before, #economy:before {
-  background: url(../images/agriculture.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: brightness(0.6);
-  -webkit-filter: brightness(0.6);
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  width: 100%;
-  -webkit-transition: all 1.4s;
-  transition: all 1.4s;
-}
-
 @media (min-height: 845px) {
-  #agriculture:before, #social:before, #economy:before {
+  #agriculture, #social, #economy {
     background: url(../images/agriculture2.jpg);
     background-position: center;
   }
 }
 
 @media (min-width: 1201px) {
-  #agriculture:before, #social:before, #economy:before {
+  #agriculture, #social, #economy {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
   }
-}
-
-#agriculture:hover:before, #social:hover:before, #economy:hover:before {
-  filter: brightness(0.6);
-  -webkit-filter: brightness(0.6);
 }
 
 #agriculture button, #social button, #economy button {
@@ -74,26 +57,32 @@
 }
 
 #agriculture .space, #social .space, #economy .space {
-  padding: 10px;
+  padding: 2px;
 }
 
 #agriculture h1, #social h1, #economy h1 {
   color: white;
 }
 
-#social:before {
+@media (max-width: 575px) {
+  #agriculture h1, #social h1, #economy h1 {
+    font-size: 2rem !important;
+  }
+}
+
+#social {
   background: url(../images/social.jpg);
   background-position: -150px center;
 }
 
 @media (max-width: 575px) {
-  #social:before {
+  #social {
     background-position: -240px center;
   }
 }
 
 @media (min-width: 1201px) {
-  #social:before {
+  #social {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -101,19 +90,19 @@
 }
 
 @media (min-height: 845px) {
-  #social:before {
+  #social {
     background: url(../images/social2.jpg);
     background-position: bottom;
   }
 }
 
-#economy:before {
+#economy {
   background: url(../images/economy.jpg);
   background-position: center;
 }
 
 @media (min-width: 1201px) {
-  #economy:before {
+  #economy {
     background-position-x: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -121,9 +110,15 @@
 }
 
 @media (min-height: 845px) {
-  #economy:before {
+  #economy {
     background: url(../images/economy2.jpg);
     background-position: center center;
+  }
+}
+
+@media (max-width: 575px) {
+  #economy h1 {
+    font-size: 1.8rem !important;
   }
 }
 
@@ -292,29 +287,23 @@
   transition: .75s;
 }
 
-@media (max-width: 1200px) {
-  .fp-nav-bottom {
-    top: unset !important;
-    bottom: 7px !important;
-    left: 50% !important;
-    -webkit-transform: translateX(-50%) !important;
-            transform: translateX(-50%) !important;
-  }
+.fp-nav-bottom {
+  top: unset !important;
+  bottom: 7px !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important;
 }
 
-@media (max-width: 1200px) {
-  .fp-nav-bottom li {
-    display: inline-block !important;
-  }
+.fp-nav-bottom li {
+  display: inline-block !important;
 }
 
-@media (max-width: 1200px) {
-  .fp-nav-bottom .fp-tooltip {
-    left: 50% !important;
-    -webkit-transform: translateX(-50%) !important;
-            transform: translateX(-50%) !important;
-    top: -20px !important;
-  }
+.fp-nav-bottom .fp-tooltip {
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important;
+  top: -20px !important;
 }
 
 .fp-tooltip {
@@ -372,7 +361,7 @@
   color: #cdcbcd;
 }
 
-.owl-nav i {
+.owl-nav i, .fp-prev i, .fp-next i {
   font-size: 18px;
   height: 40px;
   width: 40px;
@@ -386,11 +375,39 @@
   transition: 0.5s;
 }
 
-.owl-nav i:hover {
+.owl-nav i:hover, .fp-prev i:hover, .fp-next i:hover {
   -webkit-transform: scale(1.12);
           transform: scale(1.12);
   -webkit-box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
           box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
+}
+
+.fp-prev i, .fp-next i {
+  text-align: center;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  padding-top: 5px;
+}
+
+.fp-controlArrow.fp-prev {
+  left: 5px !important;
+}
+
+@media (min-width: 576px) {
+  .fp-controlArrow.fp-prev {
+    left: 10px !important;
+  }
+}
+
+.fp-controlArrow.fp-next {
+  right: 35px !important;
+}
+
+@media (min-width: 576px) {
+  .fp-controlArrow.fp-next {
+    right: 40px !important;
+  }
 }
 
 .owl-prev, .owl-next {

@@ -94,68 +94,70 @@
         </nav>
 
         <main id="fullpage">
-            <section id="agriculture" class="section" data-anchor="first">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <h1 class="text-center text-title">Agriculture & Mining</h1>
+            <section id="main-category" class="section">
+                <section id="agriculture" class="slide">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <h1 class="text-center text-title">Agriculture & Mining</h1>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row space"></div>
-                            <div class="row justify-content-center">
-                                <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                </div>
-                            </div>    
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Agriculture-Mining"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="social" class="section" data-anchor="second">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <h1 class="text-center text-title">Social & Population</h1>
+                <section id="social" class="slide">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <h1 class="text-center text-title">Social & Population</h1>
+                                    </div>
                                 </div>
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
                             </div>
-                            <div class="row space"></div>
-                            <div class="row justify-content-center">
-                                <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                </div>
-                            </div>    
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="economy" class="section" data-anchor="third">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <h1 class="text-center text-title">Economy & Trade</h1>
+                <section id="economy" class="slide">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <h1 class="text-center text-title">Economy & Trade</h1>
+                                    </div>
                                 </div>
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
                             </div>
-                            <div class="row space"></div>
-                            <div class="row justify-content-center">
-                                <div class="col-5 col-md-3 col-lg-2 text-center">
-                                    <a href="/Economic-Trade"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                </div>
-                            </div>    
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
 
-            <section id="events" class="section" data-anchor="fourth">
+            <section id="events" class="section">
                 <div class="container">
                     <h1 class="text-center text-title mt-4 mb-2">Events & Experiences</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
@@ -184,7 +186,7 @@
                 </div>
             </section>
 
-            <section id="infographics" class="section" data-anchor="fifth">
+            <section id="infographics" class="section">
                 <div class="container">
                     <h1 class="text-center text-title mt-4 mb-2">Infographics</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
@@ -210,7 +212,7 @@
             </section>
 
             <!-- footer -->
-            <footer id="home-footer" class="section fp-auto-height mt-n4" style="background: #212529;" data-anchor="sixth">
+            <footer id="home-footer" class="section fp-auto-height mt-n4" style="background: #212529;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3">

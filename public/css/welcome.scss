@@ -8,6 +8,11 @@
     #fullpage{
         padding-top: 0;
     }
+    
+    .fp-controlArrow{
+        border-color: transparent !important;
+    }
+
     //agriculture, social, economy section styling
     #agriculture, #social, #economy {
         height: 100vh;
@@ -18,23 +23,15 @@
             z-index: -1;
             width: 100%;
             transition: all 1.4s;
-
-                .row { height: 100%; }
+            background: url(../images/agriculture.jpg);
 
             //setting background using :before to apply filter on background only, not the entire components
-            &:before {
-                background: url(../images/agriculture.jpg);
+            
+                
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                filter: brightness(0.6);
-                -webkit-filter: brightness(0.6);
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                height: 100vh;
-                width: 100%;
+                
                 transition: all 1.4s;
 
                 @media (min-height: 845px){ 
@@ -42,26 +39,26 @@
                     background-position: center;
                 }
                 @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
-            }
+            
 
-            &:hover {
-                &:before {
-                    filter: brightness(0.6);
-                    -webkit-filter: brightness(0.6);
-                }
-            }
 
         //button inside the three main gallery only
         button { width: 100%; }
 
         //space between title and button
-        .space { padding: 10px; }
+        .space { padding: 2px; }
         
-        h1 { color: white; }
+        h1 { 
+            color: white; 
+
+            @include mobile{
+                font-size: 2rem !important;
+            }
+        }
     }
 
     #social {
-            &:before {
+            
                 background: url(../images/social.jpg);
                 background-position: -150px center;
                 @include mobile{ background-position: -240px center;}
@@ -71,20 +68,24 @@
                     background: url(../images/social2.jpg);
                     background-position: bottom;
                  }
-            }
+            
     }
 
     #economy {
-            &:before {
-                background: url(../images/economy.jpg);
-                background-position: center;
-                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
+        background: url(../images/economy.jpg);
+        background-position: center;
+        @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
 
-                @media (min-height: 845px){ 
-                    background: url(../images/economy2.jpg); 
-                    background-position: center center;
-                }
+        @media (min-height: 845px){ 
+            background: url(../images/economy2.jpg); 
+            background-position: center center;
+        }
+         
+        h1 { 
+            @include mobile{
+                font-size: 1.8rem !important;
             }
+        }
     }
 
 @-webkit-keyframes gradientBackground {
@@ -232,25 +233,23 @@
     }
 
     .fp-nav-bottom{
-        @media (max-width:1200px){
+        
             top: unset !important;
             bottom: 7px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
-        }
+        
 
         li{
-            @media (max-width:1200px){
                 display: inline-block !important;
-            }
+            
         }
 
         .fp-tooltip{
-            @media (max-width:1200px){
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 top: -20px !important;
-            }
+            
         }
     }
     
@@ -311,7 +310,7 @@
     }
 
     //nav used in owlCarousel
-    .owl-nav {
+    .owl-nav, .fp-prev, .fp-next {
         i {
             font-size: 18px;
             height: 40px;
@@ -326,6 +325,32 @@
                 transform: scale(1.12);
                 box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
             }
+        }
+    }
+
+    .fp-prev, .fp-next{
+        i{
+            text-align: center;
+            font-size: 15px;
+            width: 30px;
+            height: 30px;
+            padding-top: 5px;
+        }
+    }
+
+    .fp-controlArrow.fp-prev{
+        left: 5px !important;
+
+        @include small{
+            left: 10px !important;
+        }
+    }
+
+    .fp-controlArrow.fp-next{
+        right: 35px !important;
+
+        @include small{
+            right: 40px !important;
         }
     }
 

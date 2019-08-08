@@ -86,7 +86,10 @@
             }
 
             //the paragraph used in gallery details
-            p, li { font-size: 14px; }
+            p, li { 
+                font-size: 14px;
+                font-weight: 500;
+             }
         }
 
         //carousel container
@@ -171,6 +174,10 @@
         //change the font into Poppins
         h4, h6, p, a {
             font-family: "Poppins", sans-serif;
+        }
+
+        .title h4, h6{
+            font-weight: 700;
         }
 
         @include laptop { max-height: 37vw; }
