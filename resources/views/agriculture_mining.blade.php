@@ -1,13 +1,3 @@
-<!-- gambar
-@foreach($photos as $photo)
-{{$photo->caption}}
-<img src="/show/foto/{{$photo->nama_foto}}">
-@endforeach
- video
-@foreach($videos as $video)
-{{$video->caption}}
-<iframe width="640" height="390" src="http://www.youtube.com/embed/{{$video->video_id}}" frameborder="0" allowfullscreen></iframe>
-@endforeach -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -59,7 +49,7 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
                         @foreach($photos as $photo)
-                        <div class="item"><img class="lazy" data-src="/show/foto/{{$photo->nama_foto}}"></div>
+                        <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$photo->nama_foto}}"></div>
                         @endforeach
                     </div>
                 </div>
@@ -80,8 +70,7 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
                         @foreach($videos as $video)
-                        <div class="item"><iframe src="https://www.youtube.com/embed/{{$video->video_id}}"
-                                allowfullscreen></iframe></div>
+                        <div class="item"><div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" allowfullscreen></div></div>
                         @endforeach
                     </div>
                 </div>
@@ -139,8 +128,8 @@
                     </ul>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" method="get" action="/search">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -174,7 +163,7 @@
                         <div class="col-12 col-xl-8">
                             <div class="pict-column">
                                 <!-- image goes here -->
-                                <img class="lazy" data-src="/show/foto/{{$photo->nama_foto}}">
+                                <img class="owl-lazy" data-src="/show/foto/{{$photo->nama_foto}}">
                                 <!-- Button trigger modal -->
                                 <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
                                     bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
@@ -251,7 +240,7 @@
                             <div class="col-12 col-xl-8">
                                 <div class="video-column">
                                     <!-- video goes here -->
-                                    <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" allowfullscreen></iframe>
+                                    <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" allowfullscreen></div>
                                 </div>
                             </div>
 
@@ -337,11 +326,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
     <script src="{!! asset('js/gallery.js') !!}"></script>
-    <script src="{!! asset('js/lazy.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>
+    <script src="https://codegena.com/assets/js/async-iframe.js"></script>
 </body>
 
 </html>

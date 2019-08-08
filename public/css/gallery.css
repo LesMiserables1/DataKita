@@ -71,40 +71,47 @@ input[type="radio"]:checked + .label:after {
   overflow: hidden;
 }
 
-#photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+#photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 @media (min-width: 1201px) {
-  #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+  #photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
     height: 36.75vw;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+  #photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
     height: 64vw;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+  #photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
     height: 70vw;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+  #photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
     height: 80vw;
   }
 }
 
 @media (max-width: 575px) {
-  #photo-gallery .item img, #photo-gallery .item iframe, #video-gallery .item img, #video-gallery .item iframe, .carousel-modal .item img, .carousel-modal .item iframe {
+  #photo-gallery .item img, #photo-gallery .item iframe, #photo-gallery .item .codegena_iframe, #video-gallery .item img, #video-gallery .item iframe, #video-gallery .item .codegena_iframe, .carousel-modal .item img, .carousel-modal .item iframe, .carousel-modal .item .codegena_iframe {
     height: 90vw;
   }
+}
+
+#photo-gallery .item .codegena_iframe img, #video-gallery .item .codegena_iframe img, .carousel-modal .item .codegena_iframe img {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #photo-gallery .item p, #photo-gallery .item li, #video-gallery .item p, #video-gallery .item li, .carousel-modal .item p, .carousel-modal .item li {

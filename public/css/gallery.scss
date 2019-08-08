@@ -70,7 +70,7 @@
             overflow: hidden;
 
             ///the image and video
-            img, iframe {
+            img, iframe, .codegena_iframe {
                 width: 100%;
                 object-fit: contain;
 
@@ -83,6 +83,14 @@
                 @media (min-width: 576px) and (max-width: 767px) { height: 80vw; }
 
                 @include mobile { height: 90vw; }
+            }
+
+            .codegena_iframe{
+                img{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
             }
 
             //the paragraph used in gallery details

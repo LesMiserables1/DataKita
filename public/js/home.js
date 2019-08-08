@@ -35,11 +35,11 @@ $(document).ready(function(){
 
     //fullpage activator
     $('#fullpage').fullpage({
-        responsiveWidth: 2000,
+        responsiveWidth: 1200,
         navigation: true,
         scrollBar: true,
         autoScrolling: true,
-        scrollingSpeed: 1000,
+        scrollingSpeed: 650,
         // scrollOverflow: true,
         navigationPosition: 'left',
         navigationTooltips: ['Main Category', 'Events & Experiences', 'Infographics', 'Footer'],

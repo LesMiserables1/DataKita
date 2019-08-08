@@ -3,6 +3,7 @@ $('.gallery').owlCarousel({
     margin: 10,
     smartSpeed: 1100,
     dots: false,
+    lazyLoad: true,
     nav: true,
     navText: [
         "<i class='fa fa-long-arrow-alt-left'></i>",
