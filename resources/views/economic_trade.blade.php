@@ -125,8 +125,8 @@ video
                     </ul>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" method="get" action="/search">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
