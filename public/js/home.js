@@ -1,5 +1,5 @@
  // owlCarousel activator and customization
- $('.owl-carousel').owlCarousel({
+ $('.info-carousel').owlCarousel({
     loop: true,
     margin: 10,
     animateOut: 'rollOut',
@@ -27,50 +27,46 @@
     }
 });
 
+$('.category-carousel').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    navText: [
+        "<i class='fa fa-long-arrow-alt-left'></i>",
+        "<i class='fa fa-long-arrow-alt-right'></i>"
+    ],
+    autoplay: false,
+    responsive: {
+        0: {
+            items: 1
+        }
+    }
+});
+
 // toggle hamburger
 $(document).ready(function(){
     $('#nav-mhweb-hamburger').click(function(){
-        $('#navbar').toggleClass('navbar-bg');
+        $(this).toggleClass('open');
+        $('.home-nav').toggleClass('navbar-bg');
     });
+});
 
-    //fullpage activator
-    $('#fullpage').fullpage({
-        responsiveWidth: 1200,
-        navigation: true,
-        scrollBar: true,
-        autoScrolling: true,
-        scrollingSpeed: 650,
-        // scrollOverflow: true,
-        navigationPosition: 'left',
-        navigationTooltips: ['Main Category', 'Events & Experiences', 'Infographics', 'Footer'],
-        onLeave: function(origin, destination, direction){
-            //change indicator color
-            var destIndex = destination.index;
-            if(destIndex >= 1){
-                $('.fp-tooltip').addClass('blue-color');
-                $('#fp-nav ul li a span').addClass('blue-background');
-                $('.home-nav').css('background', 'rgba(33, 37, 41, 0.9)');
+var prevScrollpos = window.pageYOffset;
+    $(window).on("scroll", function(){
+        if($(window).scrollTop() > $(window).height()*0.25){
+            $('.home-nav').css('background', 'rgba(33, 37, 41, 0.9)');
+        }
+        else{
+            $('.home-nav').css('background', 'transparent');
+        }
 
-                if(destIndex != 3) $('#fp-nav').addClass('fp-nav-bottom');
-                else $('#fp-nav').removeClass('fp-nav-bottom');
+        var currentScrollPos = window.pageYOffset;
+        if($(window).scrollTop() > $(window).height()){
+            if(prevScrollpos > currentScrollPos){
+                $('.home-nav').css('opacity', '1');
+            } else{
+                $('.home-nav').css('opacity', '0');
             }
-            else{
-                $('.fp-tooltip').removeClass('blue-color');
-                $('#fp-nav ul li a span').removeClass('blue-background');
-                $('.home-nav').css('background', 'transparent');
-            }
-
-            if(destIndex != 3) $('#fp-nav').addClass('fp-nav-bottom');
-            else $('#fp-nav').removeClass('fp-nav-bottom');
-  
-        },
-        afterLoad: function(origin, destination, direction){
-            var dest = destination.index;
-            if(dest == 0) $('#fp-nav').addClass('fp-nav-bottom');
+            prevScrollpos = currentScrollPos;
         }
     });
-    $.fn.fullpage.setAllowScrolling(true);
-
-    $('.fp-prev').append("<i class='fa fa-long-arrow-alt-left fp-controlArrow'></i>");
-    $('.fp-next').append("<i class='fa fa-long-arrow-alt-right fp-controlArrow'></i>");
-});

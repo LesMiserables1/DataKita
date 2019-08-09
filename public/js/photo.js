@@ -1,6 +1,3 @@
-//wow.js activator
-new WOW().init();
-    
 $('#tags').tagsinput({
     maxTags: 6
 });
@@ -11,7 +8,7 @@ $(document).ready(function () {
 
 //to activate tooltip
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //UI control on file input > 10

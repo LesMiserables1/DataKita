@@ -23,18 +23,13 @@
     <!-- default passive events for performance optimization -->
     <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
 
-    <!-- fullpage.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/vendors/scrolloverflow.min.js"></script>
-
     <!-- OwlCarousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 
-    <body class="fp-responsive">
+    <body  style="padding-bottom: 0;">
         
 @if(session()->get('msg')!=null)
     <div class="alert alert-danger">
@@ -93,9 +88,9 @@
             </div>
         </nav>
 
-        <main id="fullpage">
-            <section id="main-category" class="section">
-                <section id="social" class="slide">
+        <main style="padding-top:0;">
+            <section id="main-category" class="owl-carousel category-carousel">
+                <section id="social" >
                         <div class="container-fluid">
                             <div class="row align-items-center">
                                 <div class="col">
@@ -115,7 +110,7 @@
                         </div>
                     </section>
 
-                <section id="agriculture" class="slide">
+                <section id="agriculture" >
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col">
@@ -136,7 +131,7 @@
                     </div>
                 </section>
 
-                <section id="economy" class="slide">
+                <section id="economy" >
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col">
@@ -157,7 +152,7 @@
                 </section>
             </section>
 
-            <section id="events" class="section">
+            <section id="events">
                 <div class="container">
                     <h1 class="text-center text-title mt-4 mb-2">Events & Experiences</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
@@ -186,7 +181,7 @@
                 </div>
             </section>
 
-            <section id="infographics" class="section">
+            <section id="infographics">
                 <div class="container">
                     <h1 class="text-center text-title mt-4 mb-2">Infographics</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
@@ -212,7 +207,7 @@
             </section>
 
             <!-- footer -->
-            <footer id="home-footer" class="section fp-auto-height mt-n4" style="background: #212529;">
+            <footer id="home-footer" style="background: #212529;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3">

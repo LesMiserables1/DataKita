@@ -5,21 +5,61 @@
     ==============
  */
 
-    #fullpage{
-        padding-top: 0;
+    #main-category{
+        .owl-prev{
+            position: absolute;
+            left: 39% !important;
+            top: 55%;
+
+            @include big{
+                left: 45% !important;
+            }
+        }
+
+        .owl-next{
+            position: absolute;
+            right: 39% !important;
+            top: 55%;
+
+            @include big{
+                right: 45% !important;
+            }
+        }
+
+        .owl-nav {
+            i {
+                font-size: 15px;
+                height: 30px;
+                width: 30px;
+                padding-top: 7px;
+                animation: shadow-pulse 1.8s infinite;
+            }
+        }
     }
-    
-    .fp-controlArrow{
-        border-color: transparent !important;
+
+    @keyframes shadow-pulse {
+        0% {
+            box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.9);
+        }
+        100% {
+            box-shadow: 0 0 20px 20px rgba(0, 123, 255, 0);
+        }
     }
 
     //agriculture, social, economy section styling
     #agriculture, #social, #economy {
         height: 100vh;
         overflow: hidden;
+
+        .container-fluid{
+            height: 100%;
+
+            .row{
+                height: 100%;
+            }
+        }
         @media (min-height: 845px){ background-repeat: no-repeat; }
 
-        //some kind of container. just to make it easier styling the background using :before
             z-index: -1;
             width: 100%;
             transition: all 1.4s;
@@ -80,12 +120,6 @@
             background: url(../images/economy2.jpg); 
             background-position: center center;
         }
-         
-        h1 { 
-            @include mobile{
-                font-size: 1.8rem !important;
-            }
-        }
     }
 
 @-webkit-keyframes gradientBackground {
@@ -111,8 +145,6 @@
             overflow: hidden;
 
             .img-container{
-                background: linear-gradient(90deg, rgba(238, 118, 82, 0.596), rgba(231, 60, 126, 0.582), rgba(35, 165, 213, 0.541), rgba(35, 213, 171, 0.493));
-                background-size: 400% 400%;
 
                 -webkit-animation: gradientBackground 2s ease-in-out infinite;
                 -moz-animation: gradientBackground 2s ease-in-out infinite;
@@ -175,7 +207,6 @@
 
     //infographics section
     #infographics {
-        transform: translateY(-30px);
         margin-bottom: 24px;
         //image container
         .item {
@@ -215,53 +246,6 @@
                 transition: 0.75s;
             }
         }
-    }
-
-    /* special components */
-    //fp-nav
-    #fp-nav{
-        transition: .3s;
-        a span{
-            background: white !important;
-            transition: .75s;
-        }
-
-        a span.blue-background{
-            background: color(primary) !important;
-            transition: .75s;
-        }
-    }
-
-    .fp-nav-bottom{
-        
-            top: unset !important;
-            bottom: 7px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-        
-
-        li{
-                display: inline-block !important;
-            
-        }
-
-        .fp-tooltip{
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                top: -20px !important;
-            
-        }
-    }
-    
-
-    .fp-tooltip{
-        font-family: "Bahnschrift Regular", sans-serif !important;
-        transition: .75s;
-    }
-    
-    .blue-color{
-        color: color(primary) !important;
-        transition: .75s;
     }
 
     //title of the gallery
@@ -310,7 +294,7 @@
     }
 
     //nav used in owlCarousel
-    .owl-nav, .fp-prev, .fp-next {
+    .owl-nav {
         i {
             font-size: 18px;
             height: 40px;
@@ -330,32 +314,6 @@
 
     .navbar-bg{
         background: color(navbar-bg) !important;
-    }
-
-    .fp-prev, .fp-next{
-        i{
-            text-align: center;
-            font-size: 15px;
-            width: 30px;
-            height: 30px;
-            padding-top: 5.5px;
-        }
-    }
-
-    .fp-controlArrow.fp-prev{
-        left: 5px !important;
-
-        @include small{
-            left: 10px !important;
-        }
-    }
-
-    .fp-controlArrow.fp-next{
-        right: 35px !important;
-
-        @include small{
-            right: 40px !important;
-        }
     }
 
     //previous button

@@ -1,6 +1,3 @@
-//wow.js activator
-new WOW().init();
-    
 $('#tags').tagsinput({
     maxTags: 6
 });
