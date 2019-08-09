@@ -2,7 +2,7 @@
      starter pack
     ==============
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
 @import url("fonts.css");
 /* end of starter pack*/
 /*  ==============
@@ -217,12 +217,15 @@ input[type="radio"]:checked + .label:after {
 }
 
 .text-column .title h4, .text-column h6 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (min-width: 1201px) {
   .text-column {
     max-height: 37vw;
+  }
+  .text-column .title h4, .text-column h6 {
+    font-weight: 700;
   }
 }
 

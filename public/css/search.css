@@ -2,7 +2,7 @@
      starter pack
     ==============
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
 @import url("fonts.css");
 /* end of starter pack*/
 #search-intro {
@@ -95,19 +95,23 @@ input[type="radio"]:checked + .type {
   }
 }
 
-.grid-item img {
+.grid-item .lazy {
   max-width: 100%;
   height: auto;
   -webkit-transition: .6s;
   transition: .6s;
 }
 
-.grid-item iframe {
+.grid-item .codegena_iframe {
   width: 100%;
   height: 300px;
 }
 
-.grid-item:hover img {
+.grid-item .codegena_iframe img {
+  pointer-events: none;
+}
+
+.grid-item:hover .lazy {
   -webkit-filter: brightness(0.5);
           filter: brightness(0.5);
   -webkit-box-shadow: 5px 12px 30px -12px rgba(20, 17, 17, 0.5);

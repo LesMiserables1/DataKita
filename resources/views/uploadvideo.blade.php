@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
 </head>
 
-<body>
+<body style="padding-bottom: 225px">
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

@@ -60,7 +60,7 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
                         @foreach($videos as $video)
-                        <div class="item"><div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" allowfullscreen></div></div>
+                        <div class="item"><div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div></div>
                         @endforeach
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                         <div class="col-12 col-xl-8">
                             <div class="video-column">
                                 <!-- video goes here -->
-                                <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" allowfullscreen></div>
+                                <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>
                             </div>
                         </div>
 
@@ -299,7 +299,7 @@
 
     <script src="{!! asset('js/gallery.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>
-    <script src="https://codegena.com/assets/js/async-iframe.js"></script>
+    <script src="{!! asset('js/async-iframe.js') !!}"></script>
 </body>
 
 </html>

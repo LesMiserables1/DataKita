@@ -12,13 +12,10 @@ h1, h3, h4, h5, h6 {
 body {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     position: relative;
     scroll-behavior: smooth;
 
-    @include tablet{
-        padding-bottom: 50px;
-    }
 }
 
 section {

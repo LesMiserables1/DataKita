@@ -137,7 +137,7 @@
                     <!-- video container -->
                     <div class="grid-item">
                         <!-- video -->
-                        <iframe src="https://www.youtube.com/embed/{{$video->video_id}}" class="lazy" allowfullscreen></iframe>
+                        <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>
                     </div>
                     @endforeach
                 </div>
@@ -190,6 +190,7 @@
     <script src="{!! asset('js/search.js') !!}"></script>
     <script src="{!! asset('js/lazy.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>
+    <script src="{!! asset('js/async-iframe.js') !!}"></script>
 </body>
 
 </html>

@@ -185,10 +185,16 @@
         }
 
         .title h4, h6{
-            font-weight: 700;
+            font-weight: 600;
         }
-
-        @include laptop { max-height: 37vw; }
+        
+        @include laptop { 
+            max-height: 37vw; 
+        
+            .title h4, h6{
+                font-weight: 700;
+            }
+        }
 
         //the uploader name
         .photo-by, .video-by {

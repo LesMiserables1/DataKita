@@ -85,19 +85,23 @@ input[type="radio"]:checked + .type {
         min-height: 150px;
     }
 
-    img{
+    .lazy{
         max-width:100%;
         height: auto;
         transition: .6s;
     }
 
-    iframe{
+    .codegena_iframe{
         width: 100%;
         height: 300px;
+
+        img{
+            pointer-events: none;
+        }
     }
 
     &:hover {
-        img {
+        .lazy {
             filter: brightness(0.5);
             box-shadow: 5px 12px 30px -12px rgba(20, 17, 17, 0.5);
             transform: scale(1.01);
