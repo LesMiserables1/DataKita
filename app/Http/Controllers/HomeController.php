@@ -6,7 +6,7 @@ use App\Photo;
 use Illuminate\Support\Facades\Storage;
 use App\Video;
 use Illuminate\Http\Request;
-
+use Kryptonit3\Counter\Counter;
 
 class HomeController extends Controller
 {
@@ -20,7 +20,8 @@ class HomeController extends Controller
     {
         $photoInfo =  Photo::where('jenis','Infographics')->where('approve',true)->get();
         $photoEve = Photo::where('jenis','Event_Experience')->where('approve',true)->get()->take(8);
-        return view('welcome')->with('photoInfo',$photoInfo)->with('photoEve',$photoEve);
+        $count = \Counter::showAndCount('home');
+        return view('welcome')->with('photoInfo',$photoInfo)->with('photoEve',$photoEve)->with('count',$count);
     }
     public function show_agri_mining()
     {
