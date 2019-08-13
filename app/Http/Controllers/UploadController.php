@@ -13,7 +13,8 @@ class UploadController extends Controller
 
     public function showUploadPhoto()
     {
-        return view('uploadfoto');
+        $count = \Counter::show('home');
+        return view('uploadfoto')->with('count',$count);
     }
     public function showUploadVideo()
     {
@@ -55,7 +56,9 @@ class UploadController extends Controller
                 return redirect($auth_url);
             }
         }
-        return view('uploadvideo');
+        $count = \Counter::show('home');
+
+        return view('uploadvideo')->with('count',$count);
     }
 
     public function storeVideo(Request $request)

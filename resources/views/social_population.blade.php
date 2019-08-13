@@ -290,7 +290,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-4 mr-auto d-flex align-items-center counts mt-md-3">
-                    929 website visits
+                    {{$count}} website visits
                 </div>
                 <div class="col-sm-12 col-md-4 justify-content-center d-flex align-items-center copyright mt-md-3">
                     <span>&copy; 2019 DataKita | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>

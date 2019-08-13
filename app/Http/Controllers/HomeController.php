@@ -41,7 +41,9 @@ class HomeController extends Controller
             $video[$x]['tags'] = $tag; 
             $x++;
         }
-        return view('agriculture_mining')->with('photos',$foto)->with('videos',$video);
+        $count = \Counter::show('home');
+
+        return view('agriculture_mining')->with('photos',$foto)->with('videos',$video)->with('count',$count);
     }
     public function show_eco_trade()
     {
@@ -61,7 +63,9 @@ class HomeController extends Controller
             $video[$x]['tags'] = $tag; 
             $x++;
         }
-        return view('economic_trade')->with('photos',$foto)->with('videos',$video);
+        $count = \Counter::show('home');
+
+        return view('economic_trade')->with('photos',$foto)->with('videos',$video)->with('count',$count);
     }
     public function show_soc_pop()
     {
@@ -81,7 +85,9 @@ class HomeController extends Controller
             $video[$x]['tags'] = $tag; 
             $x++;
         }
-        return view('social_population')->with('photos',$foto)->with('videos',$video);
+        $count = \Counter::show('home');
+
+        return view('social_population')->with('photos',$foto)->with('videos',$video)->with('count',$count);
     }
 
     public function show_eve_exp()
@@ -102,7 +108,9 @@ class HomeController extends Controller
             $video[$x]['tags'] = $tag; 
             $x++;
         }
-        return view('events_experience')->with('photos',$foto)->with('videos',$video);   
+        $count = \Counter::show('home');
+
+        return view('events_experience')->with('photos',$foto)->with('videos',$video)->with('count',$count);   
     }
     public function show_info()
     {
@@ -122,17 +130,23 @@ class HomeController extends Controller
             $video[$x]['tags'] = $tag; 
             $x++;
         }
-        return view('infographics')->with('photos',$foto)->with('videos',$video);
+        $count = \Counter::show('home');
+
+        return view('infographics')->with('photos',$foto)->with('videos',$video)->with('count',$count);
     }
     public function about()
     {
-        return view('about');
+        $count = \Counter::show('home');
+
+        return view('about')->with('count',$count);
     }
     public function search(Request $request)
     {
         $foto = Photo::where('title','like','%'.$request->search_query.'%')->orWhere('tags','like','%'.$request->search_query.'%')->get();
         $video = Video::where('title','like','%'.$request->search_query.'%')->orWhere('tags','like','%'.$request->search_query.'%')->get();
-        return view('search')->with('photos',$foto)->with('videos',$video)->with('query',$request->search_query);
+        $count = \Counter::show('home');
+
+        return view('search')->with('photos',$foto)->with('videos',$video)->with('query',$request->search_query)->with('count',$count);
     }
     
 }
