@@ -6,7 +6,7 @@
 /* end of starter pack*/
 @media (max-width: 767px) {
   body {
-    padding-bottom: 110px !important;
+    padding-bottom: 121px !important;
   }
 }
 
@@ -41,6 +41,7 @@
 
 h1 {
   color: rgba(15, 120, 185, 0.89);
+  font-family: 'Apercu Bold';
 }
 
 @media (max-width: 575px) {
@@ -52,6 +53,7 @@ h1 {
 .content p {
   color: #14171A;
   margin: auto;
+  font-family: 'Apercu Regular';
 }
 
 @media (max-width: 575px) {

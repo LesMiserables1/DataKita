@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
 use Kryptonit3\Counter\Counter;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::component('layouts.components.footer','footer');
-        $count = Counter::show('home');
+        $count = \Counter::show('home');
         View::share('counts',$count);
     }
 }

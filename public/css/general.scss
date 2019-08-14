@@ -90,10 +90,6 @@ nav, .home-nav{
     background: linear-gradient(left, rgba(49, 48, 48, 0.945) 0%,rgba(27, 27, 27, 0.83) 100%), url('../images/footer.jpg'); 
 }
 
-footer{
-    background: linear-gradient(left, rgba(27, 27, 27, 0.83) 0%, rgba(49, 48, 48, 0.945) 100%), url('../images/footer.jpg'); 
-}
-
 #navbar{
     position: fixed;
 }
@@ -292,6 +288,11 @@ main{
         footer
     ==============
 */
+
+footer{
+    background: linear-gradient(left, rgba(27, 27, 27, 0.83) 0%, rgba(49, 48, 48, 0.945) 100%), url('../images/footer.jpg'); 
+}
+
 #page-footer {
     margin-top: 50px;
     color: color(bright-gray);
@@ -303,13 +304,13 @@ main{
             color: color(nice-blue);
         }
     }
-    height: 120px;
+    min-height: 120px;
     position: absolute;
     bottom: 0;
     width: 100%;
 
     @include tablet{
-        height: 160px;
+        min-height: 160px;
     }
 }
 
@@ -335,7 +336,34 @@ main{
     @include tablet { text-align: center !important; }
 }
 
+.logo p{
+    font-size: 14px;
+
+    @include tablet{
+        width: 80%;
+        margin: 0 auto 1rem auto;
+    }
+}
+
 .counts {
     @include tablet { display: block !important; }
+}
+
+.copyright{
+    font-size: 15px;
+    color: rgba(199, 199, 199, 0.9);
+
+    @include tablet{
+        margin-top: 1rem;
+    }
+
+    a{
+        color: rgba(199, 199, 199, 0.9) !important;
+
+        &:hover{
+            text-decoration: none;
+            color: white !important;
+        }
+    }
 }
 /* end of footer*/

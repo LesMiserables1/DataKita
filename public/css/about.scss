@@ -2,7 +2,7 @@
 
 body{
     @include tablet{
-        padding-bottom: 110px !important;
+        padding-bottom: 121px !important;
     }
 }
 #about{
@@ -32,6 +32,7 @@ body{
 
 h1{
     color: color(nice-blue);
+    font-family: 'Apercu Bold';
 
     @include mobile{
         font-size: 25px;
@@ -41,6 +42,7 @@ h1{
 .content p{
     color: #14171A;
     margin: auto;
+    font-family: 'Apercu Regular';
 
     @include mobile{
         font-size: 13px;

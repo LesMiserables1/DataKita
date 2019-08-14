@@ -1,11 +1,11 @@
-<footer id="{{$footer-id}}">
+<footer id="page-footer">
     <div class="container-fluid">
 
         <!-- atas  -->
         <div class="row">
-            <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
+            <div class="col-sm-12 col-md-4 mr-auto mt-md-3 logo">
                 <a href="/">Logo DataKita</a>
-                <p>This is text.</p>
+                <p>We are a creative media-based concise information sharing platform</p>
             </div>
             <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                 <p class="mb-0">Respond us on</p>

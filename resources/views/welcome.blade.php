@@ -50,9 +50,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active mr-lg-4 mr-0 mr-md-1">
+                    <li class="nav-item mr-lg-4 mr-0 mr-md-1">
                         <!-- link sini -->
-                        <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -210,9 +210,9 @@
             <footer id="home-footer">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
+                        <div class="col-sm-12 col-md-4 mr-auto mt-md-3 logo">
                             <a href="/">Logo DataKita</a>
-                            <p>This is text.</p>
+                            <p>We are a creative media-based concise information sharing platform</p>
                         </div>
                         <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                             <p class="mb-0">Respond us on</p>
@@ -241,7 +241,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
         <script src="{!! asset('js/lazy.js') !!}"></script>
         <script src="{!! asset('js/home.js') !!}"></script>
-        <script src="{!! asset('js/header.js') !!}"></script>
 </body>
 
 </html>
