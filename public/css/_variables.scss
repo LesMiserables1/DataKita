@@ -3,7 +3,6 @@
     ==============
  */
     // import fonts
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap');
     @import url("fonts.css");
 
     // variabel
@@ -14,8 +13,10 @@
         gray: #c8ccd4,
         placeholder: #a89797,
         dot-color: #c1c1c1,
-        bright-gray: #dbdbdb,
-        navbar-bg: rgba(33, 37, 41, 0.9)
+        nice-blue: rgba(15, 120, 185, 0.89),
+        bright-blue: #a0cefffa,
+        navbar-bg: rgba(27, 27, 27, 0.83),
+        bright-gray: #F5F8FA
     );
 
     $darkNavy: #213140;

@@ -22,7 +22,7 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark" id="navbar" style="background: #212529;">
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div id="nav-mhweb-hamburger">
@@ -123,7 +123,7 @@
                 <div class="row not-found">
                     <div class="col text-center">
                         <p class="mb-4">Sorry, we couldn't find any photo for '<span class="query">{{$query}}</span>'.</p>
-                        <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
+                        <img src="../images/not found.svg" alt="Not Found" class="img-notfound lazy">
                     </div>
                 </div>
                 @endif
@@ -156,7 +156,7 @@
     </main>
 
     <!-- footer slebew -->
-    <footer id="page-footer" style="background: #212529;">
+    <footer id="page-footer">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-4 mr-auto mt-md-3">

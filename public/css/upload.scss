@@ -50,7 +50,7 @@
         display: inline-block;
         overflow: hidden;
         vertical-align: middle;
-        /* new lines */
+        background-color: color(bright-gray);
         width: 100%;
         position: absolute;
         left: 0;
@@ -59,8 +59,12 @@
 
         //the browse button
         &:after {
-            background: color(primary);
-            color: white;
+            background: color(nice-blue);
+            color: color(bright-gray);
+
+            &:hover{
+                background: color(primary);
+            }
         }
     }
 
@@ -69,7 +73,7 @@
         font-size: 12px;
 
         &:hover {
-            color: color(primary) !important;
+            color: color(nice-blue) !important;
         }
     }
 
@@ -93,7 +97,7 @@
             position: relative;
             display: inline-block;
             border: solid 1px #ddd;
-            background-color: #fff;
+            background-color: color(bright-gray);
             font-size: 14px;
             line-height: 140%;
             text-align: center;
@@ -173,6 +177,7 @@
     }
     .bootstrap-tagsinput{
         width: 100%;
+        background: color(bright-gray);
 
         .tag{
             background: $teal1;

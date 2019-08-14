@@ -2,5 +2,35 @@
     font-family: 'Bahnschrift Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Bahnschrift Regular'), url('../public/fonts/BAHNSCHRIFT 1.woff') format('woff');
+    src: local('Bahnschrift Regular'), url('../fonts/BAHNSCHRIFT 1.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Apercu Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Apercu Regular'), url('../fonts/Apercu_Regular.woff') format('woff');
+}
+    
+    
+@font-face {
+    font-family: 'Apercu Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Apercu Light'), url('../fonts/Apercu_Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Apercu Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Apercu Bold'), url('../fonts/Apercu_Bold.woff') format('woff');
+}
+    
+    
+@font-face {
+    font-family: 'Apercu Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Apercu Medium'), url('../fonts/Apercu_Medium.woff') format('woff');
 }

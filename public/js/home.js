@@ -54,7 +54,7 @@ $(document).ready(function(){
 var prevScrollpos = window.pageYOffset;
     $(window).on("scroll", function(){
         if($(window).scrollTop() > $(window).height()*0.25){
-            $('.home-nav').css('background', 'rgba(33, 37, 41, 0.9)');
+            $('.home-nav').css('background', 'rgba(27, 27, 27, 0.83)');
         }
         else{
             $('.home-nav').css('background', 'transparent');

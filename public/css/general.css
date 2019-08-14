@@ -2,7 +2,6 @@
      starter pack
     ==============
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
 @import url("fonts.css");
 /* end of starter pack*/
 /*  ================
@@ -23,6 +22,7 @@ body {
   padding-bottom: 150px;
   position: relative;
   scroll-behavior: smooth;
+  background: #F5F8FA;
 }
 
 section {
@@ -59,6 +59,17 @@ section {
   }
 }
 
+.btn-primary {
+  background: rgba(15, 120, 185, 0.89) !important;
+  border-color: rgba(15, 120, 185, 0.89) !important;
+  color: #F5F8FA;
+}
+
+.btn-primary:hover {
+  background: #007bff !important;
+  border-color: #007bff !important;
+}
+
 .btn-shadow:hover {
   -webkit-box-shadow: 10px 15px 30px -12px rgba(0, 123, 255, 0.6) !important;
           box-shadow: 10px 15px 30px -12px rgba(0, 123, 255, 0.6) !important;
@@ -90,7 +101,15 @@ section {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1.5px;
-  color: white;
+  color: #F5F8FA;
+}
+
+.nav-link {
+  color: #f5f8fac5 !important;
+}
+
+.nav-link.active, .nav-link:hover {
+  color: #F5F8FA !important;
 }
 
 nav, .home-nav {
@@ -100,7 +119,13 @@ nav, .home-nav {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   min-height: 60px;
-  background: #212529;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(49, 48, 48, 0.945)), to(rgba(27, 27, 27, 0.83))), url("../images/footer.jpg");
+  background: linear-gradient(left, rgba(49, 48, 48, 0.945) 0%, rgba(27, 27, 27, 0.83) 100%), url("../images/footer.jpg");
+}
+
+footer {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(27, 27, 27, 0.83)), to(rgba(49, 48, 48, 0.945))), url("../images/footer.jpg");
+  background: linear-gradient(left, rgba(27, 27, 27, 0.83) 0%, rgba(49, 48, 48, 0.945) 100%), url("../images/footer.jpg");
 }
 
 #navbar {
@@ -126,7 +151,7 @@ main {
 }
 
 .dropdown-menu {
-  background-color: rgba(33, 37, 41, 0.9);
+  background-color: rgba(27, 27, 27, 0.83);
   border: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -138,15 +163,20 @@ main {
 }
 
 .dropdown-menu a:hover {
-  background: #007bff;
-  color: white;
+  background: #212529;
+  color: #F5F8FA;
 }
 
 @media (max-width: 767px) {
   .dropdown-menu {
     text-align: center;
     margin-left: 1rem;
+    background: transparent;
   }
+}
+
+.dropdown-item.active {
+  background: #212529;
 }
 
 @media (max-width: 767px) {
@@ -171,6 +201,10 @@ main {
   }
 }
 
+.form-control {
+  background: #F5F8FA;
+}
+
 .home-nav {
   background: transparent;
 }
@@ -188,7 +222,7 @@ main {
 }
 
 #nav-mhweb-hamburger:hover span {
-  background: white;
+  background: #F5F8FA;
 }
 
 #nav-mhweb-hamburger span {
@@ -271,7 +305,7 @@ main {
 */
 #page-footer {
   margin-top: 50px;
-  color: white;
+  color: #F5F8FA;
   height: 120px;
   position: absolute;
   bottom: 0;
@@ -279,7 +313,11 @@ main {
 }
 
 #page-footer a {
-  color: white;
+  color: #F5F8FA;
+}
+
+#page-footer a:hover {
+  color: rgba(15, 120, 185, 0.89);
 }
 
 @media (max-width: 767px) {
@@ -290,12 +328,12 @@ main {
 
 #home-footer {
   margin-top: 60px;
-  color: white;
+  color: #F5F8FA;
   margin-bottom: 0;
 }
 
 #home-footer a {
-  color: white;
+  color: #F5F8FA;
 }
 
 .socmed {
@@ -306,10 +344,6 @@ main {
   display: inline-block;
 }
 
-.socmed li a:hover {
-  color: #007bff;
-}
-
 @media (max-width: 767px) {
   .socmed {
     margin-left: -2.5rem;
@@ -317,7 +351,7 @@ main {
 }
 
 @media (max-width: 767px) {
-  .respond, .counts {
+  .respond, .counts, .logo {
     text-align: center !important;
   }
 }

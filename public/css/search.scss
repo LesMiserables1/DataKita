@@ -4,6 +4,11 @@
 #search-intro{
     margin-left: 1.5em;
 
+    h1{
+        font-family: 'Apercu Bold';
+        color: color(nice-blue);
+    }
+
     @include mobile{
         margin-left: 0;
         text-align: center;
@@ -18,17 +23,22 @@
 }
 
 .type{
-    color: #a89797;
+    color: #AAB8C2;
     transition: .3s;
+    font-family: 'Apercu Regular';
 
     &:hover{
-        color: black;
+        color: color(nice-blue);
     }
+}
+
+.result-number{
+    font-family: 'Apercu Regular';
 }
 
 //will turn blue if the radio is checked
 input[type="radio"]:checked + .type {
-    color: black;
+    color: color(nice-blue);
 }
 
 //hiding that ugly default radio
@@ -73,7 +83,7 @@ input[type="radio"]:checked + .type {
     -webkit-box-sizing: border-box;
     min-height: 200px;
     position: relative;
-    background: linear-gradient(90deg, rgba(238, 118, 82, 0.596), rgba(231, 60, 126, 0.582), rgba(35, 165, 213, 0.541), rgba(35, 213, 171, 0.493));
+    background: linear-gradient(90deg, rgba(15, 82, 186, 0.596), rgba(0, 128, 255, 0.582), rgba(115, 194, 251, 0.541), rgba(126, 249, 255, 0.493));
     background-size: 400% 400%;
 
     -webkit-animation: gradientBackground 2s ease-in-out infinite;
@@ -127,17 +137,15 @@ input[type="radio"]:checked + .type {
         transition: 0.75s;
     }
 
-    .author, .image-title{
-        font-family: Poppins, sans-serif;
-        font-size: 12px;
-    }
-
     .author{
         font-weight: 400;
+        font-size: 12px;
+        font-family: 'Apercu Regular';
     }
 
     .image-title{
         font-size: 20px;
+        font-family: 'Apercu Bold';
     }
 
     .download{
@@ -188,9 +196,9 @@ img:not([src]) {
 
 .not-found{
     p, span{
-        font-family: Poppins, sans-serif;
+        font-family: 'Apercu Medium';
         font-size: 14px;
-        font-weight: 600;
+        color: color(nice-blue);
 
         @include ipad{
             font-size: 16px;

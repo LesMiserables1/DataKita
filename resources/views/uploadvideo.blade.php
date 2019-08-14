@@ -41,7 +41,7 @@
     @endif
 
     <!-- nav -->
-    <nav class="navbar navbar-expand-md navbar-dark" id="navbar" style="background: #212529;">
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div id="nav-mhweb-hamburger">
@@ -101,7 +101,7 @@
 
                     <!-- gambar upload -->
                     <div class="col-12 col-lg-6 d-flex align-items-center">
-                        <img class="upload mx-auto ml-lg-0" src="../images/video.png">
+                        <img class="upload mx-auto ml-lg-0" src="../images/video.svg">
                     </div>
 
                     <!-- input form section -->
@@ -181,7 +181,7 @@
     </main>
 
     <!-- footer -->
-    <footer id="page-footer" class="mt-5" style="background: #212529;">
+    <footer id="page-footer" class="mt-5">
         <div class="container-fluid">
 
             <!-- atas  -->

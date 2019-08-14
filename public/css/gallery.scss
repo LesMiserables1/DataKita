@@ -4,6 +4,11 @@
      gallery page
     ==============
  */
+
+    h3{
+        color: color(nice-blue);
+        font-family: 'Apercu Bold';
+    }
     //radio input for photo and video
     .radio {
         position: relative;
@@ -11,6 +16,7 @@
         line-height: 20px;
         font-size: 14px;
         margin-right: 15px;
+        font-family: 'Apercu Regular';
 
         .label {
             position: relative;
@@ -32,7 +38,7 @@
                 width: 10px;
                 height: 10px;
                 border-radius: 100%;
-                background: color(primary);
+                background: color(nice-blue);
                 transform: scale(0);
                 transition: all 0.2s ease;
                 opacity: 0.08;
@@ -49,7 +55,7 @@
 
     //will turn blue if the radio is checked
     input[type="radio"]:checked + .label {
-        border-color: color(primary);
+        border-color: color(nice-blue);
 
         &:after {
             transform: scale(1);
@@ -92,12 +98,6 @@
                     transform: translateX(-50%);
                 }
             }
-
-            //the paragraph used in gallery details
-            p, li { 
-                font-size: 14px;
-                font-weight: 500;
-             }
         }
 
         //carousel container
@@ -125,7 +125,7 @@
         .owl-nav {
             i {
                 color: white;
-                background: color(primary);
+                background: color(nice-blue);
                 box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
                 font-size: 18px;
                 height: 40px;
@@ -137,6 +137,7 @@
                 &:hover {
                     transform: scale(1.12);
                     box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
+                    background: color(primary);
                 }
             }
 
@@ -179,21 +180,26 @@
     .text-column {
         overflow-y: auto;
 
-        //change the font into Poppins
-        h4, h6, p, a {
-            font-family: "Poppins", sans-serif;
+        h6, a {
+            font-family: "Apercu Medium";
         }
 
-        .title h4, h6{
-            font-weight: 600;
+        h4{
+            font-family: 'Apercu Bold';
+        }
+
+        h4, h6{
+            color: color(nice-blue);
+        }
+
+        p, li{
+            font-family: 'Apercu Regular';
+            font-size: 14px;
+            color: #14171A;
         }
         
         @include laptop { 
             max-height: 37vw; 
-        
-            .title h4, h6{
-                font-weight: 700;
-            }
         }
 
         //the uploader name
@@ -209,7 +215,7 @@
     }
 
     .time, .location, .photo-by, .video-by {
-        p { color: #666; }
+        p { color: #657786; }
     }
 
     .tags{
@@ -217,8 +223,7 @@
 
         li{
             display: inline-block;
-            font-family: 'Poppins', sans-serif;
-            background: color(bright-gray);
+            background: color(bright-blue);
             padding: 1px 6px;
             border-radius: 4px;
             margin-right: 2px;
@@ -233,7 +238,7 @@
         left: 50%;
         transform: translateX(-50%);
         animation: shadow-pulse 1s infinite;
-        font-family: "Poppins";
+        font-family: "Apercu Regular";
     }
 
     //animation for the button above

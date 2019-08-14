@@ -2,19 +2,24 @@
      starter pack
     ==============
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap");
 @import url("fonts.css");
 /* end of starter pack*/
 /*  ==============
      gallery page
     ==============
  */
+h3 {
+  color: rgba(15, 120, 185, 0.89);
+  font-family: 'Apercu Bold';
+}
+
 .radio {
   position: relative;
   cursor: pointer;
   line-height: 20px;
   font-size: 14px;
   margin-right: 15px;
+  font-family: 'Apercu Regular';
 }
 
 .radio .label {
@@ -37,7 +42,7 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background: #007bff;
+  background: rgba(15, 120, 185, 0.89);
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: all 0.2s ease;
@@ -52,7 +57,7 @@
 }
 
 input[type="radio"]:checked + .label {
-  border-color: #007bff;
+  border-color: rgba(15, 120, 185, 0.89);
 }
 
 input[type="radio"]:checked + .label:after {
@@ -114,11 +119,6 @@ input[type="radio"]:checked + .label:after {
           transform: translateX(-50%);
 }
 
-#photo-gallery .item p, #photo-gallery .item li, #video-gallery .item p, #video-gallery .item li, .carousel-modal .item p, .carousel-modal .item li {
-  font-size: 14px;
-  font-weight: 500;
-}
-
 #photo-gallery .carousel-wrap, #video-gallery .carousel-wrap, .carousel-modal .carousel-wrap {
   margin: auto;
   padding: 0;
@@ -140,7 +140,7 @@ input[type="radio"]:checked + .label:after {
 
 #photo-gallery .owl-nav i, #video-gallery .owl-nav i, .carousel-modal .owl-nav i {
   color: white;
-  background: #007bff;
+  background: rgba(15, 120, 185, 0.89);
   -webkit-box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
           box-shadow: 2px 3px 10px -3px rgba(0, 50, 255, 0.6);
   font-size: 18px;
@@ -157,6 +157,7 @@ input[type="radio"]:checked + .label:after {
           transform: scale(1.12);
   -webkit-box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
           box-shadow: 3px 5px 10px -3px rgba(0, 123, 255, 0.65);
+  background: #007bff;
 }
 
 #photo-gallery .owl-nav .owl-prev, #photo-gallery .owl-nav .owl-next, #video-gallery .owl-nav .owl-prev, #video-gallery .owl-nav .owl-next, .carousel-modal .owl-nav .owl-prev, .carousel-modal .owl-nav .owl-next {
@@ -212,20 +213,27 @@ input[type="radio"]:checked + .label:after {
   overflow-y: auto;
 }
 
-.text-column h4, .text-column h6, .text-column p, .text-column a {
-  font-family: "Poppins", sans-serif;
+.text-column h6, .text-column a {
+  font-family: "Apercu Medium";
 }
 
-.text-column .title h4, .text-column h6 {
-  font-weight: 600;
+.text-column h4 {
+  font-family: 'Apercu Bold';
+}
+
+.text-column h4, .text-column h6 {
+  color: rgba(15, 120, 185, 0.89);
+}
+
+.text-column p, .text-column li {
+  font-family: 'Apercu Regular';
+  font-size: 14px;
+  color: #14171A;
 }
 
 @media (min-width: 1201px) {
   .text-column {
     max-height: 37vw;
-  }
-  .text-column .title h4, .text-column h6 {
-    font-weight: 700;
   }
 }
 
@@ -241,7 +249,7 @@ input[type="radio"]:checked + .label:after {
 }
 
 .time p, .location p, .photo-by p, .video-by p {
-  color: #666;
+  color: #657786;
 }
 
 .tags {
@@ -250,8 +258,7 @@ input[type="radio"]:checked + .label:after {
 
 .tags li {
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  background: #dbdbdb;
+  background: #a0cefffa;
   padding: 1px 6px;
   border-radius: 4px;
   margin-right: 2px;
@@ -266,7 +273,7 @@ input[type="radio"]:checked + .label:after {
           transform: translateX(-50%);
   -webkit-animation: shadow-pulse 1s infinite;
           animation: shadow-pulse 1s infinite;
-  font-family: "Poppins";
+  font-family: "Apercu Regular";
 }
 
 @-webkit-keyframes shadow-pulse {

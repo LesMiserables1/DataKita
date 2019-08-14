@@ -1,0 +1,53 @@
+@import 'variables';
+
+body{
+    @include tablet{
+        padding-bottom: 110px !important;
+    }
+}
+#about{
+    height: calc(100vh - 58px);
+    background-image: url('../images/about.jpg');
+    background-position: 65% 65%;
+
+    @media (min-height: 845px){
+        background-image: url('../images/about2.jpg');
+        background-position: 65% 85%;
+    }
+
+    .container, .row{
+        height: 100%;
+    }
+
+    .container{
+        @include big{
+            width: 70% !important;
+        }
+
+        @include laptop{
+            width: 60% !important;
+        }
+    }
+}
+
+h1{
+    color: color(nice-blue);
+
+    @include mobile{
+        font-size: 25px;
+    }
+}
+
+.content p{
+    color: #14171A;
+    margin: auto;
+
+    @include mobile{
+        font-size: 13px;
+        width: 93%;
+    }
+    
+    @include laptop{
+        width: 80%;
+    }
+}

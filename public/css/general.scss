@@ -15,7 +15,7 @@ body {
     padding-bottom: 150px;
     position: relative;
     scroll-behavior: smooth;
-
+    background: color(bright-gray);
 }
 
 section {
@@ -34,6 +34,17 @@ button span {
     @include small { font-size: 12px; }
 
     @include mobile { font-size: 11px; }
+}
+
+.btn-primary{
+    background: color(nice-blue) !important;
+    border-color: color(nice-blue) !important;
+    color: color(bright-gray);
+
+    &:hover{
+        background: color(primary) !important;
+        border-color: color(primary) !important;
+    }
 }
 
 .btn-shadow {
@@ -58,7 +69,15 @@ button span {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1.5px;
-    color: white;
+    color: color(bright-gray);
+}
+
+.nav-link{
+    color: #f5f8fac5 !important;
+}
+
+.nav-link.active, .nav-link:hover{
+    color: color(bright-gray) !important;
 }
 
 //navbar container
@@ -68,7 +87,11 @@ nav, .home-nav{
     width: 100%;
     transition: 0.5s;
     min-height: 60px;
-    background: color(dark-text);
+    background: linear-gradient(left, rgba(49, 48, 48, 0.945) 0%,rgba(27, 27, 27, 0.83) 100%), url('../images/footer.jpg'); 
+}
+
+footer{
+    background: linear-gradient(left, rgba(27, 27, 27, 0.83) 0%, rgba(49, 48, 48, 0.945) 100%), url('../images/footer.jpg'); 
 }
 
 #navbar{
@@ -110,14 +133,19 @@ main{
     opacity: 0;
     a {
         &:hover {
-            background: color(primary);
-            color: white;
+            background: color(dark-text);
+            color: color(bright-gray);
         }
     }
     @include tablet {
         text-align: center;
         margin-left: $spacer;
+        background: transparent;
     }
+}
+
+.dropdown-item.active{
+    background: color(dark-text);
 }
 
 // navbar menu list
@@ -142,6 +170,10 @@ main{
     }
 }
 
+.form-control{
+    background: color(bright-gray);
+}
+
 .home-nav{
     background: transparent;
 }
@@ -164,7 +196,7 @@ main{
 
     &:hover {
         span {
-            background: white;
+            background: color(bright-gray);
         }
     }
     
@@ -262,8 +294,15 @@ main{
 */
 #page-footer {
     margin-top: 50px;
-    color: white;
-    a { color: white; }
+    color: color(bright-gray);
+
+    a { 
+        color: color(bright-gray); 
+
+        &:hover{
+            color: color(nice-blue);
+        }
+    }
     height: 120px;
     position: absolute;
     bottom: 0;
@@ -276,8 +315,8 @@ main{
 
 #home-footer{
     margin-top: 60px;
-    color: white;
-    a { color: white; }
+    color: color(bright-gray);
+    a { color: color(bright-gray); }
     margin-bottom: 0;
 }
 
@@ -287,16 +326,12 @@ main{
 
     li {
         display: inline-block;
-
-        a {
-            &:hover { color: color(primary); }
-        }
     }
 
     @include tablet { margin-left: -2.5rem; }
 }
 
-.respond, .counts {
+.respond, .counts, .logo {
     @include tablet { text-align: center !important; }
 }
 

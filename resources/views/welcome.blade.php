@@ -29,7 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 
-    <body  style="padding-bottom: 0;">
+    <body style="padding-bottom: 0;">
         
 @if(session()->get('msg')!=null)
     <div class="alert alert-danger">
@@ -207,7 +207,7 @@
             </section>
 
             <!-- footer -->
-            <footer id="home-footer" style="background: #212529;">
+            <footer id="home-footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3">

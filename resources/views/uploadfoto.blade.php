@@ -101,7 +101,7 @@
 
                     <!-- gambar upload -->
                     <div class="col-12 col-lg-6 d-flex align-items-center">
-                        <img class="upload mx-auto ml-lg-0" src="../images/upload.png">
+                        <img class="upload mx-auto ml-lg-0" src="../images/upload.svg">
                     </div>
 
                     <!-- input form section -->
@@ -181,7 +181,7 @@
     </main>
 
     <!-- footer -->
-    <footer id="page-footer" class="mt-5" style="background: #212529;">
+    <footer id="page-footer" class="mt-5">
         <div class="container-fluid">
 
             <!-- atas  -->

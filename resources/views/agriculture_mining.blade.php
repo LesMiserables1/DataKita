@@ -17,8 +17,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
     <!-- default passive events for performance optimization -->
@@ -79,7 +77,7 @@
     </div>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark" id="navbar" style="background: #212529;">
+    <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -297,7 +295,7 @@
         </main>
         
         <!-- footer slebew -->
-        <footer id="page-footer" style="background: #212529;">
+        <footer id="page-footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12 col-md-4 mr-auto mt-md-3">
