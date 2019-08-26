@@ -289,7 +289,9 @@
     </main>
 
     <!-- footer slebew -->
-    @footer @endfooter
+    <footer id="page-footer">
+        @footer @endfooter
+    </footer>
 
     <script src="{!! asset('js/gallery.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>
