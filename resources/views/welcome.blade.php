@@ -80,7 +80,7 @@
                             <li><a class="dropdown-item" href="/upload/video">Video</a></li>
                         </ul>
                     </li>
-                    @if(isset(Auth::user()->id))
+                @if(isset(Auth::user()->id))
                 <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
