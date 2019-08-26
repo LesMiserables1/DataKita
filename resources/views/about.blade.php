@@ -70,6 +70,26 @@
                         <li><a class="dropdown-item" href="/upload/video">Video</a></li>
                     </ul>
                 </li>
+                @if(isset(Auth::user()->id))
+                <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-upload"></i> Admin
+                    </a>
+                    <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
+                        <li><a class="dropdown-item" href="/admin/delete">Delete Foto</a></li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         @csrf
+                        </form>
+                    </ul>
+                </li>
+                @endif
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                 <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
@@ -101,37 +121,8 @@
         
         <!-- footer slebew -->
         <footer id="page-footer" class="mt-0">
-        <div class="container-fluid">
-
-            <!-- atas  -->
-            <div class="row">
-                <div class="col-sm-12 col-md-4 mr-auto mt-md-3 logo">
-                    <a href="/">Logo DataKita</a>
-                    <p>We are a creative media-based concise information sharing platform</p>
-                </div>
-                <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
-                    <p class="mb-0">Respond us on</p>
-                    <ul class="socmed mb-0 pl-md-0">
-                        <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
-            </div>
-
-            <!-- bawah -->
-            <div class="row">
-                <div class="col-sm-12 col-md-4 mr-auto d-flex align-items-center counts mt-md-3">
-                {{$count}} website visits
-                </div>
-                <div class="col-sm-12 col-md-4 justify-content-center d-flex align-items-center copyright mt-md-3">
-                    <span>&copy; 2019 DataKita | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>
-                </div>
-                <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
-            </div>
-        </div>
-    </footer>
+            @footer @endfooter
+        </footer>
 
     <script src="{!! asset('js/header.js') !!}"></script>
 </body>

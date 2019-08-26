@@ -66,6 +66,26 @@
                         <li><a class="dropdown-item" href="/upload/video">Video</a></li>
                     </ul>
                 </li>
+                @if(isset(Auth::user()->id))
+                <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-upload"></i> Admin
+                    </a>
+                    <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
+                        <li><a class="dropdown-item" href="/admin/delete">Delete Foto</a></li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         @csrf
+                        </form>
+                    </ul>
+                </li>
+                @endif
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                 <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
@@ -156,7 +176,9 @@
     </main>
 
     <!-- footer slebew -->
-    @footer @endfooter
+    <footer id="page-footer">
+        @footer @endfooter
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
