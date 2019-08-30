@@ -30,8 +30,8 @@ Route::post('/upload/video','UploadController@storeVideo');
 
 Route::get('/admin/approve','AdminController@showApprove');
 Route::post('/admin/approve','AdminController@approve');
-Route::get('/delete','AdminController@showDelete');
-Route::post('/delete','AdminController@delete');
+Route::get('/admin/delete','AdminController@showDelete');
+Route::post('/admin/delete','AdminController@delete');
 
 Route::get('/Agriculture-Mining','HomeController@show_agri_mining');
 Route::get('/Economic-Trade','HomeController@show_eco_trade');

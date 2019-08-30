@@ -103,7 +103,7 @@ class AdminController extends Controller
         }
         return view('approve')->with('photos',$arrPhoto)->with('videos',$arrVideo);
     }
-    public function showEdit()
+    public function showDelete()
     {
         $photos = Photo::where('approve',true)->get();
         $prevCaption = "";
