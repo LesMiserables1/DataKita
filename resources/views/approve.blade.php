@@ -15,13 +15,16 @@
     @foreach($videos as $video)
         {{$video['caption']}}
         @foreach($video['video'] as $vid)
-            <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+            <!-- <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->
+            <div class="codegena_iframe" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>    
             <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
         @endforeach
     @endforeach
-    <button type="submit" value="approve" name="status">approve</button>
-    <button type="submit" value="delete" name="status">delete</button>
+    <button type="submit" value="approve" name="status">Approve</button>
+    <button type="submit" value="delete" name="status">Delete</button>
 
 </form>
+
+<script src="{!! asset('js/async-iframe.js') !!}"></script>
 </body>
 @endif
