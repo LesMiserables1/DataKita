@@ -93,7 +93,7 @@
     @csrf
     @if(count($photos[0])!=0)
         @foreach($photos as $photo)
-        {{$photo['caption']}}
+        {{$photo['title']}}
         @foreach($photo['foto'] as $foto)
         <img src="/show/foto/{{$foto['nama_foto']}}">
         <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
@@ -103,7 +103,7 @@
     @if(count($videos[0])!=0)
         @csrf
         @foreach($videos as $video)
-            {{$video['caption']}}
+            {{$video['title']}}
             @foreach($video['video'] as $vid)
                 <!-- <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->
                 <div class="codegena_iframe" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>    

@@ -28,23 +28,6 @@
 <body>
     <!-- photoModal -->
     <!-- ditampilkan ketika mengeklik button yang ada di slide yang lebih dari satu foto -->
-    <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                </button>
-                <div class="modal-body carousel-wrap">
-                    <div class="owl-carousel owl-theme carousel-modal">
-                        <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
-                        @foreach($photos as $photo)
-                        <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$photo->nama_foto}}"></div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- videoModal -->
     <!-- fungsinya sama seperti modal di atas, tapi ini untuk video -->
@@ -160,61 +143,98 @@
 
         <section id="photo-gallery" class="area">
             <div class="container carousel-wrap">
+                @if($photos[0] != null)
+                @foreach($photos as $photo)
+                <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
+                                </button>
+                                <div class="modal-body carousel-wrap">
+                                    <div class="owl-carousel owl-theme carousel-modal">
+                                            @foreach($photo['foto'] as $foto)
+                                        <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
+                                            <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="owl-carousel owl-theme gallery">
-                    @foreach($photos as $photo)
-                    <!-- foto2 beserta caption di dalam owl-carousel, masing2 foto ada di dalam class row item, 
-                        begitu juga dengan div2 anaknya seperti col-12 pict-column dst. pict-column untuk container gambar, text-column untuk container caption  -->
                     <div class="row item">
+                        <!-- kolom untuk gambar -->
                         <div class="col-12 col-xl-8">
                             <div class="pict-column">
                                 <!-- image goes here -->
-                                <img class="owl-lazy" data-src="/show/foto/{{$photo->nama_foto}}">
+                                <img class="owl-lazy" data-src="/show/foto/{{$photo['foto'][0]->nama_foto}}">
+                                <!-- Button trigger modal -->
+                                <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
+                                    bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
+                                    satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
+                                    karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
+                                    modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
+                                @if(count($photo['foto']) > 1)
+                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal"
+                                    data-target="#photoModal">
+                                    See full slide
+                                </button>
+                                @endif
                             </div>
                         </div>
+                        <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
                         <div class="col-12 col-xl-4">
                             <div class="text-column p-4 p-xl-2">
                                 <!-- judul caption -->
                                 <div class="title">
-                                    <h4>{{$photo->title}}</h4>
+                                    <h4>{{$photo['title']}}</h4>
                                     <hr class="mt-3 mb-3">
                                 </div>
+
                                 <div class="photo-by">
                                     <!-- nama user -->
                                     <h6 class="mb-1">Photo and Caption by</h6>
-                                    <p>{{$photo->author}}</p>
+                                    <p>{{$photo['foto'][0]->author}}</p>
                                 </div>
+
                                 <div class="caption text-justify">
                                     <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
                                     lebih dari satu p tag -->
                                     <p>
-                                        {{$photo->caption}}
+                                        {{$photo['foto'][0]->caption}}
                                     </p>
                                 </div>
+
                                 <div class="time">
                                     <!-- upload time -->
                                     <h6 class="mb-1">Uploaded on</h6>
-                                    <p>{{$photo->date}}</p>
+                                    <p>{{$photo['foto'][0]->date}}</p>
                                 </div>
+
                                 <div class="location">
                                     <!-- lokasi -->
                                     <h6 class="mb-1">Location</h6>
-                                    <p>{{$photo->location}}</p>
+                                    <p>{{$photo['foto'][0]->location}}</p>
                                 </div>
                                 <div class="tags">
-                                    <h6 class="mb-1">Tags</h6>
-                                    <ul class="pl-0">
-                                        @foreach($photo->tags as $tag)
-                                        <li>{{$tag}}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                                        <h6 class="mb-1">Tags</h6>
+                                        <ul class="pl-0">
+                                            @foreach($photo['foto'][0]['tags'] as $tag)
+                                            <li>{{$tag}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 <!-- link download -->
-                                <a href="/show/foto/{{$photo->nama_foto}}"><button type="button" class="btn btn-primary btn-shadow mt-2">Download</button></a>
+                                <a href="/show/foto/{{$photo['foto'][0]['nama_foto']}}"><button type="button"
+                                        class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
+                @endif
             </div>
         </section>
 

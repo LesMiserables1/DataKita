@@ -56,23 +56,23 @@ class AdminController extends Controller
         $arrPhoto = array(array());
         $visit = [];
         for($k = 0;$k<count($photos) ; $k++){
-            $caption = $photos[$k]->caption;
+            $title = $photos[$k]->title;
             $visit[$k] = $visit[$k]??false;
-            if($prevCaption != $caption && !$visit[$k]){
+            if($prevCaption != $title && !$visit[$k]){
                 $sortedPhoto = [];
                 $i = 0;
                 $j = 0;        
                 foreach($photos as $foto){
-                    if($caption == $foto->caption){
+                    if($title == $foto->title){
                         $sortedPhoto[$j++] = $foto;
                         $visit[$i] = true;
                     }
                     $i++;
                 }
-                $arrPhoto[$x]['caption'] = $caption;
+                $arrPhoto[$x]['title'] = $title;
                 $arrPhoto[$x]['foto'] = $sortedPhoto;
                 $x++;
-                $prevCaption = $caption;
+                $prevCaption = $title;
             }
         }
         
@@ -82,23 +82,23 @@ class AdminController extends Controller
         $arrVideo = array(array());
         $visit = array();
         for($k = 0;$k<count($videos) ; $k++){
-            $caption = $videos[$k]->caption;
+            $title = $videos[$k]->title;
             $visit[$k] = $visit[$k]??false;
-            if($prevCaption != $caption && !$visit[$k]){
+            if($prevCaption != $title && !$visit[$k]){
                 $sortedVideo = [];
                 $i = 0;
                 $j = 0;        
                 foreach($videos as $video){
-                    if($caption == $video->caption){
+                    if($title == $video->title){
                         $sortedVideo[$j++] = $video;
                         $visit[$i] = true;
                     }
                     $i++;
                 }
-                $arrVideo[$x]['caption'] = $caption;
+                $arrVideo[$x]['title'] = $title;
                 $arrVideo[$x]['video'] = $sortedVideo;
                 $x++;
-                $prevCaption = $caption;
+                $prevCaption = $title;
             }
         }
         return view('approve')->with('photos',$arrPhoto)->with('videos',$arrVideo);

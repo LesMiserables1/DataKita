@@ -25,15 +25,35 @@ class HomeController extends Controller
     }
     public function show_agri_mining()
     {
-        $foto = Photo::where('jenis','Agriculture_Mining')->where('approve',true)->get();
-        $video = Video::where('jenis','Agriculture_Mining')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Agriculture_Mining')->where('approve',true)->get();
+        $prevCaption = "";
         $x = 0;
-        foreach($foto as $ph){
-            $tag = $ph->tags;
-            $tag = explode(',',$tag);
-            $foto[$x]['tags'] = $tag; 
-            $x++;
+        $arrPhoto = array(array());
+        $visit = [];
+        for($k = 0;$k<count($photos) ; $k++){
+            $title = $photos[$k]->title;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $title && !$visit[$k]){
+                $sortedPhoto = [];
+                $i = 0;
+                $j = 0;        
+                foreach($photos as $foto){
+                    if($title == $foto->title){
+                        $tag = $foto->tags;
+                        $tag = explode(',',$tag);
+                        $foto->tags = $tag;
+                        $sortedPhoto[$j++] = $foto;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrPhoto[$x]['title'] = $title;
+                $arrPhoto[$x]['foto'] = $sortedPhoto;
+                $x++;
+                $prevCaption = $title;
+            }
         }
+        $video = Video::where('jenis','Agriculture_Mining')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -42,20 +62,39 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
-
-        return view('agriculture_mining')->with('photos',$foto)->with('videos',$video)->with('count',$count);
+        return view('agriculture_mining')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function show_eco_trade()
     {
-        $foto = Photo::where('jenis','Economic_Trade')->where('approve',true)->get();
-        $video = Video::where('jenis','Economic_Trade')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Economic_Trade')->where('approve',true)->get();
+        $prevCaption = "";
         $x = 0;
-        foreach($foto as $ph){
-            $tag = $ph->tags;
-            $tag = explode(',',$tag);
-            $foto[$x]['tags'] = $tag; 
-            $x++;
+        $arrPhoto = array(array());
+        $visit = [];
+        for($k = 0;$k<count($photos) ; $k++){
+            $title = $photos[$k]->title;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $title && !$visit[$k]){
+                $sortedPhoto = [];
+                $i = 0;
+                $j = 0;        
+                foreach($photos as $foto){
+                    if($title == $foto->title){
+                        $tag = $foto->tags;
+                        $tag = explode(',',$tag);
+                        $foto->tags = $tag;
+                        $sortedPhoto[$j++] = $foto;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrPhoto[$x]['title'] = $title;
+                $arrPhoto[$x]['foto'] = $sortedPhoto;
+                $x++;
+                $prevCaption = $title;
+            }
         }
+        $video = Video::where('jenis','Economic_Trade')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -64,20 +103,39 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
-
-        return view('economic_trade')->with('photos',$foto)->with('videos',$video)->with('count',$count);
+        return view('economic_trade')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function show_soc_pop()
     {
-        $foto = Photo::where('jenis','Social_Population')->where('approve',true)->get();
-        $video = Video::where('jenis','Social_Population')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Social_Population')->where('approve',true)->get();
+        $prevCaption = "";
         $x = 0;
-        foreach($foto as $ph){
-            $tag = $ph->tags;
-            $tag = explode(',',$tag);
-            $foto[$x]['tags'] = $tag; 
-            $x++;
+        $arrPhoto = array(array());
+        $visit = [];
+        for($k = 0;$k<count($photos) ; $k++){
+            $title = $photos[$k]->title;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $title && !$visit[$k]){
+                $sortedPhoto = [];
+                $i = 0;
+                $j = 0;        
+                foreach($photos as $foto){
+                    if($title == $foto->title){
+                        $tag = $foto->tags;
+                        $tag = explode(',',$tag);
+                        $foto->tags = $tag;
+                        $sortedPhoto[$j++] = $foto;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrPhoto[$x]['title'] = $title;
+                $arrPhoto[$x]['foto'] = $sortedPhoto;
+                $x++;
+                $prevCaption = $title;
+            }
         }
+        $video = Video::where('jenis','Social_Population')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -87,20 +145,40 @@ class HomeController extends Controller
         }
         $count = \Counter::show('home');
 
-        return view('social_population')->with('photos',$foto)->with('videos',$video)->with('count',$count);
+        return view('social_population')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
 
     public function show_eve_exp()
     {
-        $foto = Photo::where('jenis','Event_Experience')->where('approve',true)->get();
-        $video = Video::where('jenis','Event_Experience')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Event_Experience')->where('approve',true)->get();
+        $prevCaption = "";
         $x = 0;
-        foreach($foto as $ph){
-            $tag = $ph->tags;
-            $tag = explode(',',$tag);
-            $foto[$x]['tags'] = $tag; 
-            $x++;
+        $arrPhoto = array(array());
+        $visit = [];
+        for($k = 0;$k<count($photos) ; $k++){
+            $title = $photos[$k]->title;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $title && !$visit[$k]){
+                $sortedPhoto = [];
+                $i = 0;
+                $j = 0;        
+                foreach($photos as $foto){
+                    if($title == $foto->title){
+                        $tag = $foto->tags;
+                        $tag = explode(',',$tag);
+                        $foto->tags = $tag;
+                        $sortedPhoto[$j++] = $foto;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrPhoto[$x]['title'] = $title;
+                $arrPhoto[$x]['foto'] = $sortedPhoto;
+                $x++;
+                $prevCaption = $title;
+            }
         }
+        $video = Video::where('jenis','Event_Experience')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -110,19 +188,39 @@ class HomeController extends Controller
         }
         $count = \Counter::show('home');
 
-        return view('events_experience')->with('photos',$foto)->with('videos',$video)->with('count',$count);   
+        return view('events_experience')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);   
     }
     public function show_info()
     {
-        $foto = Photo::where('jenis','Infographics')->where('approve',true)->get();
-        $video = Video::where('jenis','Infographics')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Infographics')->where('approve',true)->get();
+        $prevCaption = "";
         $x = 0;
-        foreach($foto as $ph){
-            $tag = $ph->tags;
-            $tag = explode(',',$tag);
-            $foto[$x]['tags'] = $tag; 
-            $x++;
+        $arrPhoto = array(array());
+        $visit = [];
+        for($k = 0;$k<count($photos) ; $k++){
+            $title = $photos[$k]->title;
+            $visit[$k] = $visit[$k]??false;
+            if($prevCaption != $title && !$visit[$k]){
+                $sortedPhoto = [];
+                $i = 0;
+                $j = 0;        
+                foreach($photos as $foto){
+                    if($title == $foto->title){
+                        $tag = $foto->tags;
+                        $tag = explode(',',$tag);
+                        $foto->tags = $tag;
+                        $sortedPhoto[$j++] = $foto;
+                        $visit[$i] = true;
+                    }
+                    $i++;
+                }
+                $arrPhoto[$x]['title'] = $title;
+                $arrPhoto[$x]['foto'] = $sortedPhoto;
+                $x++;
+                $prevCaption = $title;
+            }
         }
+        $video = Video::where('jenis','Infographics')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;
@@ -132,7 +230,7 @@ class HomeController extends Controller
         }
         $count = \Counter::show('home');
 
-        return view('infographics')->with('photos',$foto)->with('videos',$video)->with('count',$count);
+        return view('infographics')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function about()
     {

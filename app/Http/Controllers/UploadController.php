@@ -150,6 +150,6 @@ class UploadController extends Controller
             return $image->response();
         } catch (\Throwable $th) { }
 
-        return;
+        return redirect('/');
     }
 }
