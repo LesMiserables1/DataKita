@@ -203,11 +203,6 @@
   overflow: hidden;
 }
 
-#events .image .img-container {
-  -webkit-animation: gradientBackground 2s ease-in-out infinite;
-  animation: gradientBackground 2s ease-in-out infinite;
-}
-
 #events .image:hover img {
   -webkit-filter: brightness(0.6);
           filter: brightness(0.6);

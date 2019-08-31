@@ -144,13 +144,6 @@
         .image {
             overflow: hidden;
 
-            .img-container{
-
-                -webkit-animation: gradientBackground 2s ease-in-out infinite;
-                -moz-animation: gradientBackground 2s ease-in-out infinite;
-                animation: gradientBackground 2s ease-in-out infinite;
-            }
-
             &:hover {
                 //the image itself
                 img {

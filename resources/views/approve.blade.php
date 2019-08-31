@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Approve</title>
     <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/approve.css') !!}">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -36,7 +38,7 @@
                     <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-image" aria-hidden="true"></i> Galleries
                     </a>
                     <!-- link sini -->
@@ -44,7 +46,7 @@
                         <li><a class="dropdown-item" href="/Agriculture-Mining">Agriculture & Mining</a></li>
                         <li><a class="dropdown-item" href="/Social-Population">Social & Population</a></li>
                         <li><a class="dropdown-item" href="/Economic-Trade">Economic & Trade</a></li>
-                        <li><a class="dropdown-item active" href="/Events-Experiences">Events & Experiences</a></li>
+                        <li><a class="dropdown-item" href="/Events-Experiences">Events & Experiences</a></li>
                         <li><a class="dropdown-item" href="/Infographics">Infographics</a></li>
                     </ul>
                 </li>
@@ -68,7 +70,7 @@
                         <i class="fas fa-upload"></i> Admin
                     </a>
                     <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
-                        <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
+                        <li><a class="dropdown-item active" href="/admin/approve">Approve</a></li>
                         <li><a class="dropdown-item" href="/admin/delete">Delete</a></li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -89,33 +91,64 @@
         </div>
     </nav>
 
-    <form action="/admin/approve" method="post">
-    @csrf
-    @if(count($photos[0])!=0)
-        @foreach($photos as $photo)
-        {{$photo['caption']}}
-        @foreach($photo['foto'] as $foto)
-        <img src="/show/foto/{{$foto['nama_foto']}}">
-        <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
-        @endforeach
-        @endforeach
-    @endif
-    @if(count($videos[0])!=0)
-        @csrf
-        @foreach($videos as $video)
-            {{$video['caption']}}
-            @foreach($video['video'] as $vid)
-                <!-- <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->
-                <div class="codegena_iframe" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>    
-                <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
-            @endforeach
-        @endforeach
-        @endif
-        <button class="btn btn-outline-primary" type="submit" value="approve" name="status">Approve</button>
-        <button class="btn btn-outline-danger" type="submit" value="delete" name="status">Delete</button>
+    <main>
+        <div class="container-fluid">
+            <form action="/admin/approve" method="post">
+                <h2 class="font-weight-light text-center text-lg-left mt-4 mb-0">Photo</h2>
+                <hr class="mt-2 mb-5">
+                
+                <div class="row text-center">
+                    @csrf
+                    @if(count($photos[0])!=0)
+                        @foreach($photos as $photo)
+                        <!-- {{$photo['caption']}} diganti title aja-->
+                        @foreach($photo['foto'] as $foto)
+                        <div class="image col-lg-3 col-md-4 col-6">
+                            <div class="d-block img-container mb-4">
+                                <img class="img-fluid img-thumbnail lazy" data-src="/show/foto/{{$foto['nama_foto']}}">
+                                <p class="mt-2 mb-0">{{$foto['title']}}</p>
+                                <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
+                            </div>
+                        </div>
+                        @endforeach
+                        @endforeach
+                    @endif
+                </div>
 
-    </form>
+                <h2 class="font-weight-light text-center text-lg-left mt-4 mb-0">Video</h2>
+                <hr class="mt-2 mb-5">
 
+                <div class="row text-center">
+                    @if(count($videos[0])!=0)
+                    @csrf
+                    @foreach($videos as $video)
+                        @foreach($video['video'] as $vid)
+                            <div class="image col-lg-3 col-md-4 col-6">
+                                <div class="d-block mb-4">
+                                    <div class="codegena_iframe" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>    
+                                    <p class="mt-2 mb-0">{{$vid['title']}}</p>
+                                    <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
+                                </div>
+                            </div>
+                            <!-- <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->
+                        @endforeach
+                    @endforeach
+                    @endif
+                </div>
+
+                <div class="row text-center">
+                    <div class="col">
+                        <button class="btn btn-outline-primary mr-4" type="submit" value="approve" name="status">Approve</button>
+                        <button class="btn btn-outline-danger" type="submit" value="delete" name="status">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+    <script src="{!! asset('js/lazy.js') !!}"></script>
     <script src="{!! asset('js/async-iframe.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>
 </body>

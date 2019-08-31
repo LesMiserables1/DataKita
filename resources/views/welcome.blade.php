@@ -178,7 +178,7 @@
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
                     <div class="row text-center d-flex flex-wrap">
                         @foreach($photoEve as $photo)
-                        <div class="image col-lg-3 col-md-4 col-xs-10 col-sm-6">
+                        <div class="image col-lg-3 col-md-4 col-6">
                             <div class="d-block img-container mb-4">
                                 <!-- gambar -->
                                 <img class="img-fluid img-thumbnail lazy" data-src="/show/foto/{{$photo->nama_foto}}" alt="">

@@ -1,0 +1,39 @@
+/*  ==============
+     starter pack
+    ==============
+ */
+@import url("fonts.css");
+/* end of starter pack*/
+h2 {
+  font-family: 'Apercu Bold';
+}
+
+p {
+  font-family: 'Apercu Medium';
+}
+
+.image {
+  overflow: hidden;
+}
+
+.image img {
+  height: 240px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+@media (max-width: 767px) {
+  .image img {
+    height: 175px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .image img {
+    height: 250px;
+  }
+}
+/*# sourceMappingURL=approve.css.map */
