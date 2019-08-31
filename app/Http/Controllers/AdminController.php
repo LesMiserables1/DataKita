@@ -158,5 +158,9 @@ class AdminController extends Controller
         }
         return view('delete')->with('photos',$arrPhoto)->with('videos',$arrVideo);
     }
+    public function delete(Request $request)
+    {
+        
+    }
     
 }

@@ -20,11 +20,11 @@
             <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
         @endforeach
     @endforeach
+@endif
     <button type="submit" value="approve" name="status">Approve</button>
     <button type="submit" value="delete" name="status">Delete</button>
-
+    
 </form>
 
 <script src="{!! asset('js/async-iframe.js') !!}"></script>
 </body>
-@endif
