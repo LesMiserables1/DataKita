@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Approve</title>
-    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/approve.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -17,7 +17,7 @@
     <!-- default passive events for performance optimization -->
     <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
 </head>
-<body>
+<body class="pb-5">
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">Logo</a>
@@ -97,16 +97,33 @@
                 <h2 class="font-weight-light text-center text-lg-left mt-4 mb-0">Photo</h2>
                 <hr class="mt-2 mb-5">
                 
-                <div class="row text-center">
+                <div class="row text-center justify-content-center">
                     @csrf
                     @if(count($photos[0])!=0)
                         @foreach($photos as $photo)
                         @foreach($photo['foto'] as $foto)
-                        <div class="image col-lg-3 col-md-4 col-6">
-                            <div class="d-block img-container mb-4">
-                                <img class="img-fluid img-thumbnail lazy" data-src="/show/foto/{{$foto['nama_foto']}}">
-                                <p class="mt-2 mb-0">{{$foto['title']}}</p>
-                                <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
+                        <div class="image col-lg-3 col-md-4 col-sm-6 col-9">
+                            <div class="card d-block mb-5">
+                                <img class="lazy card-img-top" data-src="/show/foto/{{$foto['nama_foto']}}">
+
+                                <div class="row card-body align-items-center">
+                                    <div class="col-12 col-md-9 text-left">
+                                        <p class="mt-2 mb-0">Title &ensp; &ensp; &ensp; : <span>{{$foto['title']}}</span></p>
+                                        <p class="mt-1 mb-0">Uploader : <span>{{$foto['author']}}</span></p>
+                                        <p class="mt-1 mb-0">Category : <span>{{$foto['jenis']}}</span></p>
+                                    </div>
+
+                                    <div class="col-12 col-md-3 d-flex justify-content-end">
+                                        <label class="toggleButton">
+                                            <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
+                                            <div>
+                                                <svg viewBox="0 0 44 44">
+                                                    <path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path>
+                                                </svg>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         @endforeach
@@ -117,16 +134,33 @@
                 <h2 class="font-weight-light text-center text-lg-left mt-4 mb-0">Video</h2>
                 <hr class="mt-2 mb-5">
 
-                <div class="row text-center">
+                <div class="row text-center justify-content-center">
                     @csrf
                     @if(count($videos[0])!=0)
                     @foreach($videos as $video)
                         @foreach($video['video'] as $vid)
-                            <div class="image col-lg-3 col-md-4 col-6">
-                                <div class="d-block mb-4">
-                                    <div class="codegena_iframe" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>    
-                                    <p class="mt-2 mb-0">{{$vid['title']}}</p>
-                                    <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
+                            <div class="image col-lg-3 col-md-4 col-sm-6 col-9">
+                                <div class="card d-block mb-4">
+                                    <div class="codegena_iframe card-img-top" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>
+
+                                    <div class="row card-body align-items-center">
+                                        <div class="col-12 col-md-9 text-left">
+                                            <p class="mt-2 mb-0">Title &ensp; &ensp; &ensp; : <span>{{$vid['title']}}</span></p>
+                                            <p class="mt-1 mb-0">Uploader : <span>{{$vid['name']}}</span></p>
+                                            <p class="mt-1 mb-0">Category : <span>{{$vid['jenis']}}</span></p>
+                                        </div>
+
+                                        <div class="col-12 col-md-3 d-flex justify-content-end">
+                                            <label class="toggleButton">
+                                                <input type="checkbox" name="checkvideo[]" value="{{$vid['id']}}">
+                                                <div>
+                                                    <svg viewBox="0 0 44 44">
+                                                        <path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- <iframe width="640" height="390" src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" frameborder="0" allowfullscreen></iframe> -->

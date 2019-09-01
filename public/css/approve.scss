@@ -1,11 +1,32 @@
 @import 'variables';
 
-h2{
-    font-family: 'Apercu Bold';
+h2{ font-family: 'Apercu Bold', sans-serif; }
+
+p, .btn{ 
+    font-family: 'Apercu Medium', sans-serif;
+    font-size: 14px;
 }
 
-p{
-    font-family: 'Apercu Medium';
+body{
+    background: color(bright-gray) !important;
+}
+
+span{ 
+    font-family: 'Apercu Thin', sans-serif; 
+    font-size: 14px;
+}
+
+.card{
+    box-shadow: 0 12px 25px -12px rgba(0,0,0,0.3);
+    transition: .5s;
+
+    &:hover{
+        transform: scale(1.01);
+        box-shadow: 0 12px 25px -12px rgba(0,0,0,0.4);
+    }
+}
+.card-body{
+    padding: .75rem !important;
 }
 
 .image {
@@ -14,11 +35,164 @@ p{
     img {
         height: 240px;
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transition: all 0.8s;
 
         @include tablet{ height: 175px; }
 
         @include laptop{ height: 250px; }
+    }
+}
+
+.toggleButton {
+    cursor: pointer;
+    display: block;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transition: transform .14s ease;
+    &:active {
+        transform: rotateX(30deg);
+    }
+    input {
+        display: none;
+        & + div {
+            border: 3px solid rgba(color(nice-blue), .2);
+            border-radius: 50%;
+            position: relative;
+            width: 32px;
+            height: 32px;
+            svg {
+                fill: none;
+                stroke-width: 3.6;
+                stroke: color(nice-blue);
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                width: 32px;
+                height: 32px;
+                display: block;
+                position: absolute;
+                left: -3px;
+                top: -3px;
+                right: -3px;
+                bottom: -3px;
+                z-index: 1;
+                stroke-dashoffset: 162.6 - 38;
+                stroke-dasharray: 0 162.6 133 (162.6 - 133);
+                transition: all .4s ease 0s;
+            }
+            &:before,
+            &:after {
+                content: '';
+                width: 3px;
+                height: 12px;
+                background: color(nice-blue);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                border-radius: 5px;
+            }
+            &:before {
+                opacity: 0;
+                transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+                animation: bounceInBefore .3s linear forwards .3s;
+            }
+            &:after {
+                opacity: 0;
+                transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+                animation: bounceInAfter .3s linear forwards .3s;
+            }
+        }
+        &:checked + div {
+            svg {
+                stroke-dashoffset: 162.6;
+                stroke-dasharray: 0 162.6 28 (162.6 - 28);
+                transition: all .4s ease .2s;
+                fill: color(nice-blue);
+                stroke: color(bright-gray);
+            }
+            &:before {
+                opacity: 0;
+                transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+                animation: bounceInBeforeDont .3s linear forwards 0s;
+            }
+            &:after {
+                opacity: 0;
+                transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+                animation: bounceInAfterDont .3s linear forwards 0s;
+            }
+        }
+    }
+}
+
+@keyframes bounceInBefore {
+    0% {
+        opacity: 0;
+        transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+    }
+    50%{
+        opacity: 0.9;
+        transform: scale(1.1) translate(-50%, -50%) rotate(45deg);
+    }
+    80%{
+        opacity: 1;
+        transform: scale(.89) translate(-50%, -50%) rotate(45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+@keyframes bounceInAfter {
+    0% {
+        opacity: 0;
+        transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+    }
+    50%{
+        opacity: 0.9;
+        transform: scale(1.1) translate(-50%, -50%) rotate(-45deg);
+    }
+    80%{
+        opacity: 1;
+        transform: scale(.89) translate(-50%, -50%) rotate(-45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+@keyframes bounceInBeforeDont {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%) rotate(45deg);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+@keyframes bounceInAfterDont {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%) rotate(-45deg);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
     }
 }
