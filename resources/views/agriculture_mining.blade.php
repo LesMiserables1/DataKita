@@ -1,3 +1,4 @@
+<?php $GLOBALS['foto'] = [] ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -47,7 +48,11 @@
                     <div class="owl-carousel owl-theme carousel-modal">
                         <!-- video-video sini -->
                         @foreach($videos as $video)
-                        <div class="item"><div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" ></div></div>
+                        <div class="item">
+                            <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}"
+                                data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg"
+                                data-responsive="true"></div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -113,20 +118,20 @@
                     <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
                         <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
                         <li><a class="dropdown-item" href="/admin/delete">Delete</a></li>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
-                         {{ __('Logout') }}
+                            {{ __('Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                         @csrf
+                            @csrf
                         </form>
                     </ul>
                 </li>
                 @endif
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
-                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search"
+                    name="search_query">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -150,85 +155,84 @@
                 </div>
             </div>
         </section>
-
         <section id="photo-gallery" class="area">
             <div class="container carousel-wrap">
-                @if($photos[0] != null)
-                @foreach($photos as $photo)
-                <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                                </button>
+
+                <!-- <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true" style="font-size: 24px;">&times;</span>
+                            </button>
+                            <div class="modal-body">
                                 <div class="modal-body carousel-wrap">
                                     <div class="owl-carousel owl-theme carousel-modal">
-                                            @foreach($photo['foto'] as $foto)
-                                        <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
-                                            <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
-                                        @endforeach
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+                </div> -->
                 <div class="owl-carousel owl-theme gallery">
-                    <div class="row item">
-                        <!-- kolom untuk gambar -->
-                        <div class="col-12 col-xl-8">
-                            <div class="pict-column">
-                                <!-- image goes here -->
-                                <img class="owl-lazy" data-src="/show/foto/{{$photo['foto'][0]->nama_foto}}">
-                                <!-- Button trigger modal -->
-                                <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
-                                    bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
-                                    satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
-                                    karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
-                                    modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
-                                @if(count($photo['foto']) > 1)
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal"
-                                    data-target="#photoModal">
-                                    See full slide
-                                </button>
-                                @endif
+                        @foreach($photos as $photo)
+                        @if(count($photo) > 1)
+                        <div class="row item">
+                            <!-- kolom untuk gambar -->
+                            <div class="col-12 col-xl-8">
+                                <div class="pict-column">
+                                    <!-- image goes here -->
+                                    <img class="owl-lazy" data-src="/show/foto/{{$photo['foto'][0]->nama_foto}}">
+                                    <!-- Button trigger modal -->
+                                    <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
+                                        bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
+                                        satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
+                                        karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
+                                        modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
+                                    @if(count($photo['foto']) > 1)
+                                    <button type="button" class="btn btn-primary more-than-one">
+                                        See full slide
+                                    </button>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                        <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
-                        <div class="col-12 col-xl-4">
-                            <div class="text-column p-4 p-xl-2">
-                                <!-- judul caption -->
-                                <div class="title">
-                                    <h4>{{$photo['title']}}</h4>
-                                    <hr class="mt-3 mb-3">
-                                </div>
-
-                                <div class="photo-by">
-                                    <!-- nama user -->
-                                    <h6 class="mb-1">Photo and Caption by</h6>
-                                    <p>{{$photo['foto'][0]->author}}</p>
-                                </div>
-
-                                <div class="caption text-justify">
-                                    <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
-                                    lebih dari satu p tag -->
-                                    <p>
-                                        {{$photo['foto'][0]->caption}}
-                                    </p>
-                                </div>
-
-                                <div class="time">
-                                    <!-- upload time -->
-                                    <h6 class="mb-1">Uploaded on</h6>
-                                    <p>{{$photo['foto'][0]->date}}</p>
-                                </div>
-
-                                <div class="location">
-                                    <!-- lokasi -->
-                                    <h6 class="mb-1">Location</h6>
-                                    <p>{{$photo['foto'][0]->location}}</p>
-                                </div>
-                                <div class="tags">
+                            <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
+                            <div class="col-12 col-xl-4">
+                                <div class="text-column p-4 p-xl-2">
+                                    <!-- judul caption -->
+                                    <div class="title">
+                                        <h4>{{$photo['title']}}</h4>
+                                        <hr class="mt-3 mb-3">
+                                    </div>
+    
+                                    <div class="photo-by">
+                                        <!-- nama user -->
+                                        <h6 class="mb-1">Photo and Caption by</h6>
+                                        <p>{{$photo['foto'][0]->author}}</p>
+                                    </div>
+    
+                                    <div class="caption text-justify">
+                                        <!-- caption. note: kalau user nginput lebih dari satu paragraf berarti butuh
+                                        lebih dari satu p tag -->
+                                        <p>
+                                            {{$photo['foto'][0]->caption}}
+                                        </p>
+                                    </div>
+    
+                                    <div class="time">
+                                        <!-- upload time -->
+                                        <h6 class="mb-1">Uploaded on</h6>
+                                        <p>{{$photo['foto'][0]->date}}</p>
+                                    </div>
+    
+                                    <div class="location">
+                                        <!-- lokasi -->
+                                        <h6 class="mb-1">Location</h6>
+                                        <p>{{$photo['foto'][0]->location}}</p>
+                                    </div>
+                                    <div class="tags">
                                         <h6 class="mb-1">Tags</h6>
                                         <ul class="pl-0">
                                             @foreach($photo['foto'][0]['tags'] as $tag)
@@ -236,88 +240,91 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                <!-- link download -->
-                                <a href="/show/foto/{{$photo['foto'][0]['nama_foto']}}"><button type="button"
-                                        class="btn btn-primary btn-shadow mt-2">Download</button></a>
+                                    <!-- link download -->
+                                    <a href="/show/foto/{{$photo['foto'][0]['nama_foto']}}"><button type="button"
+                                            class="btn btn-primary btn-shadow mt-2">Download</button></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        @endif
+                        @endforeach
                 </div>
-                @endforeach
-                @endif
             </div>
         </section>
-            <section id="video-gallery" class="area">
-                <div class="container carousel-wrap">
-                    <div class="owl-carousel owl-theme gallery">
-                        @foreach($videos as $video)
+        <section id="video-gallery" class="area">
+            <div class="container carousel-wrap">
+                <div class="owl-carousel owl-theme gallery">
+                    @foreach($videos as $video)
 
-                        <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
+                    <!-- video2 beserta caption di dalam owl-carousel, masing2 video ada di dalam class row item, 
                         begitu juga dengan div2 anaknya seperti col-12 video-column dst. video-column untuk container video, text-column untuk container caption  -->
-                        <div class="row item">
-                            <div class="col-12 col-xl-8">
-                                <div class="video-column">
-                                    <!-- video goes here -->
-                                    <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true" ></div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-4">
-                                <div class="text-column p-4 p-xl-2">
-
-                                    <!-- judul caption -->
-                                    <div class="title">
-                                        <h4>{{$video->title}}</h4>
-                                        <hr class="mt-3 mb-3">
-                                    </div>
-
-                                    <!-- nama user -->
-                                    <div class="video-by">
-                                        <h6 class="mb-1">Video and Caption by</h6>
-                                        <p>{{$video->name}}</p>
-                                    </div>
-
-                                    <!-- caption -->
-                                    <div class="caption text-justify">
-                                        <p>
-                                            {{$video->caption}}
-                                        </p>
-                                    </div>
-
-                                    <!-- upload time -->
-                                    <div class="time">
-                                        <h6 class="mb-1">Uploaded on</h6>
-                                        <p>{{$video->date}}</p>
-                                    </div>
-
-                                    <!-- lokasi -->
-                                    <div class="location">
-                                        <h6 class="mb-1">Location</h6>
-                                        <p>{{$video->location}}</p>
-                                    </div>
-
-                                    <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            @foreach($video->tags as $tag)
-                                            <li>{{$tag}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-
-                                </div>
+                    <div class="row item">
+                        <div class="col-12 col-xl-8">
+                            <div class="video-column">
+                                <!-- video goes here -->
+                                <div class="codegena_iframe"
+                                    data-src="https://www.youtube.com/embed/{{$video->video_id}}"
+                                    data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg"
+                                    data-responsive="true"></div>
                             </div>
                         </div>
-                        @endforeach
+
+                        <div class="col-12 col-xl-4">
+                            <div class="text-column p-4 p-xl-2">
+
+                                <!-- judul caption -->
+                                <div class="title">
+                                    <h4>{{$video->title}}</h4>
+                                    <hr class="mt-3 mb-3">
+                                </div>
+
+                                <!-- nama user -->
+                                <div class="video-by">
+                                    <h6 class="mb-1">Video and Caption by</h6>
+                                    <p>{{$video->name}}</p>
+                                </div>
+
+                                <!-- caption -->
+                                <div class="caption text-justify">
+                                    <p>
+                                        {{$video->caption}}
+                                    </p>
+                                </div>
+
+                                <!-- upload time -->
+                                <div class="time">
+                                    <h6 class="mb-1">Uploaded on</h6>
+                                    <p>{{$video->date}}</p>
+                                </div>
+
+                                <!-- lokasi -->
+                                <div class="location">
+                                    <h6 class="mb-1">Location</h6>
+                                    <p>{{$video->location}}</p>
+                                </div>
+
+                                <div class="tags">
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($video->tags as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+                    @endforeach
                 </div>
-            </section>
-        </main>
-        
-        <!-- footer slebew -->
-        <footer id="page-footer">
-            @footer @endfooter
-        </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer slebew -->
+    <footer id="page-footer">
+        @footer @endfooter
+    </footer>
 
     <script src="{!! asset('js/gallery.js') !!}"></script>
     <script src="{!! asset('js/header.js') !!}"></script>

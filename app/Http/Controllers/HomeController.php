@@ -144,7 +144,6 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
-
         return view('social_population')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
 
@@ -246,5 +245,8 @@ class HomeController extends Controller
 
         return view('search')->with('photos',$foto)->with('videos',$video)->with('query',$request->search_query)->with('count',$count);
     }
-    
+    public function test()
+    {
+        return json_encode('test');
+    }   
 }

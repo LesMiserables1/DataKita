@@ -43,4 +43,5 @@ Route::get('/about','HomeController@about');
 Route::get('/search','HomeController@search');
 
 Route::get('/show/foto/{nama_foto}','UploadController@showPhoto');
+Route::get('/test','HomeController@test');
 

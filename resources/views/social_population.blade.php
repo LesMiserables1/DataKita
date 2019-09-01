@@ -141,27 +141,28 @@
 
         <section id="photo-gallery" class="area">
             <div class="container carousel-wrap">
-                @if($photos[0] != null)
-                @foreach($photos as $photo)
-                <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                                </button>
+
+                <!-- <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true" style="font-size: 24px;">&times;</span>
+                            </button>
+                            <div class="modal-body">
                                 <div class="modal-body carousel-wrap">
                                     <div class="owl-carousel owl-theme carousel-modal">
-                                            @foreach($photo['foto'] as $foto)
-                                        <!-- foto-foto tersebut diletakkan di sini. di dalam owl-carousel dan div foto tersebut punya class item -->
-                                            <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
-                                        @endforeach
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+                </div> -->
                 <div class="owl-carousel owl-theme gallery">
+                    @foreach($photos as $photo)
+                    @if(count($photo) > 1)
                     <div class="row item">
                         <!-- kolom untuk gambar -->
                         <div class="col-12 col-xl-8">
@@ -175,8 +176,7 @@
                                     karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
                                     modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
                                 @if(count($photo['foto']) > 1)
-                                <button type="button" class="btn btn-primary more-than-one" data-toggle="modal"
-                                    data-target="#photoModal">
+                                <button type="button" class="btn btn-primary more-than-one">
                                     See full slide
                                 </button>
                                 @endif
@@ -217,22 +217,22 @@
                                     <p>{{$photo['foto'][0]->location}}</p>
                                 </div>
                                 <div class="tags">
-                                        <h6 class="mb-1">Tags</h6>
-                                        <ul class="pl-0">
-                                            @foreach($photo['foto'][0]['tags'] as $tag)
-                                            <li>{{$tag}}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                                    <h6 class="mb-1">Tags</h6>
+                                    <ul class="pl-0">
+                                        @foreach($photo['foto'][0]['tags'] as $tag)
+                                        <li>{{$tag}}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <!-- link download -->
                                 <a href="/show/foto/{{$photo['foto'][0]['nama_foto']}}"><button type="button"
                                         class="btn btn-primary btn-shadow mt-2">Download</button></a>
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @endforeach
                 </div>
-                @endforeach
-                @endif
             </div>
         </section>
 
