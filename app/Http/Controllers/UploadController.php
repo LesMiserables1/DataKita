@@ -146,7 +146,7 @@ class UploadController extends Controller
         $foto = Photo::where('nama_foto', $request->nama_foto)->first();
         try {
             $path = Storage::disk('foto')->get($foto->nama_foto);
-            $image = Image::make($path)->resize('300', '300');
+            $image = Image::make($path);
             return $image->response();
         } catch (\Throwable $th) { }
 
