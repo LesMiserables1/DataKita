@@ -108,7 +108,7 @@
                 <li class="nav-item dropdown mr-lg-4 mr-0 mr-md-1">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-upload"></i> Admin
+                        <i class="fas fa-user-shield"></i> Admin
                     </a>
                     <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
                         <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>

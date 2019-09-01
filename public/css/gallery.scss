@@ -167,6 +167,17 @@
         }
     }
 
+    #photoModal{
+        .owl-nav{
+            .owl-next{
+                @include laptop {
+                    left: unset !important;
+                    right: 0;
+                }
+            }
+        }
+    }
+
     //changing the position of owl-next in gallery
     #photo-gallery, #video-gallery {
         .owl-nav {

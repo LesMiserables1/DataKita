@@ -204,6 +204,13 @@ input[type="radio"]:checked + .label:after {
 }
 
 @media (min-width: 1201px) {
+  #photoModal .owl-nav .owl-next {
+    left: unset !important;
+    right: 0;
+  }
+}
+
+@media (min-width: 1201px) {
   #photo-gallery .owl-nav .owl-next, #video-gallery .owl-nav .owl-next {
     left: 61.37%;
   }
