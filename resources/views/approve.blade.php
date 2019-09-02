@@ -136,13 +136,12 @@
 
                 <div class="row text-center justify-content-center">
                     @csrf
-                    @if(count($videos[0])!=0)
+                    @if(count($videos[0]) > 0)
                     @foreach($videos as $video)
                         @foreach($video['video'] as $vid)
                             <div class="image col-lg-3 col-md-4 col-sm-6 col-9">
                                 <div class="card d-block mb-4">
-                                    <div class="codegena_iframe card-img-top" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div>
-
+                                    <div class="codegena_iframe card-img-top" data-src="http://www.youtube.com/embed/{{$vid->video_id}}?enablejsapi=1" data-img="https://img.youtube.com/vi/{{$vid->video_id}}/sddefault.jpg" data-responsive="true"></div>
                                     <div class="row card-body align-items-center">
                                         <div class="col-12 col-md-9 text-left">
                                             <p class="mt-2 mb-0">Title &ensp; &ensp; &ensp; : <span>{{$vid['title']}}</span></p>
