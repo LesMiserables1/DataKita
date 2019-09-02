@@ -44,7 +44,7 @@ span {
   overflow: hidden;
 }
 
-.image img {
+.image img, .image .codegena_iframe {
   height: 240px;
   width: 100%;
   -o-object-fit: cover;
@@ -54,15 +54,19 @@ span {
 }
 
 @media (max-width: 767px) {
-  .image img {
+  .image img, .image .codegena_iframe {
     height: 175px;
   }
 }
 
 @media (min-width: 1201px) {
-  .image img {
+  .image img, .image .codegena_iframe {
     height: 250px;
   }
+}
+
+.codegena_iframe img {
+  pointer-events: none;
 }
 
 .toggleButton {

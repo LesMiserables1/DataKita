@@ -32,7 +32,7 @@ span{
 .image {
     overflow: hidden;
 
-    img {
+    img, .codegena_iframe {
         height: 240px;
         width: 100%;
         object-fit: cover;
@@ -42,6 +42,10 @@ span{
 
         @include laptop{ height: 250px; }
     }
+}
+
+.codegena_iframe img{
+    pointer-events: none;
 }
 
 .toggleButton {
