@@ -167,17 +167,6 @@
         }
     }
 
-    #photoModal{
-        .owl-nav{
-            .owl-next{
-                @include laptop {
-                    left: unset !important;
-                    right: 0;
-                }
-            }
-        }
-    }
-
     //changing the position of owl-next in gallery
     #photo-gallery, #video-gallery {
         .owl-nav {
@@ -221,7 +210,7 @@
 
     //image and video container
     .pict-column, .video-column {
-        background: #efefef;
+        
         justify-content: center;
     }
 

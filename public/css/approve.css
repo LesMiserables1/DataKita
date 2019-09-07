@@ -18,7 +18,7 @@ body {
 }
 
 span {
-  font-family: 'Apercu Thin', sans-serif;
+  font-family: 'Apercu Light', sans-serif;
   font-size: 14px;
 }
 
@@ -59,7 +59,7 @@ span {
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   .image img, .image .codegena_iframe {
     height: 250px;
   }

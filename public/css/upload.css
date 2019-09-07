@@ -126,7 +126,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   .toggle input + label {
     font-size: 15px;
   }

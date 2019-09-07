@@ -14,6 +14,22 @@ $('.gallery').owlCarousel({
         0: {
             items: 1
         }
+    },
+    autoHeight: true
+});
+
+$('.owl-more-than-one').owlCarousel({
+    loop: true,
+    margin: 10,
+    smartSpeed: 700,
+    dots: true,
+    lazyLoad: true,
+    nav: true,
+    autoplay: false,
+    responsive: {
+        0: {
+            items: 1
+        }
     }
 });
 

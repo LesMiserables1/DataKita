@@ -98,7 +98,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #agriculture, #social, #economy {
     background-position-x: center;
     background-size: auto;
@@ -135,7 +135,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #social {
     background-position-x: center;
     background-size: auto;
@@ -155,7 +155,7 @@
   background-position: center;
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #economy {
     background-position-x: center;
     background-size: auto;
@@ -203,6 +203,11 @@
   overflow: hidden;
 }
 
+#events .image .img-container {
+  -webkit-animation: gradientBackground 2s ease-in-out infinite;
+  animation: gradientBackground 2s ease-in-out infinite;
+}
+
 #events .image:hover img {
   -webkit-filter: brightness(0.6);
           filter: brightness(0.6);
@@ -238,7 +243,7 @@
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #events .image img {
     height: 180px;
   }
