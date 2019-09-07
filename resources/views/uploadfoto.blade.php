@@ -131,7 +131,8 @@
 
                             <!-- upload file -->
                             <div class="form-group">
-                                <label>Upload <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can upload up to 10 photos." data-placement="right"></i></label>
+                                <label class="mb-0">Upload</label>
+                                <p class="input-info mb-1">You can upload up to 10 photos</p>
                                 <div class="custom-file">
                                     <input type="file" name="foto[]" id="uploadfile" accept="image/*" class="custom-file-input" multiple required>
                                     <label class="custom-file-label" for="validatedCustomFile" id="upload-label">No file choosen</label>
@@ -141,19 +142,19 @@
 
                             <!-- input nama -->
                             <div class="form-group">
-                                <label>Name <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Your name goes here." data-placement="right"></i></label>
+                                <label>Name</label>
                                 <input type="text" class="form-control" id="your-name" placeholder="John Doe" name="author" required>
                             </div>
 
                             <!-- input lokasi -->
                             <div class="form-group">
-                                <label>Location <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="The location in which you took your photo." data-placement="right"></i></label>
+                                <label>Location</label>
                                 <input type="text" class="form-control" id="your-location" placeholder="Bandung, West Java" name="location" required>
                             </div>
 
                             <!-- input judul -->
                             <div class="form-group">
-                                <label>Caption Title <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can write your desired title for the caption!" data-placement="right"></i></label>
+                                <label>Caption Title</label>
                                 <input type="text" class="form-control" id="your-title" placeholder="Dreamy Days" name="title" required>
                             </div>
 
@@ -165,7 +166,7 @@
 
                             <!-- input category -->
                             <div class="form-group">
-                                <label>Category <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="Pick one category based on your photo." data-placement="right"></i></label>
+                                <label>Category</label>
 
                                 <!-- radio atas -->
                                 <div class="toggle mb-0 justify-content-center">
@@ -188,11 +189,13 @@
 
                             <!-- input tags -->
                             <div class="form-group">
-                                <label>Tags <i class="far fa-question-circle ml-1 text-muted question" data-toggle="tooltip" title="You can add up to 6 tags." data-placement="right"></i></label>
+                                <label class="mb-0">Tags</label>
+                                <p class="input-info mb-1">You can add up to 8 tags</p>
                                 <input type="text" class="form-control" data-role="tagsinput" id="tags" value="Experiences,Love,Journey" name="tags" required>
                                 <span class="text-danger" id="tags-warning" class="warning"></span>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Upload">
+                            <p class="upload-info mt-2">Your upload will be posted after admin's approval.</p>
                         </form>
                     </div>
                 </div>

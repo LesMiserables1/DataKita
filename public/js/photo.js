@@ -1,14 +1,9 @@
 $('#tags').tagsinput({
-    maxTags: 6
+    maxTags: 8
 });
 //custom file input activator
 $(document).ready(function () {
     bsCustomFileInput.init();
-});
-
-//to activate tooltip
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
 });
 
 //UI control on file input > 10
@@ -25,12 +20,12 @@ $("#uploadfile").on("change", function() {
     }
 });
 
-//controlling UI if the tags entered more than 6
+//controlling UI if the tags entered more than 8
 var warn = document.getElementById("tags-warning");
 $('#tags').on("change", function(){
     //var to be stored
     var len = $('#tags').val().split(',');
     console.log(len);
-    if(len.length >= 6) warn.innerHTML = "You can't add more tags.";
+    if(len.length >= 8) warn.innerHTML = "You can't add more tags.";
     else warn.innerHTML = "";
 });

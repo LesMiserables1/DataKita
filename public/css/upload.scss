@@ -42,12 +42,22 @@
     //warning text below the file input
     #upload-warning, #tags-warning {
         font-size: 12px;
+        font-family: 'Apercu Light';
+    }
+
+    label{
+        font-family: 'Apercu Bold';
+    }
+
+    input, textarea, .upload-info{
+        font-family: 'Apercu Regular';
     }
 
     //what's inside the file input box
     .custom-file-label {
         color: color(placeholder);
         display: inline-block;
+        font-family: 'Apercu Regular';
         overflow: hidden;
         vertical-align: middle;
         background-color: color(bright-gray);
@@ -68,15 +78,6 @@
         }
     }
 
-    //question mark icon to display tooltip
-    .question {
-        font-size: 12px;
-
-        &:hover {
-            color: color(nice-blue) !important;
-        }
-    }
-
     //container for the category option
     .toggle {
         font-size: 0;
@@ -86,6 +87,10 @@
         //hiding that ugly default radio
         input {
             @include hideInput;
+        }
+
+        label{
+            font-family: 'Apercu Regular';
         }
 
         //+ sign means that this styles label siblings to input
@@ -175,6 +180,17 @@
             }
         }
     }
+
+    // additional info below the input label
+    .input-info{
+        font-size: 12.5px;
+        font-family: 'Apercu Light';
+    }
+
+    //text below submit button
+    .upload-info{
+        font-size: 14px;
+    }
     .bootstrap-tagsinput{
         width: 100%;
         background: color(bright-gray);
@@ -185,6 +201,7 @@
             border-radius: 3px;
             color: color(dark-text);
             font-size: 14px;
+            font-family: 'Apercu Regular';
         }
         .tag [data-role="remove"]:after{
             content: "\d7";

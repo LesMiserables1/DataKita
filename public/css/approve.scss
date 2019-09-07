@@ -60,15 +60,15 @@ span{
     input {
         display: none;
         & + div {
-            border: 3px solid rgba(color(nice-blue), .2);
+            border: 3px solid transparent;
             border-radius: 50%;
             position: relative;
             width: 32px;
             height: 32px;
             svg {
-                fill: none;
-                stroke-width: 3.6;
-                stroke: color(nice-blue);
+                fill: #9CE2B6;
+                stroke-width: 0;
+                stroke: #136E36;
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 width: 32px;
@@ -87,9 +87,10 @@ span{
             &:before,
             &:after {
                 content: '';
-                width: 3px;
+                width: 2px;
                 height: 12px;
-                background: color(nice-blue);
+                background: #8E2829;
+                z-index: 100;
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -110,9 +111,10 @@ span{
             svg {
                 stroke-dashoffset: 162.6;
                 stroke-dasharray: 0 162.6 28 (162.6 - 28);
+                stroke-width: 3.6;
                 transition: all .4s ease .2s;
-                fill: color(nice-blue);
-                stroke: color(bright-gray);
+                fill: #e8f0fe;
+                stroke: #1967d2;
             }
             &:before {
                 opacity: 0;
