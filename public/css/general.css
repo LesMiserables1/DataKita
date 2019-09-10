@@ -63,11 +63,21 @@ section {
   background: rgba(15, 120, 185, 0.89) !important;
   border-color: rgba(15, 120, 185, 0.89) !important;
   color: #F5F8FA;
+  background-position: center !important;
+  -webkit-transition: background 0.9s !important;
+  transition: background 0.9s !important;
 }
 
 .btn-primary:hover {
-  background: #007bff !important;
-  border-color: #007bff !important;
+  background: #007bff radial-gradient(circle, transparent 1%, #007bff 1%) center/15000% !important;
+  border-color: transparent !important;
+}
+
+.btn-primary:active {
+  background-color: #5fb5fc !important;
+  background-size: 100% !important;
+  -webkit-transition: background 0s !important;
+  transition: background 0s !important;
 }
 
 .btn-shadow:hover {

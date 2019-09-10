@@ -35,31 +35,6 @@
 </head>
 
 <body>
-    <!-- videoModal -->
-    <!-- fungsinya sama seperti modal di atas, tapi ini untuk video -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                </button>
-                <div class="modal-body carousel-wrap">
-                    <div class="owl-carousel owl-theme carousel-modal">
-                        <!-- video-video sini -->
-                        @foreach($videos as $video)
-                        <div class="item">
-                            <div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}"
-                                data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg"
-                                data-responsive="true"></div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">Logo</a>
@@ -131,7 +106,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
                 <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search"
-                    name="search_query">
+                    name="search_query" required>
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>

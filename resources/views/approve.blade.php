@@ -85,7 +85,7 @@
                 @endif
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
-                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query" required>
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -113,7 +113,7 @@
                                         <p class="mt-1 mb-0">Category : <span>{{$foto['jenis']}}</span></p>
                                     </div>
 
-                                    <div class="col-12 col-md-3 d-flex justify-content-end">
+                                    <div class="col-12 col-md-3 d-flex mt-3 mt-md-0 justify-content-end">
                                         <label class="toggleButton">
                                             <input type="checkbox" name="check[]" value="{{$foto['id']}} " id="">
                                             <div>

@@ -88,7 +88,7 @@
                 @endif
             </ul>
             <form class="form-inline my-2 my-lg-0" method="get" action="/search">
-                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query">
+                <input class="form-control search-box mr-2" type="search" placeholder="Search" aria-label="Search" name="search_query" required>
                 <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -167,7 +167,7 @@
                 <div class="row not-found">
                     <div class="col text-center">
                         <p class="mb-4">Sorry, we couldn't find any video for '<span class="query">{{$query}}</span>'.</p>
-                        <img src="../images/not found.png" alt="Not Found" class="img-notfound lazy">
+                        <img src="../images/not found.svg" alt="Not Found" class="img-notfound lazy">
                     </div>
                 </div>
                 @endif
