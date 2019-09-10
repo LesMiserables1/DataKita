@@ -105,10 +105,11 @@ class AdminController extends Controller
     }
     public function showDelete(Request $request)
     {
-        $photos = Photo::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
+        $photos = Photo::where('approve',true)->get();
         $countPhotos = (int)(count($photos)/10);
         if(count($photos) % 10 != 0)
             $countPhotos++;
+        $photos = Photo::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
         $prevCaption = "";
         $x = 0;
         $arrPhoto = array(array());
@@ -133,11 +134,11 @@ class AdminController extends Controller
                 $prevCaption = $title;
             }
         }
-        
-        $videos = Video::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
+        $videos = Video::where('approve',true)->get();
         $countVideos =(int) (count($videos)/10);
         if(count($videos) % 10 != 0)
             $countVideos++;
+        $videos = Video::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
         $prevCaption = "";
         $x = 0;
         $arrVideo = array(array());
