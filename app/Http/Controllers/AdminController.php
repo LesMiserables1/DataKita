@@ -103,9 +103,12 @@ class AdminController extends Controller
         }
         return view('approve')->with('photos',$arrPhoto)->with('videos',$arrVideo);
     }
-    public function showDelete()
+    public function showDelete(Request $request)
     {
-        $photos = Photo::where('approve',true)->get();
+        $photos = Photo::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
+        $countPhotos = (int)(count($photos)/10);
+        if(count($photos) % 10 != 0)
+            $countPhotos++;
         $prevCaption = "";
         $x = 0;
         $arrPhoto = array(array());
@@ -131,7 +134,10 @@ class AdminController extends Controller
             }
         }
         
-        $videos = Video::where('approve',true)->get();
+        $videos = Video::where('approve',true)->skip(($request->page-1)*10)->take(10)->get();
+        $countVideos =(int) (count($videos)/10);
+        if(count($videos) % 10 != 0)
+            $countVideos++;
         $prevCaption = "";
         $x = 0;
         $arrVideo = array(array());
@@ -156,7 +162,8 @@ class AdminController extends Controller
                 $prevCaption = $title;
             }
         }
-        return view('delete')->with('photos',$arrPhoto)->with('videos',$arrVideo);
+        $count = $countVideos > $countPhotos ? $countVideos : $countPhotos;
+        return view('delete')->with('photos',$arrPhoto)->with('videos',$arrVideo)->with('count',$count);
     }
     public function delete(Request $request)
     {

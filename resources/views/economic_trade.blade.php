@@ -102,7 +102,7 @@
                     </a>
                     <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
                         <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
-                        <li><a class="dropdown-item" href="/admin/delete">Delete</a></li>
+                        <li><a class="dropdown-item" href="/admin/delete/1">Delete</a></li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

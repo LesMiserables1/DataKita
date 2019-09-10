@@ -72,7 +72,7 @@
                     </a>
                     <ul class="dropdown-menu ml-0 mr-0" aria-labelledby="navbarDropdown2">
                         <li><a class="dropdown-item" href="/admin/approve">Approve</a></li>
-                        <li><a class="dropdown-item active" href="/admin/delete">Delete</a></li>
+                        <li><a class="dropdown-item active" href="/admin/delete/1">Delete</a></li>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -166,7 +166,12 @@
                     @endforeach
                     @endif
                 </div>
-
+                <center>
+                    @for($i = 1;$i <= $count;$i++)
+                    <a href="/admin/delete/{{$i}}">{{$i}} </a>
+                    @endfor
+                <center>
+                
                 <div class="row text-center">
                     <div class="col">
                         <button class="btn btn-outline-danger" type="submit" value="delete" name="status">Delete</button>
