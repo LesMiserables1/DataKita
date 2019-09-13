@@ -100,6 +100,7 @@
 
     <main>
         <section id="about">
+            <img src="{!! asset('images/about.jpg') !!}" />
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 text-center content">
