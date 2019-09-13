@@ -23,6 +23,8 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 80%;
+     object-position: 80%;
 }
 
 #about .container, #about .row {
