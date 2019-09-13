@@ -65,6 +65,10 @@ button span {
 ::placeholder {
     color: color(placeholder) !important;
 }
+
+.owl-theme .owl-dots .owl-dot{
+    outline: none;
+}
 /* end of global styling */
 
 /*  ==============

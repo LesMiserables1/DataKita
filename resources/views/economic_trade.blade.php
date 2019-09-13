@@ -26,29 +26,6 @@
 </head>
 
 <body>
-    <!-- photoModal -->
-    <!-- ditampilkan ketika mengeklik button yang ada di slide yang lebih dari satu foto -->
-
-    <!-- videoModal -->
-    <!-- fungsinya sama seperti modal di atas, tapi ini untuk video -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                </button>
-                <div class="modal-body carousel-wrap">
-                    <div class="owl-carousel owl-theme carousel-modal">
-                        <!-- video-video sini -->
-                        @foreach($videos as $video)
-                        <div class="item"><div class="codegena_iframe" data-src="https://www.youtube.com/embed/{{$video->video_id}}" data-img="https://img.youtube.com/vi/{{$video->video_id}}/sddefault.jpg" data-responsive="true"></div></div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
         <a class="navbar-brand" href="/">UpToData</a>
@@ -151,11 +128,10 @@
                             <div class="pict-column">
                                 <!-- image goes here -->
                                 <div class="owl-carousel owl-theme owl-more-than-one">
-                                        @foreach($photo['foto'] as $foto)
-                                            <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
-                                        @endforeach
-                                    </div>
-                                </button>
+                                    @foreach($photo['foto'] as $foto)
+                                        <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->

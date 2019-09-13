@@ -18,8 +18,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $photoInfo =  Photo::where('jenis','Infographics')->where('approve',true)->get();
-        $photoEve = Photo::where('jenis','Event_Experience')->where('approve',true)->get()->take(8);
+        $photoInfo =  Photo::where('jenis','Infographics')->where('approve',true)->get()->take(8);
+        $photoEve = Photo::where('jenis','Event_Experiences')->where('approve',true)->get()->take(8);
         $count = \Counter::showAndCount('home');
         return view('welcome')->with('photoInfo',$photoInfo)->with('photoEve',$photoEve)->with('count',$count);
     }
@@ -155,7 +155,7 @@ class HomeController extends Controller
 
     public function show_eve_exp()
     {
-        $photos = Photo::where('jenis','Event_Experience')->where('approve',true)->get();
+        $photos = Photo::where('jenis','Event_Experiences')->where('approve',true)->get();
         $prevCaption = "";
         $x = 0;
         $arrPhoto = array(array());
@@ -183,7 +183,7 @@ class HomeController extends Controller
                 $prevCaption = $title;
             }
         }
-        $video = Video::where('jenis','Event_Experience')->where('approve',true)->get();
+        $video = Video::where('jenis','Event_Experiences')->where('approve',true)->get();
         $x = 0;
         foreach($video as $vid){
             $tag = $vid->tags;

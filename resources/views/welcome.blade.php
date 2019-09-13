@@ -16,10 +16,6 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
-    <!-- style -->
-    <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
-    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
-
     <!-- default passive events for performance optimization -->
     <script src="https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js"></script>
 
@@ -27,6 +23,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- style -->
+    <link rel="stylesheet" href="{!! asset('css/welcome.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/general.css') !!}">
 </head>
 
     <body style="padding-bottom: 0;">
@@ -206,7 +206,7 @@
                     <h1 class="text-center text-title mt-4 mb-2">Infographics</h1>
                     <div class="blue-line mb-4 mt-1 mx-auto"></div>
                     <div class="row carousel-wrap">
-                        <div class="owl-carousel owl-theme">
+                        <div class="owl-carousel owl-theme info-carousel">
                             @foreach($photoInfo as $photo)
                             <div class="item">
                                 <!-- gambar -->
