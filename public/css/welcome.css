@@ -70,11 +70,17 @@
   width: 100%;
   -webkit-transition: all 1.4s;
   transition: all 1.4s;
-  background: url(../images/agriculture.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 1.4s;
+}
+
+#agriculture img, #social img, #economy img {
+  z-index: -100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #agriculture .container-fluid, #social .container-fluid, #economy .container-fluid {
@@ -83,27 +89,6 @@
 
 #agriculture .container-fluid .row, #social .container-fluid .row, #economy .container-fluid .row {
   height: 100%;
-}
-
-@media (min-height: 845px) {
-  #agriculture, #social, #economy {
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-height: 845px) {
-  #agriculture, #social, #economy {
-    background: url(../images/agriculture2.jpg);
-    background-position: center;
-  }
-}
-
-@media (min-width: 1200px) {
-  #agriculture, #social, #economy {
-    background-position-x: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-  }
 }
 
 #agriculture button, #social button, #economy button {
@@ -121,52 +106,6 @@
 @media (max-width: 575px) {
   #agriculture h1, #social h1, #economy h1 {
     font-size: 2rem !important;
-  }
-}
-
-#social {
-  background: url(../images/social.jpg);
-  background-position: -150px center;
-}
-
-@media (max-width: 575px) {
-  #social {
-    background-position: -240px center;
-  }
-}
-
-@media (min-width: 1200px) {
-  #social {
-    background-position-x: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-height: 845px) {
-  #social {
-    background: url(../images/social2.jpg);
-    background-position: bottom;
-  }
-}
-
-#economy {
-  background: url(../images/economy.jpg);
-  background-position: center;
-}
-
-@media (min-width: 1200px) {
-  #economy {
-    background-position-x: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-height: 845px) {
-  #economy {
-    background: url(../images/economy2.jpg);
-    background-position: center center;
   }
 }
 

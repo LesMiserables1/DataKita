@@ -51,6 +51,16 @@
         height: 100vh;
         overflow: hidden;
 
+        img{
+            z-index: -100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .container-fluid{
             height: 100%;
 
@@ -58,29 +68,9 @@
                 height: 100%;
             }
         }
-        @media (min-height: 845px){ background-repeat: no-repeat; }
-
             z-index: -1;
             width: 100%;
             transition: all 1.4s;
-            background: url(../images/agriculture.jpg);
-
-            //setting background using :before to apply filter on background only, not the entire components
-            
-                
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                
-                transition: all 1.4s;
-
-                @media (min-height: 845px){ 
-                    background: url(../images/agriculture2.jpg); 
-                    background-position: center;
-                }
-                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
-            
-
 
         //button inside the three main gallery only
         button { width: 100%; }
@@ -94,31 +84,6 @@
             @include mobile{
                 font-size: 2rem !important;
             }
-        }
-    }
-
-    #social {
-            
-                background: url(../images/social.jpg);
-                background-position: -150px center;
-                @include mobile{ background-position: -240px center;}
-                @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
-
-                @media (min-height: 845px){ 
-                    background: url(../images/social2.jpg);
-                    background-position: bottom;
-                 }
-            
-    }
-
-    #economy {
-        background: url(../images/economy.jpg);
-        background-position: center;
-        @include laptop{ background-position-x: center;  background-size: auto; background-repeat: no-repeat;}
-
-        @media (min-height: 845px){ 
-            background: url(../images/economy2.jpg); 
-            background-position: center center;
         }
     }
 

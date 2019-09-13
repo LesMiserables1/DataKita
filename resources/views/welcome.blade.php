@@ -110,27 +110,29 @@
 
         <main style="padding-top:0;">
             <section id="main-category" class="owl-carousel category-carousel">
-                <section id="social" >
-                        <div class="container-fluid">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h1 class="text-center text-title">Social & Population</h1>
-                                        </div>
+                <section id="social">
+                    <img src="{!! asset('images/social.jpg') !!}" />
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <h1 class="text-center text-title">Social & Population</h1>
                                     </div>
-                                    <div class="row space"></div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-5 col-md-3 col-lg-2 text-center">
-                                            <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
-                                        </div>
-                                    </div>    
                                 </div>
+                                <div class="row space"></div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 col-md-3 col-lg-2 text-center">
+                                        <a href="/Social-Population"><button type="button" class="btn btn-primary">View gallery</button></a>
+                                    </div>
+                                </div>    
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                <section id="agriculture" >
+                <section id="agriculture">
+                    <img src="{!! asset('images/agriculture.jpg') !!}" />
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col">
@@ -151,7 +153,8 @@
                     </div>
                 </section>
 
-                <section id="economy" >
+                <section id="economy">
+                    <img src="{!! asset('images/economy.jpg') !!}" />
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col">
