@@ -1,4 +1,3 @@
-<?php $GLOBALS['foto'] = [] ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -132,45 +131,18 @@
         </section>
         <section id="photo-gallery" class="area">
             <div class="container carousel-wrap">
-
-                <!-- <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <button type="button" class="close ml-auto pr-2 pt-1" data-dismiss="modal"
-                                aria-label="Close">
-                                <span aria-hidden="true" style="font-size: 24px;">&times;</span>
-                            </button>
-                            <div class="modal-body">
-                                <div class="modal-body carousel-wrap">
-                                    <div class="owl-carousel owl-theme carousel-modal">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
                 <div class="owl-carousel owl-theme gallery">
-                        @foreach($photos as $photo)
-                        @if(count($photo) > 1)
+                    @foreach($photos as $photo)
                         <div class="row item">
                             <!-- kolom untuk gambar -->
                             <div class="col-12 col-xl-8">
                                 <div class="pict-column">
                                     <!-- image goes here -->
-                                    <img class="owl-lazy" data-src="/show/foto/{{$photo['foto'][0]->nama_foto}}">
-                                    <!-- Button trigger modal -->
-                                    <!-- jika slide punya lebih dari satu foto, muncul button ini dengan atribut seperti yang
-                                        bisa dilihat di bawah. kalau dalam satu galeri ada lebih dari satu slide yang punya lebih dari
-                                        satu foto, button ini akan muncul di slide tersebut dengan atribut yang sama. data-targetnya sama
-                                        karena ketika diklik akan memunculkan modal untuk foto yang sudah dideklarasikan di atas, tapi isi
-                                        modal tersebut tergantung konten slide yang buttonnya diklik. buttonnya ada di pict-column y -->
-                                    @if(count($photo['foto']) > 1)
-                                    <button type="button" class="btn btn-primary more-than-one">
-                                        See full slide
-                                    </button>
-                                    @endif
+                                    <div class="owl-carousel owl-theme owl-more-than-one">
+                                        @foreach($photo['foto'] as $foto)
+                                            <div class="item"><img class="owl-lazy" data-src="/show/foto/{{$foto->nama_foto}}"></div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                             <!-- kolom untuk details, page lain intinya sama. cuma kontennya aja yang beda -->
@@ -221,7 +193,6 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
                         @endforeach
                 </div>
             </div>

@@ -62,6 +62,8 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
+        if($arrPhoto[0] == null)
+            $arrPhoto = [];
         return view('agriculture_mining')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function show_eco_trade()
@@ -103,6 +105,8 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
+        if($arrPhoto[0] == null)
+            $arrPhoto = [];
         return view('economic_trade')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function show_soc_pop()
@@ -144,6 +148,8 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
+        if($arrPhoto[0] == null)
+            $arrPhoto = [];
         return view('social_population')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
 
@@ -186,7 +192,8 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
-
+        if($arrPhoto[0] == null)
+        $arrPhoto = [];
         return view('events_experience')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);   
     }
     public function show_info()
@@ -228,7 +235,8 @@ class HomeController extends Controller
             $x++;
         }
         $count = \Counter::show('home');
-
+        if($arrPhoto[0] == null)
+        $arrPhoto = [];
         return view('infographics')->with('photos',$arrPhoto)->with('videos',$video)->with('count',$count);
     }
     public function about()
