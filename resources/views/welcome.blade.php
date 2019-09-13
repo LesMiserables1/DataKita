@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DataKita</title>
+    <title>UpToData</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
     </div> 
 @endif 
         <nav class="navbar navbar-expand-md navbar-dark home-nav" id="navbar">
-            <a class="navbar-brand" href="/">Logo</a>
+            <a class="navbar-brand" href="/">UpToData</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <div id="nav-mhweb-hamburger">
                     <span></span>
@@ -231,15 +231,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3 logo">
-                            <a href="/">Logo DataKita</a>
+                            <a href="/">UpToData</a>
                             <p>We are a creative media-based concise information sharing platform</p>
                         </div>
                         <div class="col-sm-12 col-md-4 ml-auto text-center respond d-flex flex-column mt-md-3">
                             <p class="mb-0">Respond us on</p>
                             <ul class="socmed mb-0 pl-md-0">
-                                <li class="mr-3"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li class="mr-3"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="mr-3"><a href="https://twitter.com/uptodata_id"><i class="fab fa-twitter"></i></a></li>
+                                <li class="mr-3"><a href="https://www.youtube.com/channel/UCj3o5xsaGGf2ZOujR4lghqg"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://instagram.com/uptodata.id"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
@@ -249,7 +249,7 @@
                             {{$count}} website visits
                         </div>
                         <div class="col-sm-12 col-md-4 justify-content-center d-flex align-items-center copyright mt-md-3">
-                            <span>&copy; 2019 DataKita | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>
+                            <span>&copy; 2019 UpToData | <a href="https://omahti.web.id" target="_blank"> OmahTI UGM</a></span>
                         </div>
                         <div class="col-sm-12 col-md-4 mr-auto mt-md-3"></div>
                     </div>

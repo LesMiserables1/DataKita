@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Galleries: Agriculture & Mining | DataKita</title>
+    <title>Galleries: Agriculture & Mining | UpToData</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -36,7 +36,7 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
-        <a class="navbar-brand" href="/">Logo</a>
+        <a class="navbar-brand" href="/">UpToData</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div id="nav-mhweb-hamburger">
