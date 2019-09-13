@@ -271,8 +271,8 @@
 
 #infographics .item {
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(15, 82, 186, 0.596)), color-stop(rgba(0, 128, 255, 0.582)), color-stop(rgba(115, 194, 251, 0.541)), to(rgba(126, 249, 255, 0.493)));
-  background: linear-gradient(90deg, rgba(15, 82, 186, 0.596), rgba(0, 128, 255, 0.582), rgba(115, 194, 251, 0.541), rgba(126, 249, 255, 0.493));
+  background: -webkit-gradient(linear, left top, right top, from(rgba(15, 82, 186, 0.2)), color-stop(rgba(0, 128, 255, 0.247)), color-stop(rgba(115, 194, 251, 0.247)), to(rgba(126, 249, 255, 0.178)));
+  background: linear-gradient(90deg, rgba(15, 82, 186, 0.2), rgba(0, 128, 255, 0.247), rgba(115, 194, 251, 0.247), rgba(126, 249, 255, 0.178));
   background-size: 400% 400%;
   -webkit-animation: gradientBackground 2s ease-in-out infinite;
   animation: gradientBackground 2s ease-in-out infinite;
