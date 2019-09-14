@@ -122,6 +122,7 @@ class UploadController extends Controller
         $request->validate([
             'foto.*' => 'image'
         ], $message);
+        dd($request->foto);
         foreach ($request->foto as $foto) {
             $time = date('YHis');
             $date = date('d/m/Y');
