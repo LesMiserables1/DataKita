@@ -109,6 +109,11 @@
   }
 }
 
+#social img {
+  -o-object-position: 15%;
+     object-position: 15%;
+}
+
 @-webkit-keyframes gradientBackground {
   0% {
     background-position: 0% 59%;
